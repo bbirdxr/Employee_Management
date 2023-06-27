@@ -1,6 +1,8 @@
 package com.example.employee.mapper;
 
 import com.example.employee.entity.Attendance;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 
 /**
@@ -11,6 +13,7 @@ import com.example.employee.entity.Attendance;
  * @author ${author}
  * @since 2023-06-27
  */
-public interface AttendanceMapper{
-
+@Mapper
+public interface AttendanceMapper {
+    Attendance selectById(@Param("id") Long id);
 }
