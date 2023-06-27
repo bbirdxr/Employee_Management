@@ -3,6 +3,8 @@ package com.example.employee.mapper;
 import com.example.employee.entity.Employee;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * <p>
  * 员工信息 Mapper 接口
@@ -13,5 +15,8 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface EmployeeMapper {
+
+
+    public List<Employee> findAll();
 
 }

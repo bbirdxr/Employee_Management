@@ -14,6 +14,9 @@
         <result column="update_time" property="updateTime" />
     </resultMap>
 
+    <select id="findById" resultType="User" >
+        select * from employee where id = #{id}
+    </select>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, name, email, phone_number, hire_date, salary, create_time, update_time
