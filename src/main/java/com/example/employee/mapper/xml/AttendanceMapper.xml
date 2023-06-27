@@ -12,12 +12,11 @@
         <result column="clock_out_time" property="clockOutTime" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
-        <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, employee_id, department_id, attendance_date, clock_in_time, clock_out_time, create_time, update_time, is_deleted
+        id, employee_id, department_id, attendance_date, clock_in_time, clock_out_time, create_time, update_time
     </sql>
 
 </mapper>

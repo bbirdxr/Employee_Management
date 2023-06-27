@@ -12,12 +12,11 @@
         <result column="salary" property="salary" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
-        <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, email, phone_number, hire_date, salary, create_time, update_time, is_deleted
+        id, name, email, phone_number, hire_date, salary, create_time, update_time
     </sql>
 
 </mapper>

@@ -15,12 +15,11 @@
         <result column="approve_status" property="approveStatus" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
-        <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, employee_id, department_id, start_date, end_date, leave_type, leave_reason, approver_id, approve_status, create_time, update_time, is_deleted
+        id, employee_id, department_id, start_date, end_date, leave_type, leave_reason, approver_id, approve_status, create_time, update_time
     </sql>
 
 </mapper>
