@@ -1,0 +1,58 @@
+package com.example.employee;
+
+
+
+import com.example.employee.entity.Employee;
+import com.example.employee.mapper.EmployeeMapper;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.InputStream;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * Keafmd
+ *
+ * @ClassName: AnnotationCRUDTest
+ * @Description: 注解开发CRUD测试
+ * @author: 牛哄哄的柯南
+ * @date: 2021-02-16 21:05
+ */
+public class EmployeeTest {
+    private InputStream in;
+    private SqlSessionFactory factory;
+    private SqlSession session;
+    private EmployeeMapper employeeMapper;
+
+    @Before
+    public void init() throws Exception{
+        in = Resources.getResourceAsStream("mybatis-config.xml");
+        factory = new SqlSessionFactoryBuilder().build(in);
+        session = factory.openSession();
+        employeeMapper = session.getMapper(EmployeeMapper.class);
+    }
+
+    @After
+    public void destory() throws Exception{
+        session.commit();
+        session.close();
+        in.close();
+    }
+
+    @Test
+    public void testFindAll(){
+        List<Employee> users = employeeMapper.findAll();
+        for (Employee user : users) {
+            System.out.println("-----每个用户的信息");
+            System.out.println(user.getId());
+        }
+    }
+
+
+}

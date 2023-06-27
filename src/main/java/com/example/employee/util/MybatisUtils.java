@@ -4,10 +4,13 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.context.annotation.Configuration;
+
 import java.io.IOException;
 import java.io.InputStream;
 
 //sqlSessionFactory -->sqlSession
+
 public class MybatisUtils {
 
     private static SqlSessionFactory sqlSessionFactory;
