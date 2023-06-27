@@ -1,6 +1,7 @@
 package com.example.employee.mapper;
 
 import com.example.employee.entity.Position;
+import org.apache.ibatis.annotations.Mapper;
 
 
 /**
@@ -11,6 +12,7 @@ import com.example.employee.entity.Position;
  * @author ${author}
  * @since 2023-06-27
  */
+@Mapper
 public interface PositionMapper{
 
 }
