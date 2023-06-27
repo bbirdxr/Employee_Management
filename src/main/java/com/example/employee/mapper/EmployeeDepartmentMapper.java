@@ -1,6 +1,7 @@
 package com.example.employee.mapper;
 
 import com.example.employee.entity.EmployeeDepartment;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -10,6 +11,7 @@ import com.example.employee.entity.EmployeeDepartment;
  * @author ${author}
  * @since 2023-06-27
  */
+@Mapper
 public interface EmployeeDepartmentMapper {
 
 }
