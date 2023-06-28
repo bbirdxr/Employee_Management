@@ -2,8 +2,10 @@ package com.example.employee.controller;
 
 
 import com.example.employee.common.BaseResponse;
+import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
 import com.example.employee.entity.Attendance;
+import com.example.employee.exception.BusinessException;
 import com.example.employee.model.dto.AttendanceQuery;
 import com.example.employee.service.AttendanceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,6 @@ public class AttendanceController {
 
     @GetMapping("selectById/{id}")
     public BaseResponse<Attendance> selectById(@PathVariable Long id) {
-        System.out.println(id);
         return ResultUtils.success(attendanceService.selectById(id));
     }
 
@@ -42,11 +43,11 @@ public class AttendanceController {
         return ResultUtils.success(true);
     }
 
-    @PostMapping("deleteById")
-    public BaseResponse deleteById() {
-//        if (attendanceService.deleteById(id) == 0) {
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "删除失败");
-//        }
+    @PostMapping("deleteById/{id}")
+    public BaseResponse deleteById(@PathVariable Long id) {
+        if (attendanceService.deleteById(id) == 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "删除失败");
+        }
         return ResultUtils.success(true);
     }
 }
