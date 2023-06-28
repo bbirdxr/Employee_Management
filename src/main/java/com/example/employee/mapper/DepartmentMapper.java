@@ -21,12 +21,15 @@ public interface DepartmentMapper {
     @Select("select * from department where department_name=#{departmentName}")
     Department selectByDepartmentName(String departmentName);
 
+    @Select("select * from department where id=#{departmentId}")
+    Department selectByDepartmentId(Long departmentId);
+
     @Select("select * from department where parent_department_id=#{parentDepartmentId}")
     List<Department> selectByParentDepartmentId(Long parentDepartmentId);
 
-    @Delete("delete from department where department_name=#{departmentName}")
-    void deleteOneByDepartmentName(String departmentName);
+    @Delete("delete from department where id=#{departmentId}")
+    void deleteOneByDepartmentId(Long departmentId);
 
-    @Update("update department set department_name=#{newName} where department_name=#{oldName}")
-    void updateDepartmentName(String newName,String oldName);
+    @Update("update department set department_name=#{newName} where id=#{departmentId}")
+    void updateDepartmentName(String newName,Long departmentId);
 }
