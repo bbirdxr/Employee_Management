@@ -15,4 +15,12 @@ import org.apache.ibatis.annotations.Param;
  */
 @Mapper
 public interface AttendanceMapper {
+
+    /**
+     * 根据主键查询
+     *
+     * @param id 主键
+     * @return 考勤表
+     */
+    Attendance selectById(@Param("id") Long id);
 }

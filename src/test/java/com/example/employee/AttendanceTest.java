@@ -1,8 +1,8 @@
 package com.example.employee;
 
-
-
+import com.example.employee.entity.Attendance;
 import com.example.employee.entity.Employee;
+import com.example.employee.mapper.AttendanceMapper;
 import com.example.employee.mapper.EmployeeMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -15,21 +15,18 @@ import org.junit.Test;
 import java.io.InputStream;
 import java.util.List;
 
-/**
- * Employee 测试类
- */
-public class EmployeeTest {
+public class AttendanceTest {
     private InputStream in;
     private SqlSessionFactory factory;
     private SqlSession session;
-    private EmployeeMapper employeeMapper;
+    private AttendanceMapper attendanceMapper;
 
     @Before
     public void init() throws Exception{
         in = Resources.getResourceAsStream("mybatis-config.xml");
         factory = new SqlSessionFactoryBuilder().build(in);
         session = factory.openSession();
-        employeeMapper = session.getMapper(EmployeeMapper.class);
+        attendanceMapper = session.getMapper(AttendanceMapper.class);
     }
 
     @After
@@ -40,13 +37,8 @@ public class EmployeeTest {
     }
 
     @Test
-    public void testFindAll(){
-        List<Employee> users = employeeMapper.findAll();
-        for (Employee user : users) {
-            System.out.println("-----每个用户的信息");
-            System.out.println(user);
-        }
+    public void testSelectById(){
+        Attendance attendance = attendanceMapper.selectById(1L);
+        System.out.println(attendance);
     }
-
-
 }
