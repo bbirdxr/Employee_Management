@@ -19,6 +19,6 @@ public interface EmployeeMapper {
 
 
     @Select("select * from employee")
-    public List<Employee> findAll();
+    List<Employee> findAll();
 
 }

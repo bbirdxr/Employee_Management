@@ -2,6 +2,7 @@ package com.example.employee.mapper;
 
 import com.example.employee.entity.Attendance;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 
 /**
@@ -13,6 +14,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2023-06-27
  */
 @Mapper
-public interface AttendanceMapper{
-
+public interface AttendanceMapper {
 }

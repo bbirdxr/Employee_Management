@@ -13,16 +13,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
-import java.util.Date;
 import java.util.List;
 
 /**
- * Keafmd
- *
- * @ClassName: AnnotationCRUDTest
- * @Description: 注解开发CRUD测试
- * @author: 牛哄哄的柯南
- * @date: 2021-02-16 21:05
+ * Employee 测试类
  */
 public class EmployeeTest {
     private InputStream in;
@@ -39,7 +33,7 @@ public class EmployeeTest {
     }
 
     @After
-    public void destory() throws Exception{
+    public void destroy() throws Exception{
         session.commit();
         session.close();
         in.close();
