@@ -13,6 +13,6 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public Attendance selectById(Long id) {
-        return attendanceMapper.selectById(id);
+        return null;
     }
 }

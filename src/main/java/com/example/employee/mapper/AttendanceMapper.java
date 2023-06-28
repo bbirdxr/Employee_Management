@@ -15,5 +15,4 @@ import org.apache.ibatis.annotations.Param;
  */
 @Mapper
 public interface AttendanceMapper {
-    Attendance selectById(@Param("id") Long id);
 }

@@ -14,14 +14,9 @@
         <result column="update_time" property="updateTime" />
     </resultMap>
 
-<!--    &lt;!&ndash; 通用查询结果列 &ndash;&gt;-->
-<!--    <sql id="Base_Column_List">-->
-<!--        id, employee_id, department_id, attendance_date, clock_in_time, clock_out_time, create_time, update_time-->
-<!--    </sql>-->
-
-    <select id="selectById" parameterType="int" resultType="com.example.employee.entity.Attendance">
-        select * from attendance
-        where id = #{id}
-    </select>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, employee_id, department_id, attendance_date, clock_in_time, clock_out_time, create_time, update_time
+    </sql>
 
 </mapper>

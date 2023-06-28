@@ -2,6 +2,9 @@ package com.example.employee.mapper;
 
 import com.example.employee.entity.Employee;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,5 +16,9 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface EmployeeMapper {
+
+
+    @Select("select * from employee")
+    List<Employee> findAll();
 
 }
