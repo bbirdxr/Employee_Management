@@ -36,8 +36,9 @@ public class DepartmentController {
         }
     }
 
+    @ResponseBody
     @PostMapping("/add")
-    BaseResponse addDepartment(@RequestParam String departmentName,@RequestParam String parentDepartmentName ){
+    BaseResponse<Department> addDepartment(@RequestParam String departmentName,@RequestParam String parentDepartmentName ){
         Department d1=departmentService.findDepartment(departmentName);
         if(d1!=null){
             return new BaseResponse(400, d1,"已存在同名部门");
@@ -51,7 +52,7 @@ public class DepartmentController {
                 return new BaseResponse(400, d1,"不存在该父部门");
             }
             departmentService.addDepartment(departmentName,parentDepartmentName);
-            return ResultUtils.success("");
+            return ResultUtils.success(null);
         }
 
 
