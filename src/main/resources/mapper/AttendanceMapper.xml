@@ -26,4 +26,43 @@
         where id = #{id}
     </select>
 
+    <insert id="insert" parameterType="com.example.employee.entity.Attendance">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into attendance (employee_id, department_id, attendance_date, clock_in_time, clock_out_time)
+        values (#{employeeId,jdbcType=BIGINT}, #{departmentId,jdbcType=BIGINT}, #{attendanceDate,jdbcType=DATE},
+        #{clockInTime,jdbcType=TIMESTAMP}, #{clockOutTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete from attendance
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <update id="updateById" parameterType="com.example.employee.entity.Attendance">
+        update attendance
+        set employee_id = #{employeeId,jdbcType=BIGINT},
+            department_id = #{departmentId,jdbcType=BIGINT},
+            attendance_date = #{attendanceDate,jdbcType=DATE},
+            clock_in_time = #{clockInTime,jdbcType=TIMESTAMP},
+            clock_out_time = #{clockOutTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectByAttendanceQuery" resultType="com.example.employee.entity.Attendance" parameterType="com.example.employee.model.dto.AttendanceQuery">
+        select id, employee_id, department_id, attendance_date, clock_in_time, clock_out_time, create_time, update_time
+        from attendance
+        where 1=1
+        <if test="employeeId != null">
+            and employee_id = #{employeeId}
+        </if>
+        <if test="departmentId != null">
+            and department_id = #{departmentId}
+        </if>
+        <if test="attendanceDate != null">
+            and attendance_date = #{attendanceDate}
+        </if>
+    </select>
+
 </mapper>

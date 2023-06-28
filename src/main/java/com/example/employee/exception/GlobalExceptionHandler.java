@@ -4,11 +4,12 @@ import com.example.employee.common.BaseResponse;
 import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
  * 全局异常处理器
  */
-// @RestControllerAdvice
+@RestControllerAdvice
 // @Slf4j
 public class GlobalExceptionHandler {
 
