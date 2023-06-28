@@ -50,7 +50,7 @@ public class EmployeeTest {
         List<Employee> users = employeeMapper.findAll();
         for (Employee user : users) {
             System.out.println("-----每个用户的信息");
-            System.out.println(user.getId());
+            System.out.println(user);
         }
     }
 
