@@ -3,6 +3,9 @@ package com.example.employee.entity;
 
 import java.util.Date;
 import java.io.Serializable;
+import java.util.List;
+
+import jdk.internal.dynalink.linker.LinkerServices;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -43,5 +46,7 @@ public class Department implements Serializable {
      */
     private Date updateTime;
 
+
+    private List<Department> sonDepartments;
 
 }
