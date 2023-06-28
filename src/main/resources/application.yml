@@ -6,6 +6,6 @@ spring:
     username: root
     password: 123456
 
-#mybatis:
-#  configuration:
-#    map-underscore-to-camel-case:true
+mybatis:
+  config-location: classpath:mybatis-config.xml
+
