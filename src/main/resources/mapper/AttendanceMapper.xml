@@ -12,6 +12,7 @@
         <result column="clock_out_time" property="clockOutTime" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
+
     </resultMap>
 
     <!-- 通用查询结果列 -->
