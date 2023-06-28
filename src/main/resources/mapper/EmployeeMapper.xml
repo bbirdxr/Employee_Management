@@ -10,7 +10,7 @@
         <result column="phone_number" property="phoneNumber" />
         <result column="hire_date" property="hireDate" />
         <result column="salary" property="salary" />
-        <result column="create_time" property="createTime" />
+        <result column="create_time" property="createTime"  />
         <result column="update_time" property="updateTime" />
     </resultMap>
 
