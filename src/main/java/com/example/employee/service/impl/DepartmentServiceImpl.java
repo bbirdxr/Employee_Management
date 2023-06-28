@@ -15,17 +15,22 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public boolean ifDepartmentExist(String departmentName) {
-        Department d=departmentMapper.selectByDepartmentName(departmentName);
-        if(d==null){
-            return false;
-        }else {
-            return true;
-        }
+
     }
 
     @Override
-    public void deleteDepartmentIfExist(Department department) {
+    public void deleteDepartmentIfExist(String departmentName) {
+        Department department=departmentMapper.selectByDepartmentName(departmentName);
+        department.setSonDepartments(departmentMapper.selectByParentDepartmentId(department.getId()));
+        if(department.getSonDepartments()!=null){
+            for(Department d:department.getSonDepartments()){
 
+            }
+        }else {
+            departmentMapper.selectByDepartmentName(departmentName);
+        }
+
+        return department;
     }
 
     @Override
@@ -45,7 +50,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public void addDepartment(String departmentName, String parentDepartmentName) {
-
+        Long parentId=departmentMapper.selectByDepartmentName(parentDepartmentName).getId();
+        departmentMapper.addDepartment(departmentName,parentId);
     }
 
     @Override

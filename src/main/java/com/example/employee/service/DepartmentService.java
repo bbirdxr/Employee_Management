@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface DepartmentService {
     boolean ifDepartmentExist(String departmentName);
-    void deleteDepartmentIfExist(Department department);
+    void deleteDepartmentIfExist(String department);
     Department findDepartment(String departmentName);
     Department filledWithSons(Department department);
     void addDepartment(String departmentName,String parentDepartmentName);
