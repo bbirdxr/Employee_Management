@@ -23,6 +23,7 @@ public interface DepartmentMapper {
     @Select("select * from department where department_name=#{departmentName}")
     Department selectByDepartmentName(String departmentName);
 
+
     @Select("select * from department where parent_department_id=#{parentDepartmentId}")
     List<Department> selectByParentDepartmentId(Long parentDepartmentId);
 

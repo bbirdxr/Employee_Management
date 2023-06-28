@@ -45,7 +45,7 @@ public class EmployeeTest {
 
     @Test
     public void testFindAll(){
-        departmentMapper.addDepartment("研发部",0L);
+        System.out.println(departmentMapper.selectByDepartmentName("设计部"));
     }
 
 

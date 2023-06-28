@@ -29,7 +29,27 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<Department> findDepartments(Department department) {
-        return null;
+    public Department findDepartment(String department) {
+        Department d=departmentMapper.selectByDepartmentName(department);
+        return d;
+    }
+
+    @Override
+    public Department filledWithSons(Department department) {
+        department.setSonDepartments(departmentMapper.selectByParentDepartmentId(department.getId()));
+        for(Department d:department.getSonDepartments()){
+            filledWithSons(d);
+        }
+        return department;
+    }
+
+    @Override
+    public void addDepartment(String departmentName, String parentDepartmentName) {
+
+    }
+
+    @Override
+    public void addRootDepartment(String departmentName) {
+        departmentMapper.addDepartment(departmentName,0L);
     }
 }

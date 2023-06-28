@@ -11,5 +11,9 @@ import java.util.List;
 public interface DepartmentService {
     boolean ifDepartmentExist(String departmentName);
     void deleteDepartmentIfExist(Department department);
-    List<Department> findDepartments(Department department);
+    Department findDepartment(String departmentName);
+    Department filledWithSons(Department department);
+    void addDepartment(String departmentName,String parentDepartmentName);
+    void addRootDepartment(String department);
+
 }
