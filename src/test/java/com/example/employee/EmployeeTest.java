@@ -3,6 +3,7 @@ package com.example.employee;
 
 
 import com.example.employee.entity.Employee;
+import com.example.employee.mapper.DepartmentMapper;
 import com.example.employee.mapper.EmployeeMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -11,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.InputStream;
 import java.util.List;
@@ -23,6 +25,7 @@ public class EmployeeTest {
     private SqlSessionFactory factory;
     private SqlSession session;
     private EmployeeMapper employeeMapper;
+    private DepartmentMapper departmentMapper;
 
     @Before
     public void init() throws Exception{
@@ -30,6 +33,7 @@ public class EmployeeTest {
         factory = new SqlSessionFactoryBuilder().build(in);
         session = factory.openSession();
         employeeMapper = session.getMapper(EmployeeMapper.class);
+        departmentMapper=session.getMapper(DepartmentMapper.class);
     }
 
     @After
@@ -41,11 +45,7 @@ public class EmployeeTest {
 
     @Test
     public void testFindAll(){
-        List<Employee> users = employeeMapper.findAll();
-        for (Employee user : users) {
-            System.out.println("-----每个用户的信息");
-            System.out.println(user);
-        }
+        departmentMapper.addDepartment("研发部",0L);
     }
 
 
