@@ -4,19 +4,24 @@ import com.example.employee.common.ErrorCode;
 import com.example.employee.entity.Employee;
 import com.example.employee.exception.BusinessException;
 import com.example.employee.mapper.EmployeeMapper;
+import com.example.employee.model.dto.EmployeeDTO;
+import com.example.employee.service.EmployeeService;
 import com.example.employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
-import com.example.employee.model.dto.EmployeeDto;
 import com.example.employee.service.PositionService;
+import com.example.employee.util.MapObjectUtil;
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.redis.core.HashOperations;
+
 
 import java.util.ArrayList;
-import java.util.List;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
@@ -37,17 +42,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public EmployeeDto selectById(Long id) {
-        return toEmployeeDto(employeeMapper.findByIdWithSalary(id));
+    public EmployeeDTO selectById(Long id) {
+        return toEmployeeDTO(employeeMapper.findByIdWithSalary(id));
     }
 
     @Override
     public Employee selectByNameSimple(String name) {
         String redisKey = String.format("employee:%s", name);
-        ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
+        HashOperations<String, String, Object> hashOperations = redisTemplate.opsForHash();
         // 如果有缓存，直接读缓存
-        Employee employee = (Employee) valueOperations.get(redisKey);
-        if (employee != null) {
+        Map<String, Object> resultMap = hashOperations.entries("redisKey");
+        Employee employee;
+        if (resultMap.size() > 0) {
+            try {
+                employee = MapObjectUtil.mapToObject(resultMap, Employee.class);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
             return employee;
         }
         // 无缓存，查数据库
@@ -56,20 +67,52 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
         // 写缓存
+        Map<String, Object> employeeMap;
         try {
-            valueOperations.set(redisKey, employee, 30000, TimeUnit.MILLISECONDS);
-            System.out.println("写入缓存");
+            employeeMap = MapObjectUtil.objectToMap(employee);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            hashOperations.putAll(redisKey, employeeMap);
+            redisTemplate.expire(redisKey, 5, TimeUnit.MINUTES);
+            System.out.println(hashOperations.entries(redisKey));
         } catch (Exception e) {
+            System.out.println("redis set key error");
             // log.error("redis set key error", e);
         }
         return employee;
     }
 
-    @Override
-    public List<EmployeeDto> selectWithCondition(Employee employee){
-        List<Employee>employeeList=employeeMapper.findAllWithCondition(employee);
-        return toEmployeeDtoList(employeeList);
+
+    public EmployeeDTO toEmployeeDTO(Employee employee){
+        EmployeeDTO dto=new EmployeeDTO();
+        BeanUtils.copyProperties(employee,dto);
+        dto.setPositionName(positionService.getPositionNameById(employee.getPositionId()));
+        dto.setDepartmentPathName(departmentService.toString(employee.getDepartmentId()));
+        return dto;
     }
+
+    public List<EmployeeDTO> toEmployeeDTOList(List<Employee>employees){
+        List<EmployeeDTO> dtos= Lists.transform(employees, (entity)->{
+            EmployeeDTO d = new EmployeeDTO();
+            BeanUtils.copyProperties(entity, d);
+            d.setPositionName(positionService.getPositionNameById(entity.getPositionId()));
+            d.setDepartmentPathName(departmentService.toString(entity.getDepartmentId()));
+            return d;
+        });
+        return dtos;
+    }
+
+    @Override
+    public List<EmployeeDTO> selectWithCondition(Employee employee){
+        List<Employee>employeeList=employeeMapper.findAllWithCondition(employee);
+        return toEmployeeDTOList(employeeList);
+    }
+    public EmployeeDTO findById(Long employId) {
+        return toEmployeeDTO(employeeMapper.findByIdWithSalary(employId));
+    }
+
 
     @Override
     public void update(Employee employee) {
@@ -91,32 +134,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.addNewEmployee(employee);
     }
 
-    public List<EmployeeDto> toEmployeeDtoList(List<Employee>employees){
-        List<EmployeeDto> dtos= tramsformList(employees, (entity)->{
-            EmployeeDto d = new EmployeeDto();
-            BeanUtils.copyProperties(entity, d);
-            d.setPositionName(positionService.getPositionNameById(entity.getPositionId()));
-            d.setDepartmentPathName(departmentService.toString(entity.getDepartmentId()));
-            return d;
-        });
-        return dtos;
-    }
 
-    public static <F,T>List<T> tramsformList(List<F> fromList, Function<F,T> fc){
-        if(fromList==null){
-            return new ArrayList<>();
-        }
-        List<T>lists=new ArrayList<>();
-        for(F from:fromList){
-            lists.add(fc.apply(from));
-        }
-        return lists;
-    }
-    public EmployeeDto toEmployeeDto(Employee employee){
-        EmployeeDto dto=new EmployeeDto();
-        BeanUtils.copyProperties(employee,dto);
-        dto.setPositionName(positionService.getPositionNameById(employee.getPositionId()));
-        dto.setDepartmentPathName(departmentService.toString(employee.getDepartmentId()));
-        return dto;
-    }
+
+
+
+
+
 }

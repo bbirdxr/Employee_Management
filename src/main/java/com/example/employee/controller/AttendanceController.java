@@ -25,7 +25,7 @@ import java.util.List;
  * @since 2023-06-27
  */
 @RestController
-@RequestMapping(value="/attendance")
+@RequestMapping("/attendance")
 public class AttendanceController {
     @Autowired
     private AttendanceServiceImpl attendanceService;

@@ -4,25 +4,16 @@ package com.example.employee.controller;
 import com.example.employee.common.BaseResponse;
 import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
-import com.example.employee.entity.Attendance;
 import com.example.employee.entity.Employee;
-import com.example.employee.service.EmployeeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.employee.entity.Employee;
-import com.example.employee.model.dto.EmployeeDto;
-import com.example.employee.service.EmployeeService;
+import com.example.employee.model.dto.EmployeeDTO;
 import com.example.employee.service.impl.EmployeeServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -51,15 +42,15 @@ public class EmployeeController {
             @RequestParam Integer pageSize,
             @RequestBody Employee employee){
         PageHelper.startPage(pageNum,pageSize);
-        List<EmployeeDto>dtos=employeeService.selectWithCondition(employee);
-        PageInfo<EmployeeDto> pageInfo = new PageInfo<>(dtos);
+        List<EmployeeDTO>dtos=employeeService.selectWithCondition(employee);
+        PageInfo<EmployeeDTO> pageInfo = new PageInfo<>(dtos);
         return ResultUtils.success(pageInfo);
     }
 
     @PostMapping("/person")
     BaseResponse add(@RequestBody Employee employee){
         employeeService.add(employee);
-        return ResultUtils.success("添加员工成功");
+        return ResultUtils.success("true");
     }
 
     @PutMapping("/person/{id}/{field}/{value}")
