@@ -12,21 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-public class EmployeeDto{
-    @Autowired
-    EmployeeServiceImpl employeeService;
-
-    @Autowired
-    DepartmentServiceImpl departmentService;
-
-    @Autowired
-    PositionService positionService;
-   public EmployeeDto(Employee e){
-       this.employee=e;
-       this.departmentPathName=departmentService.toString(e.getDepartmentId());
-       this.positionName=positionService.getPositionNameById(e.getPositionId());
-   }
-    private Employee employee;
+public class EmployeeDto extends Employee{
     private String departmentPathName;
     private String positionName;
 }

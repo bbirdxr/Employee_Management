@@ -1,8 +1,8 @@
 package com.example.employee.mapper;
 
 import com.example.employee.entity.Employee;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 
@@ -32,4 +32,17 @@ public interface EmployeeMapper {
 
     @Select("select * from employee,employee_department where department_id=#{departmentId} and employee_id=employee.id")
     List<Employee>findByDepartmentId(Long departmentId);
+
+    @Insert("insert into employee" +
+            "(name,email,phone_number,hire_date,salary,level,position_id,department_id) values" +
+            "(#{e.name},#{e.phone_number},#{e.hire_date},#{e.salary},#{e.level},#{e.position_id},#{e.department_id})")
+    void addNewEmployee(Employee e);
+
+    @Update("update employee set ${field}=#{value} where id=#{id}")
+    void update(Employee e);
+
+    @Delete("delete from employee where id=#{id}")
+    void deleteOneById(Long id);
+
+
 }
