@@ -40,33 +40,6 @@ public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
 
-<<<<<<< HEAD
-//    @GetMapping("/")
-//    BaseResponse findAllByPage(){
-//        return null;
-//    }
-//
-    @PostMapping("/add")
-    BaseResponse add(@RequestBody Employee employee){
-        employeeService.add(employee);
-        return ResultUtils.success(true);
-    }
-//
-//    @DeleteMapping("/")
-//    BaseResponse deleteById(@RequestParam Long employeeId){
-//        return null;
-//    }
-//
-//    @DeleteMapping("/")
-//    BaseResponse deleteByName(@RequestParam String employeeName){
-//        return null;
-//    }
-
-=======
->>>>>>> 98b352d4afefe666a983382e4901bd8f857c95db
-    @Autowired
-    private RedisTemplate redisTemplate;
-
     @GetMapping("/all")
     BaseResponse findAll(
             @RequestParam Integer pageNum,
@@ -79,7 +52,7 @@ public class EmployeeController {
     @PostMapping("/person")
     BaseResponse add(@RequestBody Employee employee){
         employeeService.add(employee);
-        return ResultUtils.success("添加员工成功");
+        return ResultUtils.success("true");
     }
 
     @PutMapping("/person/{id}/{field}/{value}")

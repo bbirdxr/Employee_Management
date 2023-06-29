@@ -30,9 +30,9 @@ public class Employee implements Serializable {
      */
     private Long id;
 
-//    private Long departmentId;
-//
-//    private Long positionId;
+    private Long departmentId;
+
+    private Long positionId;
 
     private String name;
 
