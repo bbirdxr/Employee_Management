@@ -7,6 +7,7 @@ import com.example.employee.exception.BusinessException;
 import com.example.employee.mapper.EmployeeMapper;
 import com.example.employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,11 @@ import com.example.employee.model.dto.EmployeeDto;
 import com.example.employee.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -41,9 +45,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee selectByNameSimple(String name) {
         String redisKey = String.format("employee:%s", name);
-        ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
+        HashOperations<String, String, Object> hashOperations = redisTemplate.opsForHash();
         // 如果有缓存，直接读缓存
-        Employee employee = (Employee) valueOperations.get(redisKey);
+        Employee employee = (Employee) hashOperations.entries(redisKey);
+
         if (employee != null) {
             return employee;
         }
@@ -54,8 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         // 写缓存
         try {
-            valueOperations.set(redisKey, employee, 30000, TimeUnit.MILLISECONDS);
-            System.out.println("写入缓存");
+            // valueOperations.set(redisKey, employee, 1, TimeUnit.HOURS);
         } catch (Exception e) {
             // log.error("redis set key error", e);
         }

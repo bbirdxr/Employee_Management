@@ -37,25 +37,25 @@ public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
 
-    @GetMapping("/")
-    BaseResponse findAllByPage(){
-        return null;
-    }
-
-    @PostMapping("/")
-    BaseResponse add(@RequestBody Employee employee){
-        return null;
-    }
-
-    @DeleteMapping("/")
-    BaseResponse deleteById(@RequestParam Long employeeId){
-        return null;
-    }
-
-    @DeleteMapping("/")
-    BaseResponse deleteByName(@RequestParam String employeeName){
-        return null;
-    }
+//    @GetMapping("/")
+//    BaseResponse findAllByPage(){
+//        return null;
+//    }
+//
+//    @PostMapping("/")
+//    BaseResponse add(@RequestBody Employee employee){
+//        return null;
+//    }
+//
+//    @DeleteMapping("/")
+//    BaseResponse deleteById(@RequestParam Long employeeId){
+//        return null;
+//    }
+//
+//    @DeleteMapping("/")
+//    BaseResponse deleteByName(@RequestParam String employeeName){
+//        return null;
+//    }
 
     @Autowired
     private RedisTemplate redisTemplate;
