@@ -14,23 +14,34 @@ public class DepartmentServiceImpl implements DepartmentService {
     private DepartmentMapper departmentMapper;
 
     @Override
-    public boolean ifDepartmentExist(String departmentName) {
-        Department d=departmentMapper.selectByDepartmentName(departmentName);
-        if(d==null){
-            return false;
-        }else {
-            return true;
-        }
+    public boolean ifDepartmentExist(Long departmentId) {
+        Department d=departmentMapper.selectByDepartmentId(departmentId);
+        if(d==null)return true;
+        else return false;
     }
 
     @Override
-    public void deleteDepartmentIfExist(Department department) {
-
+    public void deleteDepartmentIfExist(Long departmentId) {
+        Department department=departmentMapper.selectByDepartmentId(departmentId);
+        department.setSonDepartments(departmentMapper.selectByParentDepartmentId(department.getId()));
+        if(!department.getSonDepartments().isEmpty()){
+            for(Department d:department.getSonDepartments()){
+                deleteDepartmentIfExist(d.getId());
+            }
+        }else {
+            departmentMapper.deleteOneByDepartmentId(department.getId());
+        }
     }
 
     @Override
     public Department findDepartment(String department) {
         Department d=departmentMapper.selectByDepartmentName(department);
+        return d;
+    }
+
+    @Override
+    public Department findDepartmentById(Long departmentId) {
+        Department d=departmentMapper.selectByDepartmentId(departmentId);
         return d;
     }
 
@@ -44,8 +55,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void addDepartment(String departmentName, String parentDepartmentName) {
-
+    public void addDepartment(String departmentName, Long parentDepartmentId) {
+        Long parentId=departmentMapper.selectByDepartmentId(parentDepartmentId).getId();
+        departmentMapper.addDepartment(departmentName,parentId);
     }
 
     @Override
@@ -56,5 +68,39 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Department selectById(Long id) {
         return null;
+    }
+
+    public boolean ifReplicateName(String departmentName, Long parentDepartmentId) {
+        //同一个部门下不能有重名的部门
+        List<Department>departments=departmentMapper.selectByParentDepartmentId(parentDepartmentId);
+        for (Department d:departments){
+            if(d.getDepartmentName().equals(departmentName)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void changeDepartmentName(String newName,Long departmentId) {
+        departmentMapper.updateDepartmentName(newName,departmentId);
+    }
+
+    @Override
+    public String toString(Long departmentId) {
+        Department d=departmentMapper.selectByDepartmentId(departmentId);
+        String str=d.getDepartmentName();
+        return appendDepartment(str,d);
+    }
+
+    public String appendDepartment(String str,Department d){
+        if(d.getParentDepartmentId()==0L){
+            return str;
+        }else {
+            Department dd=departmentMapper.selectByDepartmentId(d.getParentDepartmentId());
+            str=dd.getDepartmentName()+"/"+str;
+            appendDepartment(str,dd);
+        }
+        return str;
     }
 }

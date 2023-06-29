@@ -1,9 +1,7 @@
 package com.example.employee.mapper;
 
 import com.example.employee.entity.Department;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -23,10 +21,15 @@ public interface DepartmentMapper {
     @Select("select * from department where department_name=#{departmentName}")
     Department selectByDepartmentName(String departmentName);
 
+    @Select("select * from department where id=#{departmentId}")
+    Department selectByDepartmentId(Long departmentId);
 
     @Select("select * from department where parent_department_id=#{parentDepartmentId}")
     List<Department> selectByParentDepartmentId(Long parentDepartmentId);
 
+    @Delete("delete from department where id=#{departmentId}")
+    void deleteOneByDepartmentId(Long departmentId);
 
-
+    @Update("update department set department_name=#{newName} where id=#{departmentId}")
+    void updateDepartmentName(String newName,Long departmentId);
 }

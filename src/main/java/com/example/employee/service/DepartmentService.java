@@ -9,13 +9,20 @@ import java.util.List;
 
 
 public interface DepartmentService {
-    boolean ifDepartmentExist(String departmentName);
-    void deleteDepartmentIfExist(Department department);
-    Department findDepartment(String departmentName);
-    Department filledWithSons(Department department);
-    void addDepartment(String departmentName,String parentDepartmentName);
-    void addRootDepartment(String department);
+    boolean ifDepartmentExist(Long departmentId);
 
     Department selectById(Long id);
 
+    void deleteDepartmentIfExist(Long departmentId);
+
+    Department findDepartment(String departmentName);
+
+    Department findDepartmentById(Long departmentId);
+
+    Department filledWithSons(Department department);
+    void addDepartment(String departmentName,Long parentDepartmentId);
+    void addRootDepartment(String department);
+    boolean ifReplicateName(String departmentName,Long parentDepartmentId);
+    void changeDepartmentName(String newName,Long departmentId);
+    String toString(Long departmentId);
 }

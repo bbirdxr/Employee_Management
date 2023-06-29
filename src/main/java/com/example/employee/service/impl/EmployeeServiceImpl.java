@@ -10,6 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import com.example.employee.entity.Employee;
+import com.example.employee.model.dto.EmployeeDto;
+import com.example.employee.service.EmployeeService;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,7 +34,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee selectByName(String name) {
+    public List<Employee> pageSelectAllEmployee(int pageNum, int pageSize) {
+        return null;
+    }
+
+    @Override
+    public Employee selectByNameSimple(String name) {
         String redisKey = String.format("employee:%s", name);
         ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
         // 如果有缓存，直接读缓存
@@ -49,5 +60,39 @@ public class EmployeeServiceImpl implements EmployeeService {
             // log.error("redis set key error", e);
         }
         return employee;
+    }
+
+    public EmployeeDto findById(Long employId) {
+        return null;
+    }
+
+    @Override
+    public List<EmployeeDto> selectByName(String EmployeeName) {
+        return null;
+    }
+
+    @Override
+    public void update(Employee employee) {
+
+    }
+
+    @Override
+    public void deleteById(Long employeeId) {
+
+    }
+
+    @Override
+    public void deleteByDepartmentId(Long departmentId) {
+
+    }
+
+    @Override
+    public void add(Employee employee) {
+
+    }
+
+    public EmployeeDto toEmployeeDto(Employee employee){
+        EmployeeDto ed=new EmployeeDto(employee);
+        return ed;
     }
 }

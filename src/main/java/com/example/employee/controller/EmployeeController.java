@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.example.employee.entity.Employee;
+import com.example.employee.model.dto.EmployeeDto;
+import com.example.employee.service.EmployeeService;
+import com.example.employee.service.impl.EmployeeServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -28,16 +34,35 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
-
     @Autowired
-    private EmployeeService employeeService;
+    EmployeeServiceImpl employeeService;
+
+    @GetMapping("/")
+    BaseResponse findAllByPage(){
+        return null;
+    }
+
+    @PostMapping("/")
+    BaseResponse add(@RequestBody Employee employee){
+        return null;
+    }
+
+    @DeleteMapping("/")
+    BaseResponse deleteById(@RequestParam Long employeeId){
+        return null;
+    }
+
+    @DeleteMapping("/")
+    BaseResponse deleteByName(@RequestParam String employeeName){
+        return null;
+    }
 
     @Autowired
     private RedisTemplate redisTemplate;
 
     @GetMapping("selectByName/{name}")
     public BaseResponse<Employee> selectByName(@PathVariable String name) {
-        return ResultUtils.success(employeeService.selectByName(name));
+        return ResultUtils.success(employeeService.selectByNameSimple(name));
     }
 
 }
