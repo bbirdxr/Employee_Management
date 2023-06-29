@@ -37,29 +37,26 @@ public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
 
-//    @GetMapping("/")
-//    BaseResponse findAllByPage(){
-//        return null;
-//    }
-//
-//    @PostMapping("/")
-//    BaseResponse add(@RequestBody Employee employee){
-//        employeeService.add(employee);
-//        return ResultUtils.success("添加员工成功");
-//    }
-//
-//    @DeleteMapping("/")
-//    BaseResponse deleteById(@RequestParam Long employeeId){
-//        return null;
-//    }
-//
-//    @DeleteMapping("/")
-//    BaseResponse deleteByName(@RequestParam String employeeName){
-//        return null;
-//    }
-
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @GetMapping("/page/")
+    BaseResponse findAllByPage(){
+        return null;
+    }
+
+    @PostMapping("/person")
+    BaseResponse add(@RequestBody Employee employee){
+        employeeService.add(employee);
+        return ResultUtils.success("添加员工成功");
+    }
+
+    @DeleteMapping("/{id}")
+    BaseResponse deleteById(@PathVariable Long employeeId){
+        return null;
+    }
+
+
 
     @GetMapping("selectByName/{name}")
     public BaseResponse<Employee> selectByName(@PathVariable String name) {
