@@ -43,7 +43,7 @@ public class DepartmentController {
         return ResultUtils.success("成功删除");
     }
 
-    @PostMapping("/change")
+    @PutMapping("/change")
     BaseResponse<Department> changeName(@RequestParam String newName,@RequestParam Long departmentId ){
         Department d=departmentService.findDepartmentById(departmentId);
         if(d==null){
@@ -74,9 +74,5 @@ public class DepartmentController {
             return ResultUtils.success(null);
         }
     }
-
-
-
-
 }
 

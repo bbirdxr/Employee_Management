@@ -1,9 +1,18 @@
 package com.example.employee.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.example.employee.common.BaseResponse;
+import com.example.employee.common.ErrorCode;
+import com.example.employee.common.ResultUtils;
+import com.example.employee.entity.Position;
+import com.example.employee.mapper.PositionMapper;
+import com.example.employee.service.PositionService;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Update;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 /**
  * <p>
@@ -16,6 +25,31 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/position")
 public class PositionController {
+    @Autowired
+    PositionService positionService;
 
+    @Autowired
+    PositionMapper positionMapper;
+    //增
+    @PostMapping("/")
+    BaseResponse add(@RequestParam String positionName){
+        if(positionName.equals("")){
+            return ResultUtils.error(ErrorCode.NULL_ERROR);
+        }
+        if(positionMapper.selectByName(positionName)!=null){
+            return ResultUtils.error(ErrorCode.PARAMS_ERROR,"已有相同职位");
+        }else {
+            positionMapper.addOne(positionName);
+            return ResultUtils.success("添加成功");
+        }
+    }
+
+    //查
+    @GetMapping("/like")
+    BaseResponse get(@RequestParam String positionName){
+        List<Position> positionList=positionMapper.likeSelectByName(positionName);
+        return ResultUtils.success(positionList);
+    }
+    //职位
 }
 

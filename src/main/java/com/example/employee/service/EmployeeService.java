@@ -1,11 +1,24 @@
 package com.example.employee.service;
 
 import com.example.employee.entity.Employee;
+import com.example.employee.model.dto.EmployeeDto;
 
 import java.util.List;
 
 public interface EmployeeService {
     //分页查询基本信息
-    List<Employee> getAllEmployee();
-    //查询员工公司就职历史
+
+    List<Employee> pageSelectAllEmployee(int pageNum, int pageSize);
+
+    EmployeeDto findById(Long employId);
+
+    List<EmployeeDto>selectByName(String EmployeeName);
+
+    void update(Employee employee);
+
+    void deleteById(Long employeeId);
+
+    void deleteByDepartmentId(Long departmentId);
+
+    void add(Employee employee);
 }
