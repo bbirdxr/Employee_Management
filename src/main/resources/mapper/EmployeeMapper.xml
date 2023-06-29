@@ -10,13 +10,39 @@
         <result column="phone_number" property="phoneNumber" />
         <result column="hire_date" property="hireDate" />
         <result column="salary" property="salary" />
+        <result column="position_id" property="positionId"/>
+        <result column="department_id" property="departmentId"/>
         <result column="create_time" property="createTime"  />
         <result column="update_time" property="updateTime" />
     </resultMap>
 
+    <update id="updateById" parameterType="com.example.employee.entity.Employee">
+        update employee
+           <set>
+               <if test="position_id!=null">
+                   position_id=#{position_id},
+               </if>
+               <if test="name!=null">
+                   name=#{name},
+               </if>
+               <if test="email!=null">
+                   email=#{email},
+               </if>
+               <if test="level!=null">
+                   level=#{level},
+               </if>
+               <if test="salary!=null">
+                   salary=#{salary},
+               </if>
+               <if test="department_id!=null">
+                   department_id=#{phone_number},
+               </if>
+           </set>
+            where  id=#{id}
+    </update>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, email, phone_number, hire_date, salary, create_time, update_time
+        id, name, email, phone_number, hire_date, salary, create_time, update_time,position_id,department_id
     </sql>
 
     <select id="selectByName" resultType="com.example.employee.entity.Employee">

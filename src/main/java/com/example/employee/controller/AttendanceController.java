@@ -8,6 +8,7 @@ import com.example.employee.entity.Attendance;
 import com.example.employee.exception.BusinessException;
 import com.example.employee.model.dto.AttendanceQuery;
 import com.example.employee.service.AttendanceService;
+import com.example.employee.service.impl.AttendanceServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,10 @@ import java.util.List;
  * @since 2023-06-27
  */
 @RestController
-@RequestMapping(value="/attendance")
+@RequestMapping("/attendance")
 public class AttendanceController {
     @Autowired
-    private AttendanceService attendanceService;
+    private AttendanceServiceImpl attendanceService;
 
     @GetMapping("selectById/{id}")
     public BaseResponse<Attendance> selectById(@PathVariable Long id) {

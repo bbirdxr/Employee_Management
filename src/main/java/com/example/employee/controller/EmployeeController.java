@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.employee.entity.Employee;
-import com.example.employee.model.dto.EmployeeDto;
+import com.example.employee.model.dto.EmployeeDTO;
 import com.example.employee.service.EmployeeService;
 import com.example.employee.service.impl.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,10 +42,11 @@ public class EmployeeController {
 //        return null;
 //    }
 //
-//    @PostMapping("/")
-//    BaseResponse add(@RequestBody Employee employee){
-//        return null;
-//    }
+    @PostMapping("/add")
+    BaseResponse add(@RequestBody Employee employee){
+        employeeService.add(employee);
+        return ResultUtils.success(true);
+    }
 //
 //    @DeleteMapping("/")
 //    BaseResponse deleteById(@RequestParam Long employeeId){

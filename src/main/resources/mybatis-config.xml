@@ -28,8 +28,6 @@
         <mapper resource="mapper/AttendanceMapper.xml"/>
         <mapper resource="mapper/DepartmentMapper.xml"/>
         <mapper resource="mapper/EmployeeMapper.xml"/>
-        <mapper resource="mapper/EmployeeDepartmentMapper.xml"/>
-        <mapper resource="mapper/EmployeePositionMapper.xml"/>
         <mapper resource="mapper/LeaveMapper.xml"/>
         <mapper resource="mapper/PositionMapper.xml"/>
     </mappers>

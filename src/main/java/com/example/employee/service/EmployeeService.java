@@ -2,7 +2,7 @@ package com.example.employee.service;
 
 import com.example.employee.entity.Employee;
 
-import com.example.employee.model.dto.EmployeeDto;
+import com.example.employee.model.dto.EmployeeDTO;
 
 import java.util.List;
 
@@ -15,9 +15,9 @@ public interface EmployeeService {
 
     List<Employee> pageSelectAllEmployee(int pageNum, int pageSize);
 
-    EmployeeDto findById(Long employId);
+    EmployeeDTO findById(Long employId);
 
-    List<EmployeeDto>selectByName(String EmployeeName);
+    List<EmployeeDTO>selectByName(String EmployeeName);
 
     void update(Employee employee);
 

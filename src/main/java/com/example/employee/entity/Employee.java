@@ -21,7 +21,6 @@ import org.springframework.data.redis.core.RedisHash;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@RedisHash("Employee")
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -31,9 +30,9 @@ public class Employee implements Serializable {
      */
     private Long id;
 
-    private Long departmentId;
-
-    private Long positionId;
+//    private Long departmentId;
+//
+//    private Long positionId;
 
     private String name;
 
