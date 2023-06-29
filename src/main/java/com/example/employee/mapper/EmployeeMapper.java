@@ -39,6 +39,8 @@ public interface EmployeeMapper {
     void addNewEmployee(Employee e);
 
     @Update("update employee set ${field}=#{value} where id=#{id}")
+    void updateSingleField(Long id,String field,Object value);
+
     void update(Employee e);
 
     @Delete("delete from employee where id=#{id}")

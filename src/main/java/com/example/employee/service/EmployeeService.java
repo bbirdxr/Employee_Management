@@ -21,6 +21,8 @@ public interface EmployeeService {
 
     void update(Employee employee);
 
+    void updateSingleField(Long id, String field, Object value);
+
     void deleteById(Long employeeId);
 
     void deleteByDepartmentId(Long departmentId);

@@ -1,7 +1,6 @@
 package com.example.employee.service.impl;
 
 import com.example.employee.common.ErrorCode;
-import com.example.employee.common.ResultUtils;
 import com.example.employee.entity.Employee;
 import com.example.employee.exception.BusinessException;
 import com.example.employee.mapper.EmployeeMapper;
@@ -10,15 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
-import com.example.employee.entity.Employee;
-import com.example.employee.mapper.EmployeeMapper;
 import com.example.employee.model.dto.EmployeeDto;
-import com.example.employee.service.EmployeeService;
 import com.example.employee.service.PositionService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -86,6 +80,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void update(Employee employee) {
         employeeMapper.update(employee);
+    }
+
+    @Override
+    public void updateSingleField(Long id, String field, Object value){
+        employeeMapper.updateSingleField(id,field,value);
     }
 
     @Override
