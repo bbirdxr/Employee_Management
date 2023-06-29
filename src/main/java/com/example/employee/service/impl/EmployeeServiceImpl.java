@@ -45,7 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     public EmployeeDto toEmployeeDto(Employee employee){
-        EmployeeDto ed=new EmployeeDto();
-
+        EmployeeDto ed=new EmployeeDto(employee);
+        return ed;
     }
 }

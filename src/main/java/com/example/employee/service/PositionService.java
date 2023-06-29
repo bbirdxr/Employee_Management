@@ -9,6 +9,9 @@ public class PositionService {
     @Autowired
     PositionMapper positionMapper;
 
+    public String getPositionNameById(Long positionId){
+        return positionMapper.selectById(positionId).getPositionName();
+    }
 
 
 }

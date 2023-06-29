@@ -26,6 +26,9 @@ public interface PositionMapper{
     @Select("select * from position where position_name=#{name}")
     Position selectByName(String name);
 
+    @Select("select * from position where id=#{id}")
+    Position selectById(Long id);
+
     @Insert("insert into position(position_name) values(#{name})")
     void addOne(String name);
 
