@@ -4,9 +4,11 @@ package com.example.employee.controller;
 import com.example.employee.common.BaseResponse;
 import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
+import com.example.employee.entity.Attendance;
 import com.example.employee.entity.Employee;
 import com.example.employee.service.EmployeeService;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -43,13 +45,15 @@ public class EmployeeController {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @GetMapping("/all")
+    @PostMapping("/all")
     BaseResponse findAll(
             @RequestParam Integer pageNum,
-            @RequestParam Integer pageSize){
+            @RequestParam Integer pageSize,
+            @RequestBody Employee employee){
         PageHelper.startPage(pageNum,pageSize);
-        
-        return null;
+        List<EmployeeDto>dtos=employeeService.selectWithCondition(employee);
+        PageInfo<EmployeeDto> pageInfo = new PageInfo<>(dtos);
+        return ResultUtils.success(pageInfo);
     }
 
     @PostMapping("/person")
@@ -72,13 +76,14 @@ public class EmployeeController {
 
     @DeleteMapping("/{id}")
     BaseResponse deleteById(@PathVariable Long employeeId){
-        return null;
+        if(employeeService.selectById(employeeId)!=null){
+            employeeService.deleteById(employeeId);
+            return ResultUtils.success("删除成功");
+        }else {
+            return ResultUtils.error(ErrorCode.PARAMS_ERROR,"不存在该用户");
+        }
     }
 
-    @GetMapping("/name/{name}")
-    public BaseResponse<Employee> selectByName(@PathVariable String name) {
-        return ResultUtils.success(employeeService.selectByNameSimple(name));
-    }
 
 }
 

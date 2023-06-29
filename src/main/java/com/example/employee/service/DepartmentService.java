@@ -13,9 +13,11 @@ public interface DepartmentService {
 
     Department selectById(Long id);
 
+    List<Department> getAllDepartment();
+
     void deleteDepartmentIfExist(Long departmentId);
 
-    Department findDepartment(String departmentName);
+    Department findDepartmentByParentIdAndName(Long parentDepartmentId, String departmentName);
 
     Department findDepartmentById(Long departmentId);
 

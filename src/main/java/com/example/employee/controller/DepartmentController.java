@@ -28,13 +28,18 @@ public class DepartmentController {
 
 
     @GetMapping("/find")
-    BaseResponse  getAllDepartmentsIncludingSons(Long departmentId){
+    BaseResponse  getDepartmentsIncludingSons(Long departmentId){
         Department d=departmentService.findDepartmentById(departmentId);
         if(d==null){
             return  ResultUtils.error(ErrorCode.PARAMS_ERROR,"部门不存在");
         }else {
             return ResultUtils.success(departmentService.filledWithSons(d));
         }
+    }
+
+    @GetMapping("/all")
+    BaseResponse  getAllDepartments(){
+        return ResultUtils.success(departmentService.getAllDepartment());
     }
 
     @GetMapping("/delete")
@@ -57,21 +62,21 @@ public class DepartmentController {
     }
 
     @PostMapping("/add")
-    BaseResponse<Department> addDepartment(@RequestParam String departmentName,@RequestParam Long parentDepartmentId ){
-        Department d1=departmentService.findDepartment(departmentName);
+    BaseResponse addDepartment(@RequestParam String departmentName,@RequestParam Long parentDepartmentId ){
+        Department d1=departmentService.findDepartmentByParentIdAndName(parentDepartmentId,departmentName);
         if(d1!=null){
             return new BaseResponse(400, d1,"已存在同名部门");
         }
-        if(parentDepartmentId.equals("")){//添加根部门
+        if(parentDepartmentId==0L){//添加根部门
             departmentService.addRootDepartment(departmentName);
-            return ResultUtils.success(departmentService.findDepartment(departmentName));
+            return ResultUtils.success("添加成功");
         }else{//添加部门
             Department d=departmentService.findDepartmentById(parentDepartmentId);
             if(d==null){
                 return new BaseResponse(400, d1,"不存在该父部门");
             }
             departmentService.addDepartment(departmentName,parentDepartmentId);
-            return ResultUtils.success(null);
+            return new BaseResponse(200,"添加成功");
         }
     }
 }

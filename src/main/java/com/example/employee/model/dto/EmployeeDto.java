@@ -13,6 +13,8 @@ import java.util.Date;
 
 @Data
 public class EmployeeDto extends Employee{
+
     private String departmentPathName;
+
     private String positionName;
 }

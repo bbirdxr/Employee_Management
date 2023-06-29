@@ -30,6 +30,9 @@ public interface EmployeeMapper {
     @Select("select * from employee where name like concat(#{name},'%')")
     List<Employee> findByName(String name);
 
+
+    List<Employee>findAllWithCondition(Employee employee);
+
     @Select("select * from employee,employee_department where department_id=#{departmentId} and employee_id=employee.id")
     List<Employee>findByDepartmentId(Long departmentId);
 

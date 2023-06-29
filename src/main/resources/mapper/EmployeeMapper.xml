@@ -17,6 +17,36 @@
         <result column="update_time" property="updateTime" />
     </resultMap>
 
+
+    <select id="findAllWithCondition" parameterType="com.example.employee.entity.Employee" resultType="com.example.employee.entity.Employee">
+        select * from employee
+        where
+        1='1'
+            <if test="positionId!=null and positionId!=''">
+               and position_id=#{positionId}
+            </if>
+            <if test="name!=null and name!=''">
+                and  name=#{name}
+            </if>
+            <if test="email!=null and email!=''">
+                and  email=#{email}
+            </if>
+            <if test="level!=null and level!=''">
+                and level=#{level}
+            </if>
+            <if test="salary!=null and salary!=''">
+                and salary=#{salary}
+            </if>
+            <if test="departmentId!=null  and departmentId!=''">
+                and department_id=#{departmentId}
+            </if>
+            <if test="id!=null and id!=''">
+                and id=#{id}
+           </if>
+
+    </select>
+
+
     <update id="updateById" parameterType="com.example.employee.entity.Employee">
         update employee
            <set>

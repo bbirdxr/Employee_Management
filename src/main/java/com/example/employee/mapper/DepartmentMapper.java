@@ -24,6 +24,9 @@ public interface DepartmentMapper {
     @Select("select * from department where id=#{departmentId}")
     Department selectByDepartmentId(Long departmentId);
 
+    @Select("select * from department where parent_department_id=#{parentDepartmentId} and department_name=#{departmentName}")
+    Department selectByParentDepartmentIdAndName(Long parentDepartmentId,String departmentName);
+
     @Select("select * from department where parent_department_id=#{parentDepartmentId}")
     List<Department> selectByParentDepartmentId(Long parentDepartmentId);
 

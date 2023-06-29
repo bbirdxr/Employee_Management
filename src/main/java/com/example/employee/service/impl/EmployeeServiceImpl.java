@@ -14,13 +14,17 @@ import com.example.employee.service.PositionService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+    @Autowired
+    DepartmentServiceImpl departmentService;
 
     @Autowired
     PositionService positionService;
@@ -33,14 +37,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public Employee selectById(Long id) {
-        return null;
-    }
-
-
-    @Override
-    public List<Employee> pageSelectAllEmployee(int pageNum, int pageSize) {
-        return null;
+    public EmployeeDto selectById(Long id) {
+        return toEmployeeDto(employeeMapper.findByIdWithSalary(id));
     }
 
     @Override
@@ -67,14 +65,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employee;
     }
 
-    public EmployeeDto findById(Long employId) {
-        return toEmployeeDto(employeeMapper.findByIdWithSalary(employId));
-    }
-
     @Override
-    public List<EmployeeDto> selectByName(String EmployeeName) {
-        List<Employee>ls=employeeMapper.findByName(EmployeeName);
-        return toEmployeeDtoList(ls);
+    public List<EmployeeDto> selectWithCondition(Employee employee){
+        List<Employee>employeeList=employeeMapper.findAllWithCondition(employee);
+        return toEmployeeDtoList(employeeList);
     }
 
     @Override
@@ -89,14 +83,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void deleteById(Long employeeId) {
-
+        employeeMapper.deleteOneById(employeeId);
     }
-
-    @Override
-    public void deleteByDepartmentId(Long departmentId) {
-
-    }
-
 
     @Override
     public void add(Employee employee) {
@@ -104,19 +92,31 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     public List<EmployeeDto> toEmployeeDtoList(List<Employee>employees){
-        List<EmployeeDto> dtos= Lists.transform(employees, (entity)->{
+        List<EmployeeDto> dtos= tramsformList(employees, (entity)->{
             EmployeeDto d = new EmployeeDto();
             BeanUtils.copyProperties(entity, d);
+            d.setPositionName(positionService.getPositionNameById(entity.getPositionId()));
+            d.setDepartmentPathName(departmentService.toString(entity.getDepartmentId()));
             return d;
         });
         return dtos;
     }
 
+    public static <F,T>List<T> tramsformList(List<F> fromList, Function<F,T> fc){
+        if(fromList==null){
+            return new ArrayList<>();
+        }
+        List<T>lists=new ArrayList<>();
+        for(F from:fromList){
+            lists.add(fc.apply(from));
+        }
+        return lists;
+    }
     public EmployeeDto toEmployeeDto(Employee employee){
         EmployeeDto dto=new EmployeeDto();
         BeanUtils.copyProperties(employee,dto);
         dto.setPositionName(positionService.getPositionNameById(employee.getPositionId()));
-        dto.setPositionName(positionService.getPositionNameById(employee.getPositionId()));
+        dto.setDepartmentPathName(departmentService.toString(employee.getDepartmentId()));
         return dto;
     }
 }

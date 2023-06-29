@@ -21,6 +21,16 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
+    public List<Department> getAllDepartment(){
+        List<Department>departments=departmentMapper.selectByParentDepartmentId(0L);
+        for(Department d:departments){
+            filledWithSons(d);
+        }
+        return departments;
+    }
+
+
+    @Override
     public void deleteDepartmentIfExist(Long departmentId) {
         Department department=departmentMapper.selectByDepartmentId(departmentId);
         department.setSonDepartments(departmentMapper.selectByParentDepartmentId(department.getId()));
@@ -34,8 +44,8 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Department findDepartment(String department) {
-        Department d=departmentMapper.selectByDepartmentName(department);
+    public Department findDepartmentByParentIdAndName(Long parentDepartmentId,String departmentName) {
+        Department d=departmentMapper.selectByParentDepartmentIdAndName(parentDepartmentId,departmentName);
         return d;
     }
 
@@ -56,8 +66,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public void addDepartment(String departmentName, Long parentDepartmentId) {
-        Long parentId=departmentMapper.selectByDepartmentId(parentDepartmentId).getId();
-        departmentMapper.addDepartment(departmentName,parentId);
+        departmentMapper.addDepartment(departmentName,parentDepartmentId);
     }
 
     @Override
