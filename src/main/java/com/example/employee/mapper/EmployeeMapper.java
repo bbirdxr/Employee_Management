@@ -32,4 +32,6 @@ public interface EmployeeMapper {
 
     @Select("select * from employee,employee_department where department_id=#{departmentId} and employee_id=employee.id")
     List<Employee>findByDepartmentId(Long departmentId);
+
+    Employee selectByName(String name);
 }

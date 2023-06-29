@@ -107,7 +107,7 @@ CREATE TABLE `leave`  (
   `employee_id` bigint(20) NOT NULL DEFAULT 0 COMMENT '员工 id',
   `department_id` bigint(20) NOT NULL DEFAULT 0 COMMENT '部门 id',
   `start_date` date NULL DEFAULT NULL COMMENT '开始日期',
-  `end_date` date NULL DEFAULT NULL COMMENT '结s束日期',
+  `end_date` date NULL DEFAULT NULL COMMENT '结束日期',
   `leave_type` tinyint(3) NOT NULL DEFAULT 0 COMMENT '请假类型',
   `leave_reason` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '请假原因',
   `approver_id` bigint(20) NOT NULL DEFAULT 0 COMMENT '审批人 id',

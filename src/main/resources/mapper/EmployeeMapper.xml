@@ -16,7 +16,13 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, email, phoneNumber, hire_date, salary, create_time, update_time
+        id, name, email, phone_number, hire_date, salary, create_time, update_time
     </sql>
+
+    <select id="selectByName" resultType="com.example.employee.entity.Employee">
+        select id, name, email, phone_number, hire_date, salary, create_time, update_time
+        from employee
+        where name = #{name}
+    </select>
 
 </mapper>

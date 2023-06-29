@@ -16,4 +16,6 @@ public interface DepartmentService {
     void addDepartment(String departmentName,String parentDepartmentName);
     void addRootDepartment(String department);
 
+    Department selectById(Long id);
+
 }

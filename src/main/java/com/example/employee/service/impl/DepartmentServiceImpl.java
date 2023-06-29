@@ -52,4 +52,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     public void addRootDepartment(String departmentName) {
         departmentMapper.addDepartment(departmentName,0L);
     }
+
+    @Override
+    public Department selectById(Long id) {
+        return null;
+    }
 }
