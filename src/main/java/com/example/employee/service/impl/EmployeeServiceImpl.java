@@ -59,7 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         // 写缓存
         try {
-            // valueOperations.set(redisKey, employee, 1, TimeUnit.HOURS);
+            hashOperations.save(redisKey, "employee", employee);
         } catch (Exception e) {
             // log.error("redis set key error", e);
         }

@@ -8,6 +8,7 @@ import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.data.redis.core.RedisHash;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@RedisHash("Employee")
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;
