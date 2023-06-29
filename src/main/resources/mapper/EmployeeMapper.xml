@@ -10,6 +10,7 @@
         <result column="phone_number" property="phoneNumber" />
         <result column="hire_date" property="hireDate" />
         <result column="salary" property="salary" />
+        <result column="level" property="level" />
         <result column="position_id" property="positionId"/>
         <result column="department_id" property="departmentId"/>
         <result column="create_time" property="createTime"  />
@@ -42,11 +43,15 @@
     </update>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
+<<<<<<< HEAD
         id, name, email, phone_number, hire_date, salary, create_time, update_time,position_id,department_id
+=======
+        id, name, email, phone_number, hire_date, salary, create_time, update_time,position_id,department_id,level
+>>>>>>> 98b352d4afefe666a983382e4901bd8f857c95db
     </sql>
 
     <select id="selectByName" resultType="com.example.employee.entity.Employee">
-        select id, name, email, phone_number, hire_date, salary, create_time, update_time
+        select id, name, email, phone_number, hire_date, salary, create_time, update_time,level
         from employee
         where name = #{name}
     </select>

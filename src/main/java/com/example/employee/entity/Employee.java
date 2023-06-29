@@ -44,6 +44,8 @@ public class Employee implements Serializable {
 
     private BigDecimal salary;
 
+    private Integer level;
+
     /**
      * 创建时间
      */

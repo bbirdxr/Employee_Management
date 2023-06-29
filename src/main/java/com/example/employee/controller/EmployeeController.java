@@ -2,9 +2,12 @@ package com.example.employee.controller;
 
 
 import com.example.employee.common.BaseResponse;
+import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
 import com.example.employee.entity.Employee;
 import com.example.employee.service.EmployeeService;
+import com.github.pagehelper.PageHelper;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -37,6 +40,7 @@ public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
 
+<<<<<<< HEAD
 //    @GetMapping("/")
 //    BaseResponse findAllByPage(){
 //        return null;
@@ -58,10 +62,44 @@ public class EmployeeController {
 //        return null;
 //    }
 
+=======
+>>>>>>> 98b352d4afefe666a983382e4901bd8f857c95db
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @GetMapping("selectByName/{name}")
+    @GetMapping("/all")
+    BaseResponse findAll(
+            @RequestParam Integer pageNum,
+            @RequestParam Integer pageSize){
+        PageHelper.startPage(pageNum,pageSize);
+        
+        return null;
+    }
+
+    @PostMapping("/person")
+    BaseResponse add(@RequestBody Employee employee){
+        employeeService.add(employee);
+        return ResultUtils.success("添加员工成功");
+    }
+
+    @PutMapping("/person/{id}/{field}/{value}")
+    BaseResponse updateSingleField(@PathVariable Long id,@PathVariable String field,@PathVariable Object value){
+        try {
+            System.out.println(Employee.class.getDeclaredFields());
+            Employee.class.getDeclaredField(field);
+        } catch (NoSuchFieldException e) {
+            return ResultUtils.error(ErrorCode.PARAMS_ERROR,"没有该字段");
+        }
+        employeeService.updateSingleField(id,field,value);
+        return ResultUtils.success("更新字段成功");
+    }
+
+    @DeleteMapping("/{id}")
+    BaseResponse deleteById(@PathVariable Long employeeId){
+        return null;
+    }
+
+    @GetMapping("/name/{name}")
     public BaseResponse<Employee> selectByName(@PathVariable String name) {
         return ResultUtils.success(employeeService.selectByNameSimple(name));
     }
