@@ -45,4 +45,6 @@ public interface EmployeeMapper {
     void deleteOneById(Long id);
 
 
+    Employee selectByName(String name);
+
 }

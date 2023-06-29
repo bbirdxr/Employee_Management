@@ -11,6 +11,8 @@ import java.util.List;
 public interface DepartmentService {
     boolean ifDepartmentExist(Long departmentId);
 
+    Department selectById(Long id);
+
     void deleteDepartmentIfExist(Long departmentId);
 
     Department findDepartment(String departmentName);

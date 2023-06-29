@@ -42,7 +42,17 @@
     </update>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
+<<<<<<< HEAD
         id, name, email, phoneNumber, hire_date, salary, create_time, update_time,position_id,department_id
+=======
+        id, name, email, phone_number, hire_date, salary, create_time, update_time
+>>>>>>> eb68d8d93bd6ec554f9a189c2958b20b193a1a8e
     </sql>
+
+    <select id="selectByName" resultType="com.example.employee.entity.Employee">
+        select id, name, email, phone_number, hire_date, salary, create_time, update_time
+        from employee
+        where name = #{name}
+    </select>
 
 </mapper>

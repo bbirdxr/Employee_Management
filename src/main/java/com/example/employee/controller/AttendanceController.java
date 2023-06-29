@@ -8,6 +8,9 @@ import com.example.employee.entity.Attendance;
 import com.example.employee.exception.BusinessException;
 import com.example.employee.model.dto.AttendanceQuery;
 import com.example.employee.service.AttendanceService;
+import com.example.employee.service.impl.AttendanceServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,19 +25,25 @@ import java.util.List;
  * @since 2023-06-27
  */
 @RestController
-@RequestMapping(value="/attendance", produces = "application/json;charset=UTF-8")
+@RequestMapping(value="/attendance")
 public class AttendanceController {
     @Autowired
-    private AttendanceService attendanceService;
+    private AttendanceServiceImpl attendanceService;
 
     @GetMapping("selectById/{id}")
     public BaseResponse<Attendance> selectById(@PathVariable Long id) {
         return ResultUtils.success(attendanceService.selectById(id));
     }
 
-    @PostMapping("selectByAttendanceQuery")
-    public BaseResponse<List<Attendance>> selectByAttendanceQuery(@RequestBody AttendanceQuery attendanceQuery) {
-        return ResultUtils.success(attendanceService.selectByAttendanceQuery(attendanceQuery));
+    @PostMapping("selectByAttendanceQuery/{pageNum}/{pageSize}")
+    public BaseResponse<PageInfo<Attendance>> selectByAttendanceQuery(
+            @PathVariable Integer pageNum,
+            @PathVariable Integer pageSize,
+            @RequestBody AttendanceQuery attendanceQuery) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Attendance> list = attendanceService.selectByAttendanceQuery(attendanceQuery);
+        PageInfo<Attendance> pageInfo = new PageInfo<>(list);
+        return ResultUtils.success(pageInfo);
     }
 
     @PostMapping("insert")

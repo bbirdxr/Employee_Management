@@ -66,6 +66,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
+    public Department selectById(Long id) {
+        return null;
+    }
+
     public boolean ifReplicateName(String departmentName, Long parentDepartmentId) {
         //同一个部门下不能有重名的部门
         List<Department>departments=departmentMapper.selectByParentDepartmentId(parentDepartmentId);
