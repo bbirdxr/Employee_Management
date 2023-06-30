@@ -17,15 +17,11 @@ public interface EmployeeService {
 
     //分页查询基本信息
 
-    EmployeeDTO findById(Long employId);
-
-
-
-    void update(Employee employee);
+    Employee update(Employee employee);
 
     void updateSingleField(Long id, String field, Object value);
 
     void deleteById(Long employeeId);
 
-    void add(Employee employee);
+    Employee add(Employee employee);
 }
