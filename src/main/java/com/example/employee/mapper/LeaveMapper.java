@@ -53,7 +53,7 @@ public interface LeaveMapper {
      * 负责人审批
      * @param approverId 负责人 ID
      * @param id 请假 ID
-     * @param status 状态
+     * @param approveStatus 状态
      * @return
      */
     int approveById(@Param("approverId") Long approverId, @Param("id") Long id, @Param("approveStatus") Integer approveStatus);
