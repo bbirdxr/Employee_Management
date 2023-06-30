@@ -109,6 +109,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         List<Employee>employeeList=employeeMapper.findAllWithCondition(employee);
         return toEmployeeDTOList(employeeList);
     }
+
+    
     public EmployeeDTO findById(Long employId) {
         return toEmployeeDTO(employeeMapper.findByIdWithSalary(employId));
     }
