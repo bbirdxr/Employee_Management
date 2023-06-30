@@ -40,8 +40,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         return toEmployeeDTO(employeeMapper.findByIdWithSalary(id));
     }
 
-
-
     @Override
     public List<Employee> selectByNameSimple(String name) {
         String keyPattern = "employee:" + "*" + name + "*";

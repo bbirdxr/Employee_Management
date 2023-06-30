@@ -6,6 +6,7 @@ import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
 import com.example.employee.entity.Leave;
 import com.example.employee.exception.BusinessException;
+import com.example.employee.model.dto.LeaveDTO;
 import com.example.employee.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -38,23 +39,30 @@ public class LeaveController {
     }
 
     @PostMapping("updateLeave/{employeeId}")
-    public BaseResponse updateLeave(@PathVariable Long employeeId) {
+    public BaseResponse updateLeave(@PathVariable Long employeeId, @RequestBody LeaveDTO leaveDTO) {
+        return ResultUtils.success(leaveService.updateLeave(employeeId, leaveDTO));
+    }
+
+    @PostMapping("insertLeave/{employeeId}")
+    public BaseResponse insertLeave(@PathVariable Long employeeId, @RequestBody LeaveDTO leaveDTO) {
+        leaveService.insertLeave(employeeId, leaveDTO);
         return ResultUtils.success(true);
     }
 
-    @PostMapping("insert")
-    public BaseResponse insert(@RequestBody Leave leave) {
-        leaveService.insert(leave);
+    @PostMapping("cancelLeave/{employeeId}")
+    public BaseResponse cancelLeave(@PathVariable Long employeeId) {
+        if (leaveService.cancelLeave(employeeId) == 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "取消失败");
+        }
         return ResultUtils.success(true);
     }
 
-    @PostMapping("deleteLeave/{employeeId}")
-    public BaseResponse deleteLeave(@PathVariable Long employeeId) {
-//        if (leaveService.deleteLeave(employeeId) == 0) {
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "删除失败");
-//        }
+    @PostMapping("approveLeave/{employeeId}/{approverId}/{status}")
+    public BaseResponse approveLeave(@PathVariable Long employeeId, @PathVariable Long approverId, @PathVariable Integer status) {
+        if (leaveService.approveLeave(employeeId, approverId, status) == 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "审批失败");
+        }
         return ResultUtils.success(true);
     }
-
 }
 

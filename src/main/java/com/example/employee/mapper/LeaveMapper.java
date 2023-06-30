@@ -1,7 +1,7 @@
 package com.example.employee.mapper;
 
 import com.example.employee.entity.Leave;
-import com.example.employee.model.dto.LeaveUpdateDTO;
+import com.example.employee.model.dto.LeaveDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -32,7 +32,7 @@ public interface LeaveMapper {
      * @param leave 实例对象
      * @return 影响行数
      */
-    int insert(Leave leave);
+    int insertLeave(Leave leave);
 
     /**
      * 通过主键删除数据
@@ -44,10 +44,10 @@ public interface LeaveMapper {
 
     /**
      * 修改数据
-     * @param leaveUpdateDTO 请假更新 DTO
+     * @param leave 请假更新
      * @return 影响行数
      */
-    int update(LeaveUpdateDTO leaveUpdateDTO);
+    int update(Leave leave);
 
     /**
      * 负责人审批
@@ -56,7 +56,7 @@ public interface LeaveMapper {
      * @param status 状态
      * @return
      */
-    int approveById(@Param("approverId") Long approverId, @Param("id") Long id, @Param("status") Integer status);
+    int approveById(@Param("approverId") Long approverId, @Param("id") Long id, @Param("approveStatus") Integer approveStatus);
 
     /**
      * 根据员工 ID 查询最近的一条请假记录
