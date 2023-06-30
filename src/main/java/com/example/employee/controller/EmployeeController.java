@@ -5,8 +5,11 @@ import com.example.employee.common.BaseResponse;
 import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
 import com.example.employee.entity.Employee;
+import com.example.employee.mapper.EmployeeMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.google.common.collect.Lists;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,14 +39,22 @@ public class EmployeeController {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    @Autowired
+    private EmployeeMapper employeeMapper;
+
     @PostMapping("/all")
     BaseResponse findAll(
-            @RequestParam Integer pageNum,
-            @RequestParam Integer pageSize,
+            @RequestParam Integer pageNumber,
+            @RequestParam Integer pageCount,
             @RequestBody Employee employee){
-        PageHelper.startPage(pageNum,pageSize);
-        List<EmployeeDTO>dtos=employeeService.selectWithCondition(employee);
-        PageInfo<EmployeeDTO> pageInfo = new PageInfo<>(dtos);
+        PageHelper.startPage(pageNumber,pageCount);
+        List<Employee>employeeList=employeeMapper.findAllWithCondition(employee);
+        PageInfo<Employee>pageInfo=new PageInfo<>(employeeList);
+//        PageInfo<EmployeeDTO>employeeDTOPageInfo=new PageInfo<>();
+//        BeanUtils.copyProperties(pageInfo,employeeDTOPageInfo);
+
+//        List<EmployeeDTO>dtos=employeeService.selectWithCondition(employee);
+//        PageInfo<EmployeeDTO> pageInfo = new PageInfo<>(dtos);
         return ResultUtils.success(pageInfo);
     }
 
