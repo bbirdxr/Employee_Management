@@ -9,7 +9,9 @@ import java.util.List;
 public interface EmployeeService {
     Employee selectById(Long id);
 
-    Employee selectByNameSimple(String name);
+    List<Employee> selectByNameSimple(String name);
+
+    void importDataToRedis();
 
     //分页查询基本信息
 

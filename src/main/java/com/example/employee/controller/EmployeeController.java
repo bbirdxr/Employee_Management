@@ -68,14 +68,19 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    BaseResponse deleteById(@PathVariable Long employeeId){
+    BaseResponse deleteById(@PathVariable Long id){
         return null;
     }
 
     @GetMapping("/name/{name}")
-    public BaseResponse<Employee> selectByName(@PathVariable String name) {
+    public BaseResponse<List<Employee>> selectByName(@PathVariable String name) {
         return ResultUtils.success(employeeService.selectByNameSimple(name));
     }
 
+    @GetMapping("/importDataToRedis")
+    public BaseResponse importDataToRedis() {
+        employeeService.importDataToRedis();
+        return ResultUtils.success("导入成功");
+    }
 }
 

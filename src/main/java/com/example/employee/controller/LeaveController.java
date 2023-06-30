@@ -37,6 +37,11 @@ public class LeaveController {
         return ResultUtils.success(leaveService.selectByDepartmentId(departmentId));
     }
 
+    @PostMapping("updateLeave/{employeeId}")
+    public BaseResponse updateLeave(@PathVariable Long employeeId) {
+        return ResultUtils.success(true);
+    }
+
     @PostMapping("insert")
     public BaseResponse insert(@RequestBody Leave leave) {
         leaveService.insert(leave);

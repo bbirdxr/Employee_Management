@@ -1,5 +1,8 @@
 package com.example.employee.util;
 
+import org.apache.commons.beanutils.BeanMap;
+import org.apache.commons.beanutils.BeanUtils;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
@@ -33,6 +36,12 @@ public class MapObjectUtil {
             }
         }
         return obj;
+//        if (map == null) {
+//            return null;
+//        }
+//        T t = cla.newInstance();
+//        BeanUtils.populate(t, map);
+//        return t;
     }
 
     /**
