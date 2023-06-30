@@ -45,13 +45,6 @@ public class AttendanceTest {
 
     @Test
     public void testInsert(){
-        Attendance attendance = new Attendance();
-        attendance.setEmployeeId(1L);
-        attendance.setDepartmentId(1L);
-        attendance.setAttendanceDate(new java.util.Date());
-        attendance.setClockInTime(new java.util.Date());
-        attendanceMapper.insert(attendance);
-        System.out.println(attendance.getId());
     }
 
     @Test

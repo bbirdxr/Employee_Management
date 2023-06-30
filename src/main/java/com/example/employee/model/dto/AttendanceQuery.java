@@ -1,7 +1,9 @@
 package com.example.employee.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -10,5 +12,6 @@ public class AttendanceQuery {
 
     private Long departmentId;
 
-    private Date attendanceDate;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate attendanceDate;
 }

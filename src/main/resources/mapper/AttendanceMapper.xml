@@ -42,11 +42,17 @@
 
     <update id="updateById" parameterType="com.example.employee.entity.Attendance">
         update attendance
-        set employee_id = #{employeeId,jdbcType=BIGINT},
-            department_id = #{departmentId,jdbcType=BIGINT},
-            attendance_date = #{attendanceDate,jdbcType=DATE},
-            clock_in_time = #{clockInTime,jdbcType=TIMESTAMP},
-            clock_out_time = #{clockOutTime,jdbcType=TIMESTAMP}
+        <set>
+            <if test="attendanceDate != null">
+                attendance_date = #{attendanceDate,jdbcType=DATE},
+            </if>
+            <if test="clockInTime != null">
+                clock_in_time = #{clockInTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="clockOutTime != null">
+                clock_out_time = #{clockOutTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
 

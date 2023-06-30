@@ -1,7 +1,7 @@
 package com.example.employee.service;
 
 import com.example.employee.entity.Leave;
-import com.example.employee.model.dto.LeaveUpdateDTO;
+import com.example.employee.model.dto.LeaveDTO;
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ public interface LeaveService {
 
     List<Leave> selectByDepartmentId(Long departmentId);
 
-    int insert(Leave leave);
+    int insertLeave(Long employeeId, LeaveDTO leaveDTO);
 
     int cancelLeave(Long employeeId);
 
-    int updateLeave(Long employeeId, LeaveUpdateDTO leaveUpdateDTO);
+    int updateLeave(Long employeeId, LeaveDTO leaveDTO);
 
     Leave selectById(Long id);
 
-    int approveByEmployeeId(Long approverId, Long employeeId, Integer status);
+    int approveLeave(Long approverId, Long employeeId, Integer status);
 
 }

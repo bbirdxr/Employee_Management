@@ -11,9 +11,14 @@ spring:
     port: 6379
     host: localhost
     database: 0
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_empty
+    time-zone: Asia/Shanghai
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
-    # config-location: classpath:mybatis-config.xml
+  # config-location: classpath:mybatis-config.xml
+

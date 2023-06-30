@@ -1,9 +1,13 @@
 package com.example.employee.entity;
 
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -41,7 +45,8 @@ public class Attendance implements Serializable {
     /**
      * 考勤日期
      */
-    private Date attendanceDate;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate attendanceDate;
 
     /**
      * 上班打卡时间

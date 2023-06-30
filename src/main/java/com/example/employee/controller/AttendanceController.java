@@ -7,7 +7,8 @@ import com.example.employee.common.ResultUtils;
 import com.example.employee.entity.Attendance;
 import com.example.employee.exception.BusinessException;
 import com.example.employee.model.dto.AttendanceQuery;
-import com.example.employee.service.impl.AttendanceServiceImpl;
+import com.example.employee.service.AttendanceService;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ import java.util.List;
 @RequestMapping("/attendance")
 public class AttendanceController {
     @Autowired
-    private AttendanceServiceImpl attendanceService;
+    private AttendanceService attendanceService;
 
     @GetMapping("selectById/{id}")
     public BaseResponse<Attendance> selectById(@PathVariable Long id) {
@@ -45,10 +46,16 @@ public class AttendanceController {
         return ResultUtils.success(pageInfo);
     }
 
-    @PostMapping("insert")
-    public BaseResponse insert(@RequestBody Attendance attendance) {
-        attendanceService.insert(attendance);
-        return ResultUtils.success(true);
+    @PostMapping("clockIn/{employeeId}")
+    public BaseResponse clockIn(@PathVariable Long employeeId) {
+        attendanceService.clockIn(employeeId);
+        return ResultUtils.success("打卡成功");
+    }
+
+    @PostMapping("clockOut/{employeeId}")
+    public BaseResponse clockOut(@PathVariable Long employeeId) {
+        attendanceService.clockOut(employeeId);
+        return ResultUtils.success("打卡成功");
     }
 
     @PostMapping("deleteById/{id}")
@@ -56,7 +63,7 @@ public class AttendanceController {
         if (attendanceService.deleteById(id) == 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "删除失败");
         }
-        return ResultUtils.success(true);
+        return ResultUtils.success("删除成功");
     }
 }
 

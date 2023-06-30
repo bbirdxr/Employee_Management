@@ -22,57 +22,78 @@
         id, employee_id, department_id, start_date, end_date, leave_type, leave_reason, approver_id, approve_status, create_time, update_time
     </sql>
 
-    <select id="selectById" resultType="com.example.employee.entity.Attendance">
+    <select id="selectById" resultType="com.example.employee.entity.Leave">
         select id, employee_id, department_id, start_date, end_date, leave_type, leave_reason, approver_id, approve_status, create_time, update_time
-        from leave
+        from `leave`
         where id = #{id}
     </select>
 
-    <insert id="insert" parameterType="com.example.employee.entity.Attendance">
+    <insert id="insertLeave" parameterType="com.example.employee.entity.Leave">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into leave (employee_id, department_id, start_date, end_date, leave_type, leave_reason)
+        insert into `leave` (employee_id, department_id, start_date, end_date, leave_type, leave_reason)
         values (#{employeeId,jdbcType=BIGINT}, #{departmentId,jdbcType=BIGINT}, #{startDate,jdbcType=DATE},
         #{endDate,jdbcType=DATE}, #{leaveType,jdbcType=TINYINT}, #{leaveReason,jdbcType=VARCHAR})
     </insert>
 
     <delete id="deleteById" parameterType="java.lang.Long">
-        delete from leave
+        delete from `leave`
         where id = #{id,jdbcType=BIGINT}
     </delete>
 
-    <update id="update" parameterType="com.example.employee.model.dto.LeaveUpdateDTO">
-        update leave
-        set start_date = #{startDate,jdbcType=DATE},
-            end_date = #{endDate,jdbcType=DATE},
-            leave_type = #{leaveType,jdbcType=TINYINT},
-            leave_reason = #{leaveReason,jdbcType=VARCHAR}
+    <update id="update" parameterType="com.example.employee.entity.Leave">
+        update `leave`
+        <set>
+            <if test="startDate != null">
+                start_date = #{startDate,jdbcType=DATE},
+            </if>
+            <if test="endDate != null">
+                end_date = #{endDate,jdbcType=DATE},
+            </if>
+            <if test="leaveType != null">
+                leave_type = #{leaveType,jdbcType=TINYINT},
+            </if>
+            <if test="leaveReason != null">
+                leave_reason = #{leaveReason,jdbcType=VARCHAR},
+            </if>
+            <if test="approverId != null">
+                approver_id = #{approverId,jdbcType=BIGINT},
+            </if>
+            <if test="approveStatus != null">
+                approve_status = #{approveStatus,jdbcType=TINYINT},
+            </if>
+        </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
 
     <update id="approveById">
-        update leave
+        update `leave`
         set approver_id = #{approverId,jdbcType=BIGINT},
             approve_status = #{approveStatus,jdbcType=TINYINT}
         where id = #{id,jdbcType=BIGINT}
     </update>
 
-    <select id="selectRecentLeaveByEmployeeId" parameterType="java.lang.Long">
+    <select id="selectRecentLeaveByEmployeeId" parameterType="java.lang.Long" resultType="com.example.employee.entity.Leave">
         select id, employee_id, department_id, start_date, end_date, leave_type, leave_reason, approver_id, approve_status, create_time, update_time
-        from leave
+        from `leave`
         where employee_id = #{employeeId,jdbcType=BIGINT}
         order by create_time desc
         limit 1
     </select>
 
-    <select id="selectByEmployeeId" parameterType="java.lang.Long">
+    <select id="selectByEmployeeId" parameterType="java.lang.Long" resultType="com.example.employee.entity.Leave">
         select
         <include refid="Base_Column_List" />
-        from leave
+        from `leave`
         where employee_id = #{employeeId,jdbcType=BIGINT}
     </select>
 
-
+    <select id="selectByDepartmentId" parameterType="java.lang.Long" resultType="com.example.employee.entity.Leave">
+        select
+        <include refid="Base_Column_List" />
+        from `leave`
+        where department_id = #{departmentId,jdbcType=BIGINT}
+    </select>
 
 </mapper>
