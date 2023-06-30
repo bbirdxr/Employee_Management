@@ -7,8 +7,6 @@ import java.util.Date;
 @Data
 public class LeaveUpdateDTO {
 
-    private Long id;
-
     private Date startDate;
 
     private Date endDate;

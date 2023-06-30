@@ -42,23 +42,36 @@ public class LeaveServiceImpl implements LeaveService {
     }
 
     @Override
-    public int deleteLeave(Long employeeId) {
+    public int cancelLeave(Long employeeId) {
         Leave leave = leaveMapper.selectRecentLeaveByEmployeeId(employeeId);
         if (leave == null) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+            throw new BusinessException(ErrorCode.NULL_ERROR, "没有请假记录");
+        }
+        if (leave.getApproveStatus() != 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "请假已审批");
         }
         return leaveMapper.deleteById(leave.getId());
     }
 
     @Override
-    public int updateLeave(LeaveUpdateDTO leaveUpdateDTO) {
+    public int updateLeave(Long employeeId, LeaveUpdateDTO leaveUpdateDTO) {
+        if (employeeId == null || employeeId <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        if (employeeService.selectById(employeeId) == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
         if (leaveUpdateDTO == null) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+            throw new BusinessException(ErrorCode.NULL_ERROR, "参数为空");
         }
-        Leave leave = leaveMapper.selectById(leaveUpdateDTO.getId());
+        Leave leave = leaveMapper.selectRecentLeaveByEmployeeId(employeeId);
         if (leave == null) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+            throw new BusinessException(ErrorCode.NULL_ERROR, "没有请假记录");
         }
+        if (leave.getApproveStatus() != 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "请假已审批");
+        }
+
         return 0;
     }
 
@@ -71,7 +84,7 @@ public class LeaveServiceImpl implements LeaveService {
     }
 
     @Override
-    public int approveById(Long approverId, Long employeeId, Integer status) {
+    public int approveByEmployeeId(Long approverId, Long employeeId, Integer status) {
         Leave leave = leaveMapper.selectRecentLeaveByEmployeeId(employeeId);
         if (leave == null || leave.getApproveStatus() != 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);

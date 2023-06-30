@@ -9,15 +9,16 @@ public interface LeaveService {
 
     List<Leave> selectByEmployeeId(Long employeeId);
 
+    List<Leave> selectByDepartmentId(Long departmentId);
+
     int insert(Leave leave);
 
-    int deleteLeave(Long employeeId);
+    int cancelLeave(Long employeeId);
 
-    int updateLeave(LeaveUpdateDTO leaveUpdateDTO);
+    int updateLeave(Long employeeId, LeaveUpdateDTO leaveUpdateDTO);
 
     Leave selectById(Long id);
 
-    int approveById(Long approverId, Long employeeId, Integer status);
+    int approveByEmployeeId(Long approverId, Long employeeId, Integer status);
 
-    List<Leave> selectByDepartmentId(Long departmentId);
 }

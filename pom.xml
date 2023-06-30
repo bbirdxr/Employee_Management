@@ -129,6 +129,12 @@
             <version>5.2.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+
         <!--Digets Util -->
         <dependency>
             <groupId>commons-codec</groupId>
@@ -153,7 +159,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-
         </dependency>
     </dependencies>
 

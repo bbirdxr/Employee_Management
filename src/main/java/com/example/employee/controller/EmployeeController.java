@@ -65,10 +65,16 @@ public class EmployeeController {
         return ResultUtils.success("更新字段成功");
     }
 
+
+    @GetMapping("/name/{name}")
+    public BaseResponse<List<Employee>> selectByName(@PathVariable String name) {
+        return ResultUtils.success(employeeService.selectByNameSimple(name));
+    }
+
     @DeleteMapping("/{id}")
-    BaseResponse deleteById(@PathVariable Long employeeId){
-        if(employeeService.selectById(employeeId)!=null){
-            employeeService.deleteById(employeeId);
+    BaseResponse deleteById(@PathVariable Long id){
+        if(employeeService.selectById(id)!=null){
+            employeeService.deleteById(id);
             return ResultUtils.success("删除成功");
         }else {
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"不存在该用户");
@@ -76,5 +82,10 @@ public class EmployeeController {
     }
 
 
+    @GetMapping("/importDataToRedis")
+    public BaseResponse importDataToRedis() {
+        employeeService.importDataToRedis();
+        return ResultUtils.success("导入成功");
+    }
 }
 
