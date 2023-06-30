@@ -11,15 +11,21 @@ import com.example.employee.util.MapObjectUtil;
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 @Service
+@CacheConfig(cacheNames = "employees")
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
@@ -35,12 +41,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     private RedisTemplate<String, Object> redisTemplate;
 
 
+    public static final String CACHE_KEY_USER="employ_id:";
+
     @Override
-    public EmployeeDTO selectById(Long id) {
-        return toEmployeeDTO(employeeMapper.findByIdWithSalary(id));
+    @Cacheable(key = "#p0")
+    public Employee selectById(Long id) {
+        return employeeMapper.findByIdWithSalary(id);
     }
-
-
 
     @Override
     public List<Employee> selectByNameSimple(String name) {
@@ -113,15 +120,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         return toEmployeeDTOList(employeeList);
     }
 
-    
-    public EmployeeDTO findById(Long employId) {
-        return toEmployeeDTO(employeeMapper.findByIdWithSalary(employId));
-    }
-
-
     @Override
-    public void update(Employee employee) {
+    @CachePut(key = "#p0.id")
+    public Employee update(Employee employee) {
         employeeMapper.update(employee);
+        return employee;
     }
 
     @Override
@@ -130,13 +133,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    @CacheEvict(key = "#p0",allEntries = true)
     public void deleteById(Long employeeId) {
         employeeMapper.deleteOneById(employeeId);
     }
 
-    @Override
-    public void add(Employee employee) {
-        employeeMapper.addNewEmployee(employee);
+    @CachePut(key = "#p0.id")
+    public Employee add(Employee employee) {
+        Long generateId=employeeMapper.addNewEmployee(employee);
+        return selectById(employee.getId());
     }
-
 }

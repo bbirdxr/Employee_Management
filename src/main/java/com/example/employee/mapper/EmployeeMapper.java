@@ -39,17 +39,17 @@ public interface EmployeeMapper {
     @Insert("insert into employee" +
             "(name,email,phone_number,hire_date,salary,level,position_id,department_id) values" +
             "(#{name},#{email},#{phoneNumber},#{hireDate},#{salary},#{level},#{positionId},#{departmentId})")
-    void addNewEmployee(Employee e);
+
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    Long addNewEmployee(Employee e);
 
     @Update("update employee set ${field}=#{value} where id=#{id}")
     void updateSingleField(Long id,String field,Object value);
+
 
     void update(Employee e);
 
     @Delete("delete from employee where id=#{id}")
     void deleteOneById(Long id);
-
-
-    Employee selectByName(String name);
 
 }
