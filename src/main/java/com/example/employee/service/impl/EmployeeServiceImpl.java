@@ -18,11 +18,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+    @Autowired
+    DepartmentServiceImpl departmentService;
 
     @Autowired
     private PositionService positionService;
@@ -35,14 +36,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public Employee selectById(Long id) {
-        return null;
-    }
-
-
-    @Override
-    public List<Employee> pageSelectAllEmployee(int pageNum, int pageSize) {
-        return null;
+    public EmployeeDTO selectById(Long id) {
+        return toEmployeeDTO(employeeMapper.findByIdWithSalary(id));
     }
 
 
@@ -92,15 +87,35 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
     }
 
+
+    public EmployeeDTO toEmployeeDTO(Employee employee){
+        EmployeeDTO dto=new EmployeeDTO();
+        BeanUtils.copyProperties(employee,dto);
+        dto.setPositionName(positionService.getPositionNameById(employee.getPositionId()));
+        dto.setDepartmentPathName(departmentService.toString(employee.getDepartmentId()));
+        return dto;
+    }
+
+    public List<EmployeeDTO> toEmployeeDTOList(List<Employee>employees){
+        List<EmployeeDTO> dtos= Lists.transform(employees, (entity)->{
+            EmployeeDTO d = new EmployeeDTO();
+            BeanUtils.copyProperties(entity, d);
+            d.setPositionName(positionService.getPositionNameById(entity.getPositionId()));
+            d.setDepartmentPathName(departmentService.toString(entity.getDepartmentId()));
+            return d;
+        });
+        return dtos;
+    }
+
+    @Override
+    public List<EmployeeDTO> selectWithCondition(Employee employee){
+        List<Employee>employeeList=employeeMapper.findAllWithCondition(employee);
+        return toEmployeeDTOList(employeeList);
+    }
     public EmployeeDTO findById(Long employId) {
         return toEmployeeDTO(employeeMapper.findByIdWithSalary(employId));
     }
 
-    @Override
-    public List<EmployeeDTO> selectByName(String EmployeeName) {
-        List<Employee>ls=employeeMapper.findByName(EmployeeName);
-        return toEmployeeDTOList(ls);
-    }
 
     @Override
     public void update(Employee employee) {
@@ -114,34 +129,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void deleteById(Long employeeId) {
-
+        employeeMapper.deleteOneById(employeeId);
     }
-
-    @Override
-    public void deleteByDepartmentId(Long departmentId) {
-
-    }
-
 
     @Override
     public void add(Employee employee) {
         employeeMapper.addNewEmployee(employee);
     }
 
-    public List<EmployeeDTO> toEmployeeDTOList(List<Employee>employees){
-        List<EmployeeDTO> dtos= Lists.transform(employees, (entity)->{
-            EmployeeDTO d = new EmployeeDTO();
-            BeanUtils.copyProperties(entity, d);
-            return d;
-        });
-        return dtos;
-    }
-
-    public EmployeeDTO toEmployeeDTO(Employee employee){
-        EmployeeDTO dto=new EmployeeDTO();
-        BeanUtils.copyProperties(employee,dto);
-        dto.setPositionName(positionService.getPositionNameById(employee.getPositionId()));
-        dto.setPositionName(positionService.getPositionNameById(employee.getPositionId()));
-        return dto;
-    }
 }

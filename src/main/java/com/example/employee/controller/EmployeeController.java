@@ -5,22 +5,15 @@ import com.example.employee.common.BaseResponse;
 import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
 import com.example.employee.entity.Employee;
-import com.example.employee.service.EmployeeService;
 import com.github.pagehelper.PageHelper;
-import io.swagger.models.auth.In;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.employee.entity.Employee;
 import com.example.employee.model.dto.EmployeeDTO;
-import com.example.employee.service.EmployeeService;
 import com.example.employee.service.impl.EmployeeServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,13 +33,18 @@ public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
 
-    @GetMapping("/all")
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    @PostMapping("/all")
     BaseResponse findAll(
             @RequestParam Integer pageNum,
-            @RequestParam Integer pageSize){
+            @RequestParam Integer pageSize,
+            @RequestBody Employee employee){
         PageHelper.startPage(pageNum,pageSize);
-        
-        return null;
+        List<EmployeeDTO>dtos=employeeService.selectWithCondition(employee);
+        PageInfo<EmployeeDTO> pageInfo = new PageInfo<>(dtos);
+        return ResultUtils.success(pageInfo);
     }
 
     @PostMapping("/person")
@@ -67,15 +65,22 @@ public class EmployeeController {
         return ResultUtils.success("更新字段成功");
     }
 
-    @DeleteMapping("/{id}")
-    BaseResponse deleteById(@PathVariable Long id){
-        return null;
-    }
 
     @GetMapping("/name/{name}")
     public BaseResponse<List<Employee>> selectByName(@PathVariable String name) {
         return ResultUtils.success(employeeService.selectByNameSimple(name));
     }
+
+    @DeleteMapping("/{id}")
+    BaseResponse deleteById(@PathVariable Long id){
+        if(employeeService.selectById(id)!=null){
+            employeeService.deleteById(id);
+            return ResultUtils.success("删除成功");
+        }else {
+            return ResultUtils.error(ErrorCode.PARAMS_ERROR,"不存在该用户");
+        }
+    }
+
 
     @GetMapping("/importDataToRedis")
     public BaseResponse importDataToRedis() {

@@ -13,21 +13,19 @@ public interface EmployeeService {
 
     void importDataToRedis();
 
-    //分页查询基本信息
+    List<EmployeeDTO> selectWithCondition(Employee employee);
 
-    List<Employee> pageSelectAllEmployee(int pageNum, int pageSize);
+    //分页查询基本信息
 
     EmployeeDTO findById(Long employId);
 
-    List<EmployeeDTO>selectByName(String EmployeeName);
+
 
     void update(Employee employee);
 
     void updateSingleField(Long id, String field, Object value);
 
     void deleteById(Long employeeId);
-
-    void deleteByDepartmentId(Long departmentId);
 
     void add(Employee employee);
 }

@@ -20,7 +20,7 @@ import java.util.List;
  */
 @Mapper
 public interface PositionMapper{
-    @Select("select * from position where position_name like concat(#{name}+'%') limit 6")
+    @Select("select * from position where position_name like concat(#{name},'%') limit 6")
     List<Position> likeSelectByName(String name);
 
     @Select("select * from position where position_name=#{name}")
@@ -29,7 +29,7 @@ public interface PositionMapper{
     @Select("select * from position where id=#{id}")
     Position selectById(Long id);
 
-    @Insert("insert into position(position_name) values(#{name})")
+    @Insert("insert into position (position_name) values (#{name})")
     void addOne(String name);
 
     @Update("update position set position_name=#{newName} where position_name=#{name}")

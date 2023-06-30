@@ -50,9 +50,9 @@ public class LeaveController {
 
     @PostMapping("deleteLeave/{employeeId}")
     public BaseResponse deleteLeave(@PathVariable Long employeeId) {
-        if (leaveService.deleteLeave(employeeId) == 0) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR, "删除失败");
-        }
+//        if (leaveService.deleteLeave(employeeId) == 0) {
+//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "删除失败");
+//        }
         return ResultUtils.success(true);
     }
 

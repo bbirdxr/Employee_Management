@@ -46,7 +46,7 @@ public class PositionController {
 
     //查
     @GetMapping("/like")
-    BaseResponse get(@RequestParam String positionName){
+    BaseResponse get(@RequestParam(required = false) String positionName){
         List<Position> positionList=positionMapper.likeSelectByName(positionName);
         return ResultUtils.success(positionList);
     }
