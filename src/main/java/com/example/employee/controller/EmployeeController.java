@@ -64,12 +64,12 @@ public class EmployeeController {
         return ResultUtils.success("true");
     }
 
-    @PutMapping("/person/{id}/{field}/{value}")
+    @PutMapping(value = "/person/{id}/{field}/{value}",consumes = {"application/json"})//精确
     BaseResponse updateSingleField(@PathVariable Long id,@PathVariable String field,@PathVariable Object value){
         try {
             System.out.println(Employee.class.getDeclaredFields());
             Employee.class.getDeclaredField(field);
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchFieldException e) {//二级catch
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"没有该字段");
         }
         employeeService.updateSingleField(id,field,value);
@@ -90,13 +90,6 @@ public class EmployeeController {
         }else {
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"不存在该用户");
         }
-    }
-
-
-    @GetMapping("/importDataToRedis")
-    public BaseResponse importDataToRedis() {
-        employeeService.importDataToRedis();
-        return ResultUtils.success("导入成功");
     }
 }
 
