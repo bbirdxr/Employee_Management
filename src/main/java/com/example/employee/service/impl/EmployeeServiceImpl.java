@@ -40,8 +40,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     private RedisTemplate<String, Object> redisTemplate;
 
 
-    public static final String CACHE_KEY_USER="employ_id:";
-
     @Override
     @Cacheable(key = "#p0")
     public Employee selectById(Long id) {

@@ -41,3 +41,51 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2023-07-03 11:55:51.085 - INFO  [nio-8080-exec-8] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
 2023-07-03 11:55:51.244 - INFO  [nio-8080-exec-8] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
 2023-07-03 11:55:51.314 - INFO  [nio-8080-exec-8] c.e.e.c.EmployeeController     : successfully insert an employee:tony
+2023-07-03 13:35:56.873 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m4s792ms432µs400ns).
+2023-07-03 13:37:44.879 - INFO  [ioEventLoop-4-2] n.u.i.l.AbstractInternalLogger : null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:1.8.0_342]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:1.8.0_342]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[?:1.8.0_342]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192) ~[?:1.8.0_342]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379) ~[?:1.8.0_342]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256) ~[netty-buffer-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2023-07-03 13:37:44.879 - INFO  [ioEventLoop-4-1] n.u.i.l.AbstractInternalLogger : null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:1.8.0_342]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:1.8.0_342]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[?:1.8.0_342]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192) ~[?:1.8.0_342]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379) ~[?:1.8.0_342]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256) ~[netty-buffer-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2023-07-03 13:37:44.934 - INFO  [ecutorLoop-1-11] n.u.i.l.AbstractInternalLogger : Reconnecting, last destination was localhost/127.0.0.1:6379
+2023-07-03 13:37:44.934 - INFO  [ecutorLoop-1-10] n.u.i.l.AbstractInternalLogger : Reconnecting, last destination was localhost/127.0.0.1:6379
+2023-07-03 13:37:46.981 - WARN  [ioEventLoop-4-4] n.u.i.l.AbstractInternalLogger : Cannot reconnect to [localhost:6379]: Connection refused: no further information: localhost/127.0.0.1:6379
+2023-07-03 13:37:46.981 - WARN  [ioEventLoop-4-3] n.u.i.l.AbstractInternalLogger : Cannot reconnect to [localhost:6379]: Connection refused: no further information: localhost/127.0.0.1:6379
+2023-07-03 13:37:51.223 - INFO  [xecutorLoop-1-4] n.u.i.l.AbstractInternalLogger : Reconnecting, last destination was localhost:6379
+2023-07-03 13:37:51.223 - INFO  [xecutorLoop-1-5] n.u.i.l.AbstractInternalLogger : Reconnecting, last destination was localhost:6379
+2023-07-03 13:37:52.751 - INFO  [oEventLoop-4-10] i.l.c.p.ReconnectionHandler    : Reconnected to localhost:6379
+2023-07-03 13:37:52.753 - INFO  [ioEventLoop-4-9] i.l.c.p.ReconnectionHandler    : Reconnected to localhost:6379
+2023-07-03 13:42:14.526 - INFO  [nio-8080-exec-1] c.e.e.c.EmployeeController     : successfully insert an employee:dear-tony
