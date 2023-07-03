@@ -55,10 +55,10 @@ public class AttendanceServiceImpl implements AttendanceService {
         }
         AttendanceQuery attendanceQuery = new AttendanceQuery();
         attendanceQuery.setEmployeeId(employeeId);
-        attendanceQuery.setAttendanceDate(new Date());
+        attendanceQuery.setAttendanceDate(LocalDate.now());
         List<Attendance> attendances = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
         if (attendances.size() > 0) {
-            throw new BusinessException(ErrorCode.NULL_ERROR, "员工已打卡");
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "员工已打卡");
         }
         Attendance attendance = new Attendance();
         attendance.setEmployeeId(employeeId);
@@ -78,7 +78,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         }
         AttendanceQuery attendanceQuery = new AttendanceQuery();
         attendanceQuery.setEmployeeId(employeeId);
-        attendanceQuery.setAttendanceDate(new Date());
+        attendanceQuery.setAttendanceDate(LocalDate.now());
         List<Attendance> attendances = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
         if (attendances == null || attendances.size() == 0) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工未打卡");

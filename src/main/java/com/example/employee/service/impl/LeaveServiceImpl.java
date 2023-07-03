@@ -29,9 +29,6 @@ public class LeaveServiceImpl implements LeaveService {
     @Autowired
     private EmployeeService employeeService;
 
-    @Autowired
-    private DepartmentService departmentService;
-
     @Override
     public List<Leave> selectByEmployeeId(Long employeeId) {
         if (employeeId == null || employeeId <= 0) {

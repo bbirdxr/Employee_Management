@@ -23,11 +23,11 @@ public class SqlStatementHandlerInterceptor implements Interceptor {
         MappedStatement mappedStatement = (MappedStatement) metaObject.getValue("delegate.mappedStatement");
         BoundSql boundSql = (BoundSql) metaObject.getValue("delegate.boundSql");
         String sql = boundSql.getSql();
-        if (mappedStatement.getSqlCommandType() == SqlCommandType.SELECT) {
+        if (mappedStatement.getSqlCommandType() == SqlCommandType.SELECT && !sql.contains("LAST_INSERT_ID()")) {
             sql += " and is_deleted = 0";
         }
         metaObject.setValue("delegate.boundSql.sql", sql);
-        System.out.println("sql: " + boundSql.getSql());
+        log.info("sql: " + boundSql.getSql());
         return invocation.proceed();
     }
 

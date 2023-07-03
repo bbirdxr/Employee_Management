@@ -54,7 +54,7 @@
     </update>
 
     <select id="selectByAttendanceQuery" resultType="com.example.employee.entity.Attendance" parameterType="com.example.employee.model.dto.AttendanceQuery">
-        select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time
+        select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
         from attendance
         where 1=1
         <if test="employeeId != null">
@@ -64,7 +64,7 @@
             and department_id = #{departmentId}
         </if>
         <if test="attendanceDate != null">
-            and clock_in_time &gt;= #{attendanceDate}
+            and clock_in_time BETWEEN #{attendanceDate} AND DATE_ADD(#{attendanceDate}, INTERVAL 1 DAY)
         </if>
     </select>
 
