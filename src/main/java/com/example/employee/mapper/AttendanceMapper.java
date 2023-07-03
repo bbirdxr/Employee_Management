@@ -1,6 +1,5 @@
 package com.example.employee.mapper;
 
-import com.example.employee.common.InterceptAnnotation;
 import com.example.employee.entity.Attendance;
 import com.example.employee.model.dto.AttendanceQuery;
 import org.apache.ibatis.annotations.Mapper;

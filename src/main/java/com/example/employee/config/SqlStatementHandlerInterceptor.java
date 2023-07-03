@@ -1,18 +1,14 @@
 package com.example.employee.config;
 
-import com.example.employee.common.InterceptAnnotation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.*;
-import org.apache.ibatis.reflection.DefaultReflectorFactory;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.util.Properties;
 
@@ -27,7 +23,7 @@ public class SqlStatementHandlerInterceptor implements Interceptor {
         MappedStatement mappedStatement = (MappedStatement) metaObject.getValue("delegate.mappedStatement");
         BoundSql boundSql = (BoundSql) metaObject.getValue("delegate.boundSql");
         String sql = boundSql.getSql();
-        if (mappedStatement.getSqlCommandType() != SqlCommandType.DELETE) {
+        if (mappedStatement.getSqlCommandType() == SqlCommandType.SELECT) {
             sql += " and is_deleted = 0";
         }
         metaObject.setValue("delegate.boundSql.sql", sql);
