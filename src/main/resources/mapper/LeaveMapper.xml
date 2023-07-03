@@ -33,23 +33,23 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
         insert into `leave` (employee_id, department_id, start_date, end_date, leave_type, leave_reason)
-        values (#{employeeId,jdbcType=BIGINT}, #{departmentId,jdbcType=BIGINT}, #{startDate,jdbcType=DATE},
-        #{endDate,jdbcType=DATE}, #{leaveType,jdbcType=TINYINT}, #{leaveReason,jdbcType=VARCHAR})
+        values (#{employeeId,jdbcType=BIGINT}, #{departmentId,jdbcType=BIGINT}, #{startDate,jdbcType=TIMESTAMP},
+        #{endDate,jdbcType=TIMESTAMP}, #{leaveType,jdbcType=TINYINT}, #{leaveReason,jdbcType=VARCHAR})
     </insert>
 
-    <delete id="deleteById" parameterType="java.lang.Long">
+    <update id="deleteById" parameterType="java.lang.Long">
         delete from `leave`
         where id = #{id,jdbcType=BIGINT}
-    </delete>
+    </update>
 
     <update id="update" parameterType="com.example.employee.entity.Leave">
         update `leave`
         <set>
             <if test="startDate != null">
-                start_date = #{startDate,jdbcType=DATE},
+                start_date = #{startDate,jdbcType=TIMESTAMP},
             </if>
             <if test="endDate != null">
-                end_date = #{endDate,jdbcType=DATE},
+                end_date = #{endDate,jdbcType=TIMESTAMP},
             </if>
             <if test="leaveType != null">
                 leave_type = #{leaveType,jdbcType=TINYINT},

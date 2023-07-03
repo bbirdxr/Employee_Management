@@ -25,6 +25,7 @@ public interface AttendanceMapper {
      * @param id 主键
      * @return 考勤表
      */
+    // @InterceptAnnotation
     Attendance selectById(@Param("id") Long id);
 
     /**

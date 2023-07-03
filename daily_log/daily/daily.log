@@ -89,3 +89,5 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 2023-07-03 13:37:52.751 - INFO  [oEventLoop-4-10] i.l.c.p.ReconnectionHandler    : Reconnected to localhost:6379
 2023-07-03 13:37:52.753 - INFO  [ioEventLoop-4-9] i.l.c.p.ReconnectionHandler    : Reconnected to localhost:6379
 2023-07-03 13:42:14.526 - INFO  [nio-8080-exec-1] c.e.e.c.EmployeeController     : successfully insert an employee:dear-tony
+2023-07-03 14:14:19.782 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2023-07-03 14:14:19.788 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.

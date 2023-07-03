@@ -10,16 +10,17 @@ import com.example.employee.model.enums.ApproveStatusEnum;
 import com.example.employee.service.DepartmentService;
 import com.example.employee.service.EmployeeService;
 import com.example.employee.service.LeaveService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Objects;
 
 @Service
+@Slf4j
 public class LeaveServiceImpl implements LeaveService {
 
     @Autowired
@@ -27,9 +28,6 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Autowired
     private EmployeeService employeeService;
-
-    @Autowired
-    private DepartmentService departmentService;
 
     @Override
     public List<Leave> selectByEmployeeId(Long employeeId) {
@@ -143,7 +141,7 @@ public class LeaveServiceImpl implements LeaveService {
         if (approver == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "审批人不存在");
         }
-        if (employee.getDepartmentId() != approver.getDepartmentId()) {
+        if (!Objects.equals(employee.getDepartmentId(), approver.getDepartmentId())) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "审批人不在同一部门");
         }
         if (approver.getLevel() != 1) {

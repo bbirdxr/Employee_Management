@@ -10,6 +10,7 @@ import com.example.employee.service.AttendanceService;
 import com.example.employee.service.EmployeeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@Slf4j
 public class AttendanceServiceImpl implements AttendanceService {
     @Autowired
     private AttendanceMapper attendanceMapper;
@@ -56,12 +58,11 @@ public class AttendanceServiceImpl implements AttendanceService {
         attendanceQuery.setAttendanceDate(LocalDate.now());
         List<Attendance> attendances = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
         if (attendances.size() > 0) {
-            throw new BusinessException(ErrorCode.NULL_ERROR, "员工已打卡");
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "员工已打卡");
         }
         Attendance attendance = new Attendance();
         attendance.setEmployeeId(employeeId);
         attendance.setDepartmentId(employee.getDepartmentId());
-        attendance.setAttendanceDate(LocalDate.now());
         attendance.setClockInTime(new Date());
         return attendanceMapper.insert(attendance);
     }
