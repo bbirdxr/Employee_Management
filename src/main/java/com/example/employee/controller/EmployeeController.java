@@ -4,19 +4,19 @@ import com.example.employee.common.BaseResponse;
 import com.example.employee.common.ErrorCode;
 import com.example.employee.common.ResultUtils;
 import com.example.employee.entity.Employee;
+import com.example.employee.mapper.EmployeeMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.employee.model.dto.EmployeeDTO;
 import com.example.employee.service.impl.EmployeeServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
@@ -27,7 +27,8 @@ import java.util.concurrent.TimeUnit;
  * @since 2023-06-27
  */
 @RestController
-@RequestMapping("/employee")
+@Slf4j
+@RequestMapping(value = "/employee",consumes = {"application/json"})
 public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
@@ -35,14 +36,22 @@ public class EmployeeController {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    @Autowired
+    private EmployeeMapper employeeMapper;
+
     @PostMapping("/all")
     BaseResponse findAll(
-            @RequestParam Integer pageNum,
-            @RequestParam Integer pageSize,
+            @RequestParam Integer pageNumber,
+            @RequestParam Integer pageCount,
             @RequestBody Employee employee){
-        PageHelper.startPage(pageNum,pageSize);
-        List<EmployeeDTO>dtos=employeeService.selectWithCondition(employee);
-        PageInfo<EmployeeDTO> pageInfo = new PageInfo<>(dtos);
+        PageHelper.startPage(pageNumber,pageCount);
+        List<Employee>employeeList=employeeMapper.findAllWithCondition(employee);
+        PageInfo<Employee>pageInfo=new PageInfo<>(employeeList);
+//        PageInfo<EmployeeDTO>employeeDTOPageInfo=new PageInfo<>();
+//        BeanUtils.copyProperties(pageInfo,employeeDTOPageInfo);
+
+//        List<EmployeeDTO>dtos=employeeService.selectWithCondition(employee);
+//        PageInfo<EmployeeDTO> pageInfo = new PageInfo<>(dtos);
         return ResultUtils.success(pageInfo);
     }
 
@@ -52,15 +61,17 @@ public class EmployeeController {
         return ResultUtils.success("true");
     }
 
-    @PutMapping("/person/{id}/{field}/{value}")
+    @PutMapping(value = "/person/{id}/{field}/{value}")//精确
     BaseResponse updateSingleField(@PathVariable Long id,@PathVariable String field,@PathVariable Object value){
         try {
-            System.out.println(Employee.class.getDeclaredFields());
+            log.debug("获取Employee字段");
             Employee.class.getDeclaredField(field);
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchFieldException e) {//二级catch
+            log.error("Employee对象没有"+field+"字段");
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"没有该字段");
         }
         employeeService.updateSingleField(id,field,value);
+        log.info("更新Employee字段成功：id："+id+" field:"+field+" value:"+value);
         return ResultUtils.success("更新字段成功");
     }
 
@@ -78,13 +89,6 @@ public class EmployeeController {
         }else {
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"不存在该用户");
         }
-    }
-
-
-    @GetMapping("/importDataToRedis")
-    public BaseResponse importDataToRedis() {
-        employeeService.importDataToRedis();
-        return ResultUtils.success("导入成功");
     }
 }
 
