@@ -9,6 +9,7 @@ import com.example.employee.service.EmployeeService;
 import com.example.employee.service.PositionService;
 import com.example.employee.util.MapObjectUtil;
 import com.google.common.collect.Lists;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
@@ -25,6 +26,7 @@ import java.util.Set;
 
 @Service
 @CacheConfig(cacheNames = "employees")
+@Slf4j
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
@@ -87,8 +89,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 // redisTemplate.expire(key, 5, TimeUnit.MINUTES);
                 System.out.println(hashOperations.entries(key));
             } catch (Exception e) {
-                System.out.println("redis set key error");
-                // log.error("redis set key error", e);
+                log.error("redis set key error", e);
             }
         }
     }

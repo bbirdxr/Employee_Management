@@ -173,11 +173,6 @@
             <version>1.4.7</version>
         </dependency>
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 8e6f2df3462989ca96fe70db445fd0e003ddba29
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>

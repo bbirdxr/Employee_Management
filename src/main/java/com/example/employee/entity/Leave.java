@@ -80,4 +80,6 @@ public class Leave implements Serializable {
 
     private Date updateTime;
 
+    private Integer isDeleted;
+
 }

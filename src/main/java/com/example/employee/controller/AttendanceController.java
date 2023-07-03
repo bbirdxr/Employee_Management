@@ -11,6 +11,7 @@ import com.example.employee.service.AttendanceService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,8 @@ import java.util.List;
  * @since 2023-06-27
  */
 @RestController
-@RequestMapping("/attendance")
+@RequestMapping( "/attendance")
+@Slf4j
 public class AttendanceController {
     @Autowired
     private AttendanceService attendanceService;
@@ -58,7 +60,7 @@ public class AttendanceController {
         return ResultUtils.success("打卡成功");
     }
 
-    @PostMapping("deleteById/{id}")
+    @DeleteMapping("deleteById/{id}")
     public BaseResponse deleteById(@PathVariable Long id) {
         if (attendanceService.deleteById(id) == 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "删除失败");

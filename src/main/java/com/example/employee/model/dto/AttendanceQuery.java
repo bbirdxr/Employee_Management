@@ -13,5 +13,5 @@ public class AttendanceQuery {
     private Long departmentId;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate attendanceDate;
+    private Date attendanceDate;
 }

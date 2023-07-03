@@ -11,175 +11,153 @@
  Target Server Version : 50739
  File Encoding         : 65001
 
- Date: 30/06/2023 14:16:10
+ Date: 03/07/2023 10:57:35
 */
 
 SET NAMES utf8mb4;
-SET
-FOREIGN_KEY_CHECKS = 0;
-
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for attendance
 -- ----------------------------
 DROP TABLE IF EXISTS `attendance`;
-CREATE TABLE `attendance`
-(
-    `id`              bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-    `employee_id`     bigint(20) NOT NULL DEFAULT 0 COMMENT '员工 id',
-    `department_id`   bigint(20) NOT NULL DEFAULT 0 COMMENT '部门 id',
-    `attendance_date` date NULL DEFAULT NULL COMMENT '考勤日期',
-    `clock_in_time`   timestamp(0) NULL DEFAULT NULL COMMENT '上班打卡时间',
-    `clock_out_time`  timestamp(0) NULL DEFAULT NULL COMMENT '下班打卡时间',
-    `create_time`     timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`     timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP (0) COMMENT '更新时间',
-    PRIMARY KEY (`id`) USING BTREE,
-    INDEX             `idx_employee_id`(`employee_id`) USING BTREE,
-    INDEX             `idx_department_id`(`department_id`) USING BTREE,
-    INDEX             `idx_attendance_date`(`attendance_date`) USING BTREE
+CREATE TABLE `attendance`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint(20) NOT NULL DEFAULT 0,
+  `department_id` bigint(20) NOT NULL DEFAULT 0,
+  `clock_in_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'clock-in time',
+  `clock_out_time` timestamp(0) NULL DEFAULT NULL COMMENT 'clock-out time',
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_employee_id`(`employee_id`) USING BTREE,
+  INDEX `idx_department_id`(`department_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '考勤表' ROW_FORMAT = Dynamic;
-
 
 -- ----------------------------
 -- Table structure for department
 -- ----------------------------
 DROP TABLE IF EXISTS `department`;
-CREATE TABLE `department`
-(
-    `id`                   bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-    `department_name`      varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-    `parent_department_id` bigint(20) NULL DEFAULT -1,
-    `create_time`          timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`          timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP (0) COMMENT '更新时间',
-    PRIMARY KEY (`id`) USING BTREE
+CREATE TABLE `department`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `department_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `parent_department_id` bigint(20) NULL DEFAULT -1,
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '部门表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of department
 -- ----------------------------
-INSERT INTO `department`
-VALUES (1, '研发部', 0, '2023-06-28 11:11:56', '2023-06-28 11:11:56');
-INSERT INTO `department`
-VALUES (3, '设计部', 0, '2023-06-28 14:44:51', '2023-06-28 14:44:51');
-INSERT INTO `department`
-VALUES (7, '设1部', 0, '2023-06-28 15:22:56', '2023-06-28 15:22:56');
-INSERT INTO `department`
-VALUES (11, '手机部', 0, '2023-06-29 15:43:05', '2023-06-29 15:43:05');
-INSERT INTO `department`
-VALUES (12, '产品部', 11, '2023-06-29 15:44:01', '2023-06-29 15:44:01');
+INSERT INTO `department` VALUES (1, '研发部', 0, '2023-06-28 11:11:56', '2023-06-28 11:11:56', 0);
+INSERT INTO `department` VALUES (3, '设计部', 0, '2023-06-28 14:44:51', '2023-06-28 14:44:51', 0);
+INSERT INTO `department` VALUES (7, '设1部', 0, '2023-06-28 15:22:56', '2023-06-28 15:22:56', 0);
+INSERT INTO `department` VALUES (11, '手机部', 0, '2023-06-29 15:43:05', '2023-06-29 15:43:05', 0);
+INSERT INTO `department` VALUES (12, '产品部', 11, '2023-06-29 15:44:01', '2023-06-29 15:44:01', 0);
 
 -- ----------------------------
 -- Table structure for employee
 -- ----------------------------
 DROP TABLE IF EXISTS `employee`;
-CREATE TABLE `employee`
-(
-    `position_id`   bigint(20) NOT NULL,
-    `id`            bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-    `name`          varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-    `email`         varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-    `phone_number`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-    `hire_date`     date NULL DEFAULT NULL,
-    `salary`        decimal(10, 2) NULL DEFAULT NULL,
-    `create_time`   timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`   timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP (0) COMMENT '更新时间',
-    `level`         tinyint(2) NOT NULL,
-    `department_id` bigint(20) NOT NULL,
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '员工信息' ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of employee
--- ----------------------------
-INSERT INTO `employee`
-VALUES (1, 1, '王五', '485189519@baidu.com', '123456789', '2023-06-28', 200.00, '2023-06-28 10:02:33',
-        '2023-06-29 16:48:38', 0, 1);
-INSERT INTO `employee`
-VALUES (1, 2, '但是', '48632@qq.com', '', NULL, 300.00, '2023-06-29 11:56:33', '2023-06-29 16:48:39', 0, 1);
-INSERT INTO `employee`
-VALUES (1, 3, '但是', '', '', NULL, 0.00, '2023-06-29 16:03:55', '2023-06-29 16:05:16', 0, 12);
+CREATE TABLE `employee`  (
+  `position_id` bigint(16) NOT NULL DEFAULT -1 COMMENT 'position id to connect to the position table',
+  `id` bigint(16) NOT NULL AUTO_INCREMENT COMMENT 'primary key',
+  `name` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '-1' COMMENT 'name of employee',
+  `email` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '-1' COMMENT 'email of employee',
+  `phone_number` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '-1' COMMENT 'phone number of employee',
+  `hire_date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'hire date of  employee',
+  `salary` decimal(16, 2) NOT NULL DEFAULT -1.00 COMMENT 'salary of the employee ',
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'automatically generated create time ',
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT 'update time ',
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  `level` tinyint(2) NOT NULL DEFAULT -1 COMMENT 'level of the employee like \' P0\' \' P1\'',
+  `department_id` bigint(16) NOT NULL DEFAULT -1 COMMENT 'department id',
+  `gender` tinyint(2) NOT NULL DEFAULT -1 COMMENT '0:female 1 male  -1:null',
+  `identity_card` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0' COMMENT 'Identity card number',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `id`(`id`) USING BTREE,
+  UNIQUE INDEX `union key`(`name`, `phone_number`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '员工信息' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for employee_department
 -- ----------------------------
 DROP TABLE IF EXISTS `employee_department`;
-CREATE TABLE `employee_department`
-(
-    `id`            bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-    `employee_id`   bigint(20) NULL DEFAULT NULL,
-    `department_id` bigint(20) NULL DEFAULT NULL,
-    `start_date`    date NULL DEFAULT NULL,
-    `end_date`      date NULL DEFAULT NULL,
-    `create_time`   timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`   timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP (0) COMMENT '更新时间',
-    PRIMARY KEY (`id`) USING BTREE,
-    INDEX           `idx_employee_id`(`employee_id`) USING BTREE,
-    INDEX           `idx_department_id`(`department_id`) USING BTREE
+CREATE TABLE `employee_department`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `employee_id` bigint(20) NULL DEFAULT NULL,
+  `department_id` bigint(20) NULL DEFAULT NULL,
+  `start_date` date NULL DEFAULT NULL,
+  `end_date` date NULL DEFAULT NULL,
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '更新时间',
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_employee_id`(`employee_id`) USING BTREE,
+  INDEX `idx_department_id`(`department_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for employee_position
 -- ----------------------------
 DROP TABLE IF EXISTS `employee_position`;
-CREATE TABLE `employee_position`
-(
-    `employee_id` bigint(20) NOT NULL,
-    `position_id` bigint(20) NOT NULL,
-    `start_date`  date         NOT NULL,
-    `end_date`    date NULL DEFAULT NULL,
-    `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP (0) COMMENT '更新时间',
-    PRIMARY KEY (`employee_id`, `position_id`, `start_date`) USING BTREE,
-    INDEX         `idx_employee_id`(`employee_id`) USING BTREE,
-    INDEX         `idx_department_id`(`position_id`) USING BTREE
+CREATE TABLE `employee_position`  (
+  `employee_id` bigint(20) NOT NULL,
+  `position_id` bigint(20) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NULL DEFAULT NULL,
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '更新时间',
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  PRIMARY KEY (`employee_id`, `position_id`, `start_date`) USING BTREE,
+  INDEX `idx_employee_id`(`employee_id`) USING BTREE,
+  INDEX `idx_department_id`(`position_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for leave
 -- ----------------------------
 DROP TABLE IF EXISTS `leave`;
-CREATE TABLE `leave`
-(
-    `id`             bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-    `employee_id`    bigint(20) NOT NULL DEFAULT 0 COMMENT '员工 id',
-    `department_id`  bigint(20) NOT NULL DEFAULT 0 COMMENT '部门 id',
-    `start_date`     date NULL DEFAULT NULL COMMENT '开始日期',
-    `end_date`       date NULL DEFAULT NULL COMMENT '结束日期',
-    `leave_type`     tinyint(3) NOT NULL DEFAULT 0 COMMENT '请假类型',
-    `leave_reason`   varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '请假原因',
-    `approver_id`    bigint(20) NOT NULL DEFAULT 0 COMMENT '审批人 id',
-    `approve_status` tinyint(3) NOT NULL DEFAULT 0 COMMENT '请假状态',
-    `create_time`    timestamp(0)                                             NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`    timestamp(0)                                             NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP (0) COMMENT '更新时间',
-    PRIMARY KEY (`id`) USING BTREE,
-    INDEX            `idx_employee_id`(`employee_id`) USING BTREE,
-    INDEX            `idx_department_id`(`department_id`) USING BTREE
+CREATE TABLE `leave`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint(20) NOT NULL DEFAULT 0,
+  `department_id` bigint(20) NOT NULL DEFAULT 0,
+  `start_date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'leave start date',
+  `end_date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'leave end date',
+  `leave_type` tinyint(3) NOT NULL DEFAULT 0 COMMENT '0: sick 1: personal 2: annual 年假 3: other',
+  `leave_reason` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '请假原因',
+  `approver_id` bigint(20) NOT NULL DEFAULT 0 COMMENT 'id of approver, approver is the leader of the department',
+  `approve_status` tinyint(3) NOT NULL DEFAULT 0 COMMENT '0: waiting 1: approved 2: rejected',
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_employee_id`(`employee_id`) USING BTREE,
+  INDEX `idx_department_id`(`department_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '请假表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for position
 -- ----------------------------
 DROP TABLE IF EXISTS `position`;
-CREATE TABLE `position`
-(
-    `id`            bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-    `position_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-    `create_time`   timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time`   timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP (0) COMMENT '更新时间',
-    PRIMARY KEY (`id`) USING BTREE
+CREATE TABLE `position`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `position_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '更新时间',
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '职位表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of position
 -- ----------------------------
-INSERT INTO `position`
-VALUES (1, 'Java开发实习生', '2023-06-29 15:51:49', '2023-06-29 15:51:49');
-INSERT INTO `position`
-VALUES (2, 'C++开发实习生', '2023-06-29 15:52:05', '2023-06-29 15:52:05');
-INSERT INTO `position`
-VALUES (3, 'C++开发工程师', '2023-06-29 15:52:14', '2023-06-29 15:52:14');
-INSERT INTO `position`
-VALUES (4, '产品经理', '2023-06-29 15:52:20', '2023-06-29 15:52:20');
+INSERT INTO `position` VALUES (1, 'Java开发实习生', '2023-06-29 15:51:49', '2023-06-29 15:51:49', 0);
+INSERT INTO `position` VALUES (2, 'C++开发实习生', '2023-06-29 15:52:05', '2023-06-29 15:52:05', 0);
+INSERT INTO `position` VALUES (3, 'C++开发工程师', '2023-06-29 15:52:14', '2023-06-29 15:52:14', 0);
+INSERT INTO `position` VALUES (4, '产品经理', '2023-06-29 15:52:20', '2023-06-29 15:52:20', 0);
 
-SET
-FOREIGN_KEY_CHECKS = 1;
+SET FOREIGN_KEY_CHECKS = 1;

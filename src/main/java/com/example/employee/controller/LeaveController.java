@@ -8,6 +8,7 @@ import com.example.employee.entity.Leave;
 import com.example.employee.exception.BusinessException;
 import com.example.employee.model.dto.LeaveDTO;
 import com.example.employee.service.LeaveService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,8 @@ import java.util.List;
  * @since 2023-06-27
  */
 @RestController
-@RequestMapping("/leave")
+@RequestMapping("/attendance")
+@Slf4j
 public class LeaveController {
 
     @Autowired
@@ -38,7 +40,7 @@ public class LeaveController {
         return ResultUtils.success(leaveService.selectByDepartmentId(departmentId));
     }
 
-    @PostMapping("updateLeave/{employeeId}")
+    @PutMapping("updateLeave/{employeeId}")
     public BaseResponse updateLeave(@PathVariable Long employeeId, @RequestBody LeaveDTO leaveDTO) {
         return ResultUtils.success(leaveService.updateLeave(employeeId, leaveDTO));
     }

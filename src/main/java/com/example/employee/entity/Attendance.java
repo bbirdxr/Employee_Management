@@ -43,12 +43,6 @@ public class Attendance implements Serializable {
     private Long departmentId;
 
     /**
-     * 考勤日期
-     */
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate attendanceDate;
-
-    /**
      * 上班打卡时间
      */
     private Date clockInTime;
@@ -70,5 +64,5 @@ public class Attendance implements Serializable {
 
     private Date updateTime;
 
-
+    private Integer isDeleted;
 }

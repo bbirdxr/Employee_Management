@@ -3,7 +3,7 @@
 # intLevel 值越小，级别越高
 Configuration:
   #日志框架本身的输出日志级别
-  status: WARN
+  status: DEBUG
   #自动加载配置文件的间隔时间，不低于5秒
   monitorInterval: 5
 

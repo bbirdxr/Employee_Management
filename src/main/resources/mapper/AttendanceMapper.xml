@@ -7,21 +7,20 @@
         <id column="id" property="id" />
         <result column="employee_id" property="employeeId" />
         <result column="department_id" property="departmentId" />
-        <result column="attendance_date" property="attendanceDate" />
         <result column="clock_in_time" property="clockInTime" />
         <result column="clock_out_time" property="clockOutTime" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
-
+        <result column="is_deleted" property="isDeleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, employee_id, department_id, attendance_date, clock_in_time, clock_out_time, create_time, update_time
+        id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
     </sql>
 
     <select id="selectById" resultType="com.example.employee.entity.Attendance">
-        select id, employee_id, department_id, attendance_date, clock_in_time, clock_out_time, create_time, update_time
+        select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
         from attendance
         where id = #{id}
     </select>
@@ -30,22 +29,20 @@
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into attendance (employee_id, department_id, attendance_date, clock_in_time, clock_out_time)
-        values (#{employeeId,jdbcType=BIGINT}, #{departmentId,jdbcType=BIGINT}, #{attendanceDate,jdbcType=DATE},
+        insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
+        values (#{employeeId,jdbcType=BIGINT}, #{departmentId,jdbcType=BIGINT},
         #{clockInTime,jdbcType=TIMESTAMP}, #{clockOutTime,jdbcType=TIMESTAMP})
     </insert>
 
-    <delete id="deleteById" parameterType="java.lang.Long">
-        delete from attendance
+    <update id="deleteById" parameterType="java.lang.Long">
+        update attendance
+        set is_deleted = 1
         where id = #{id,jdbcType=BIGINT}
-    </delete>
+    </update>
 
     <update id="updateById" parameterType="com.example.employee.entity.Attendance">
         update attendance
         <set>
-            <if test="attendanceDate != null">
-                attendance_date = #{attendanceDate,jdbcType=DATE},
-            </if>
             <if test="clockInTime != null">
                 clock_in_time = #{clockInTime,jdbcType=TIMESTAMP},
             </if>
@@ -57,7 +54,7 @@
     </update>
 
     <select id="selectByAttendanceQuery" resultType="com.example.employee.entity.Attendance" parameterType="com.example.employee.model.dto.AttendanceQuery">
-        select id, employee_id, department_id, attendance_date, clock_in_time, clock_out_time, create_time, update_time
+        select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time
         from attendance
         where 1=1
         <if test="employeeId != null">
@@ -67,7 +64,7 @@
             and department_id = #{departmentId}
         </if>
         <if test="attendanceDate != null">
-            and attendance_date = #{attendanceDate}
+            and clock_in_time &gt;= #{attendanceDate}
         </if>
     </select>
 
