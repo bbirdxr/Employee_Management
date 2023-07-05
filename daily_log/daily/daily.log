@@ -1,505 +1,79 @@
-2023-07-02 19:45:42.512 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_342 on LAPTOP-T5ICR3J1 with PID 27764 (D:\Employee_Management\target\classes started by 48518 in D:\Employee_Management)
-2023-07-02 19:45:42.522 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-02 19:45:43.364 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-02 19:45:43.367 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-02 19:45:43.397 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
-2023-07-02 19:45:43.984 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-02 19:45:43.991 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-02 19:45:43.992 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-02 19:45:43.993 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-02 19:45:44.193 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-02 19:45:44.193 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1627 ms
-2023-07-02 19:45:45.124 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-02 19:45:48.184 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'enableRedisKeyspaceNotificationsInitializer' defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
-2023-07-02 19:45:48.317 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
-2023-07-02 19:45:48.328 - INFO  [           main] valuationReportLoggingListener : 
+2023-07-05 22:37:56.034 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 16624 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-05 22:37:56.064 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-05 22:37:57.635 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-05 22:37:57.640 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-05 22:37:57.697 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2023-07-05 22:37:58.758 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-05 22:37:58.780 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-05 22:37:58.783 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-05 22:37:58.784 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-05 22:37:59.191 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-05 22:37:59.192 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3031 ms
+2023-07-05 22:37:59.646 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentController': Unsatisfied dependency expressed through field 'departmentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl': Unsatisfied dependency expressed through field 'departmentMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentMapper' defined in file [C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes\com\example\employee\mapper\DepartmentMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse config resource: class path resource [mybatis-config.xml]
+2023-07-05 22:37:59.661 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2023-07-05 22:37:59.691 - INFO  [           main] valuationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2023-07-02 19:46:33.805 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_342 on LAPTOP-T5ICR3J1 with PID 13768 (D:\Employee_Management\target\classes started by 48518 in D:\Employee_Management)
-2023-07-02 19:46:33.815 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-02 19:46:34.652 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-02 19:46:34.654 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-02 19:46:34.684 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2023-07-02 19:46:35.262 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-02 19:46:35.270 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-02 19:46:35.271 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-02 19:46:35.271 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-02 19:46:35.620 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-02 19:46:35.620 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1761 ms
-2023-07-02 19:46:36.581 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-02 19:46:37.766 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-02 19:46:37.777 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-02 19:46:37.778 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-02 19:46:37.799 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-02 19:46:37.836 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-02 19:46:38.061 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-02 19:46:38.155 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-02 19:46:38.164 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 4.812 seconds (JVM running for 6.51)
-2023-07-02 19:47:09.027 - INFO  [nio-8080-exec-2] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-02 19:47:09.027 - INFO  [nio-8080-exec-2] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-02 19:47:09.028 - INFO  [nio-8080-exec-2] o.s.w.s.FrameworkServlet       : Completed initialization in 1 ms
-2023-07-02 19:47:39.704 - WARN  [nio-8080-exec-8] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:53:32.041 - WARN  [io-8080-exec-10] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:53:33.220 - WARN  [nio-8080-exec-2] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:53:33.435 - WARN  [nio-8080-exec-3] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:53:33.687 - WARN  [nio-8080-exec-8] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:53:34.323 - WARN  [nio-8080-exec-4] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:53:34.488 - WARN  [nio-8080-exec-1] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:53:37.949 - WARN  [nio-8080-exec-9] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:53:39.235 - WARN  [nio-8080-exec-5] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2023-07-02 19:56:54.037 - WARN  [nio-8080-exec-3] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded' not supported]
-2023-07-02 19:57:24.773 - INFO  [nio-8080-exec-8] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-02 19:57:24.906 - INFO  [nio-8080-exec-8] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-02 19:57:24.931 - INFO  [nio-8080-exec-8] c.e.e.c.EmployeeController     : 更新Employee字段成功：id：3 field:name value:xr
-2023-07-03 12:41:07.069 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 148 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 12:41:07.083 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 12:41:08.594 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 12:41:08.600 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 12:41:08.660 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-2023-07-03 12:41:09.973 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 12:41:09.987 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 12:41:09.990 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 12:41:09.990 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 12:41:10.395 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 12:41:10.396 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3240 ms
-2023-07-03 12:41:12.056 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 12:41:14.663 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 12:41:14.689 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 12:41:14.691 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 12:41:14.734 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 12:41:14.820 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 12:41:15.202 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 12:41:15.291 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 12:41:15.500 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 12:41:15.526 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 9.106 seconds (JVM running for 12.732)
-2023-07-03 12:42:47.987 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 21348 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 12:42:48.006 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 12:42:49.741 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 12:42:49.746 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 12:42:49.795 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
-2023-07-03 12:42:50.771 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 12:42:50.783 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 12:42:50.786 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 12:42:50.786 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 12:42:51.212 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 12:42:51.213 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3094 ms
-2023-07-03 12:42:52.893 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 12:42:54.218 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 12:42:54.232 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 12:42:54.233 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 12:42:54.261 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 12:42:54.305 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 12:42:54.499 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 12:42:54.547 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 12:42:54.660 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 12:42:54.672 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 7.659 seconds (JVM running for 11.876)
-2023-07-03 12:43:08.268 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 12:43:08.269 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 12:43:08.271 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
-2023-07-03 12:43:27.506 - INFO  [nio-8080-exec-4] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 12:43:28.380 - INFO  [nio-8080-exec-4] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 12:43:28.386 - INFO  [nio-8080-exec-4] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where id = ? and is_deleted = 0
-2023-07-03 12:44:06.257 - INFO  [io-8080-exec-10] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time >= ? and is_deleted = 0
-2023-07-03 12:44:06.284 - INFO  [io-8080-exec-10] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 12:44:06.314 - INFO  [io-8080-exec-10] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID() and is_deleted = 0
-2023-07-03 12:45:14.591 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 10200 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 12:45:14.604 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 12:45:15.836 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 12:45:15.839 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 12:45:15.873 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-2023-07-03 12:45:16.671 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 12:45:16.683 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 12:45:16.685 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 12:45:16.685 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 12:45:17.068 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 12:45:17.068 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2405 ms
-2023-07-03 12:45:18.608 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 12:45:19.930 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 12:45:19.943 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 12:45:19.944 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 12:45:19.963 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 12:45:20.000 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 12:45:20.179 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 12:45:20.229 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 12:45:20.363 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 12:45:20.376 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 6.353 seconds (JVM running for 8.447)
-2023-07-03 12:45:30.701 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 12:45:30.702 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 12:45:30.705 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
-2023-07-03 12:45:30.809 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 12:45:31.564 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 12:45:31.569 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time >= ? and is_deleted = 0
-2023-07-03 12:45:31.614 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 12:45:31.619 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID() and is_deleted = 0
-2023-07-03 13:33:15.978 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m14s260ms303µs200ns).
-2023-07-03 13:34:22.894 - INFO  [nio-8080-exec-2] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time >= ? and is_deleted = 0
-2023-07-03 13:34:22.917 - INFO  [nio-8080-exec-2] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 13:34:22.924 - INFO  [nio-8080-exec-2] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID() and is_deleted = 0
-2023-07-03 13:38:44.992 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 15224 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 13:38:45.004 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 13:38:46.186 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 13:38:46.190 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 13:38:46.242 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
-2023-07-03 13:38:47.035 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 13:38:47.044 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:38:47.047 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 13:38:47.048 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 13:38:47.338 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 13:38:47.338 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2259 ms
-2023-07-03 13:38:48.510 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 13:38:49.678 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:38:49.697 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 13:38:49.698 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 13:38:49.720 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 13:38:49.756 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 13:38:49.943 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 13:38:49.979 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 13:38:50.078 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 13:38:50.087 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 5.61 seconds (JVM running for 7.42)
-2023-07-03 13:39:20.120 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 5224 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 13:39:20.132 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 13:39:21.151 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 13:39:21.154 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 13:39:21.195 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
-2023-07-03 13:39:21.942 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 13:39:21.953 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:39:21.955 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 13:39:21.956 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 13:39:22.302 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 13:39:22.302 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2118 ms
-2023-07-03 13:39:23.488 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 13:39:24.563 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 13:39:24.565 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 13:39:24.586 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 13:39:24.619 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 13:39:24.784 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 13:39:24.836 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 13:39:24.930 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 13:39:24.940 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 5.334 seconds (JVM running for 7.01)
-2023-07-03 13:39:28.818 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 17252 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 13:39:28.827 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 13:39:29.765 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 13:39:29.768 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 13:39:29.799 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2023-07-03 13:39:30.474 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 13:39:30.482 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:39:30.484 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 13:39:30.485 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 13:39:30.754 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 13:39:30.755 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1884 ms
-2023-07-03 13:39:31.689 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 13:39:32.769 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:39:32.786 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 13:39:32.787 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 13:39:32.805 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 13:39:32.837 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 13:39:33.000 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 13:39:33.048 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 13:39:33.136 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 13:39:33.145 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 4.729 seconds (JVM running for 6.332)
-2023-07-03 13:39:45.451 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 13:39:45.451 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 13:39:45.453 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
-2023-07-03 13:39:45.583 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 13:39:46.408 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 13:39:46.413 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time >= ? where is_deleted = 0
-2023-07-03 13:43:43.372 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 18532 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 13:43:43.383 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 13:43:44.538 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 13:43:44.542 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 13:43:44.581 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-2023-07-03 13:43:45.337 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 13:43:45.349 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:43:45.351 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 13:43:45.352 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 13:43:45.699 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 13:43:45.699 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2260 ms
-2023-07-03 13:43:46.907 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 13:43:48.187 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:43:48.203 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 13:43:48.204 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 13:43:48.227 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 13:43:48.265 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 13:43:48.454 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 13:43:48.507 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 13:43:48.696 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 13:43:48.723 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 5.837 seconds (JVM running for 8.058)
-2023-07-03 13:43:57.716 - INFO  [nio-8080-exec-4] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 13:43:57.717 - INFO  [nio-8080-exec-4] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 13:43:57.720 - INFO  [nio-8080-exec-4] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
-2023-07-03 13:43:57.859 - INFO  [nio-8080-exec-4] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 13:43:58.665 - INFO  [nio-8080-exec-4] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 13:43:58.670 - INFO  [nio-8080-exec-4] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time >= ? and is_deleted = 0
-2023-07-03 13:43:58.735 - INFO  [nio-8080-exec-4] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 13:43:58.753 - INFO  [nio-8080-exec-4] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID() where 1 = 1 and is_deleted = 0
-2023-07-03 13:49:35.979 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 9416 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 13:49:35.992 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 13:49:37.085 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 13:49:37.088 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 13:49:37.124 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-2023-07-03 13:49:38.129 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 13:49:38.140 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:49:38.143 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 13:49:38.143 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 13:49:38.477 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 13:49:38.477 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2420 ms
-2023-07-03 13:49:39.891 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 13:49:41.047 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:49:41.061 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 13:49:41.062 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 13:49:41.085 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 13:49:41.126 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 13:49:41.337 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 13:49:41.378 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 13:49:41.480 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 13:49:41.490 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 5.975 seconds (JVM running for 7.946)
-2023-07-03 13:49:53.920 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 13:49:53.920 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 13:49:53.923 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 1 ms
-2023-07-03 13:49:54.044 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 13:49:54.846 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 13:49:54.851 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time >= ? and is_deleted = 0
-2023-07-03 13:49:54.899 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 13:49:54.913 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID() where 1 = 1
-2023-07-03 13:50:11.392 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 20304 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 13:50:11.401 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 13:50:12.345 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 13:50:12.348 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 13:50:12.381 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-2023-07-03 13:50:13.009 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 13:50:13.020 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:50:13.021 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 13:50:13.022 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 13:50:13.353 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 13:50:13.353 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1901 ms
-2023-07-03 13:50:14.459 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 13:50:15.485 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:50:15.497 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 13:50:15.498 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 13:50:15.519 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 13:50:15.552 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 13:50:15.716 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 13:50:15.766 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 13:50:15.867 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 13:50:15.877 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 4.917 seconds (JVM running for 6.772)
-2023-07-03 13:50:19.158 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 13:50:19.158 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 13:50:19.162 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
-2023-07-03 13:50:19.339 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 13:50:20.808 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 13:50:20.818 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time >= ? and is_deleted = 0
-2023-07-03 13:50:20.892 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 13:50:20.900 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID()
-2023-07-03 13:51:57.629 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
-2023-07-03 13:51:57.664 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
-2023-07-03 13:52:02.469 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 5104 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 13:52:02.480 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 13:52:03.593 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 13:52:03.596 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 13:52:03.631 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-2023-07-03 13:52:04.446 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 13:52:04.459 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:52:04.461 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 13:52:04.461 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 13:52:04.789 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 13:52:04.789 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2255 ms
-2023-07-03 13:52:06.066 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 13:52:07.285 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 13:52:07.299 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 13:52:07.300 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 13:52:07.322 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 13:52:07.363 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 13:52:07.557 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 13:52:07.594 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 13:52:07.722 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 13:52:07.738 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 5.798 seconds (JVM running for 8.046)
-2023-07-03 13:52:16.096 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 13:52:16.098 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 13:52:16.104 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 5 ms
-2023-07-03 13:52:56.538 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 13:52:58.937 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 13:52:58.959 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time >= ? and is_deleted = 0
-2023-07-03 13:53:30.423 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 13:53:30.432 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID()
-2023-07-03 14:00:05.266 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 3608 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 14:00:05.279 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 14:00:06.729 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 14:00:06.733 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 14:00:06.782 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-2023-07-03 14:00:07.750 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 14:00:07.761 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 14:00:07.763 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 14:00:07.763 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 14:00:08.104 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 14:00:08.104 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2750 ms
-2023-07-03 14:00:09.547 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 14:00:10.958 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 14:00:10.970 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 14:00:10.971 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 14:00:10.991 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 14:00:11.027 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 14:00:11.197 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 14:00:11.248 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 14:00:11.336 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 14:00:11.345 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 6.678 seconds (JVM running for 8.876)
-2023-07-03 14:00:49.131 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 14:00:49.132 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 14:00:49.134 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
-2023-07-03 14:00:49.250 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 14:00:50.027 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 14:00:50.032 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time BETWEEN ? AND DATE_ADD(?, INTERVAL 1 DAY) and is_deleted = 0
-2023-07-03 14:00:50.093 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 14:00:50.105 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID()
-2023-07-03 14:02:42.006 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting EmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 15164 (C:\Users\DELL\IdeaProjects\Employee_Management\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
-2023-07-03 14:02:42.017 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-07-03 14:02:43.128 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-07-03 14:02:43.132 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-07-03 14:02:43.177 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
-2023-07-03 14:02:44.247 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
-2023-07-03 14:02:44.256 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
-2023-07-03 14:02:44.258 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
-2023-07-03 14:02:44.259 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2023-07-03 14:02:44.530 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
-2023-07-03 14:02:44.530 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2454 ms
-2023-07-03 14:02:45.640 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-07-03 14:02:46.824 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
-2023-07-03 14:02:46.839 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-03 14:02:46.840 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
-2023-07-03 14:02:46.864 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-07-03 14:02:46.904 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
-2023-07-03 14:02:47.087 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
-2023-07-03 14:02:47.126 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-07-03 14:02:47.226 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2023-07-03 14:02:47.238 - INFO  [           main] o.s.b.StartupInfoLogger        : Started EmployeeApplication in 5.707 seconds (JVM running for 7.585)
-2023-07-03 14:03:02.863 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-07-03 14:03:02.864 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
-2023-07-03 14:03:02.868 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 4 ms
-2023-07-03 14:03:03.081 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
-2023-07-03 14:03:05.506 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
-2023-07-03 14:03:05.530 - INFO  [nio-8080-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time BETWEEN ? AND DATE_ADD(?, INTERVAL 1 DAY) and is_deleted = 0
-2023-07-03 14:07:16.234 - INFO  [nio-8080-exec-3] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time BETWEEN ? AND DATE_ADD(?, INTERVAL 1 DAY) and is_deleted = 0
-2023-07-03 14:07:16.285 - INFO  [nio-8080-exec-3] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
-        values (?, ?,
-        ?, ?)
-2023-07-03 14:07:16.349 - INFO  [nio-8080-exec-3] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID()
-2023-07-03 14:07:21.521 - INFO  [io-8080-exec-10] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
-        from attendance
-        where 1=1
-         
-            and employee_id = ?
-         
-         
-         
-            and clock_in_time BETWEEN ? AND DATE_ADD(?, INTERVAL 1 DAY) and is_deleted = 0
-2023-07-03 14:07:21.539 - INFO  [io-8080-exec-10] SqlStatementHandlerInterceptor : sql: update attendance
-         SET clock_in_time = ?,
-            
-            
-                clock_out_time = ? 
-        where id = ?
+2023-07-05 22:44:28.018 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 8184 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-05 22:44:28.040 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-05 22:44:29.780 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-05 22:44:29.786 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-05 22:44:29.831 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2023-07-05 22:44:30.976 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-05 22:44:30.990 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-05 22:44:30.994 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-05 22:44:30.995 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-05 22:44:31.550 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-05 22:44:31.550 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3412 ms
+2023-07-05 22:44:32.194 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentController': Unsatisfied dependency expressed through field 'departmentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl': Unsatisfied dependency expressed through field 'departmentMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentMapper' defined in file [C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes\com\example\employee\mapper\DepartmentMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse config resource: class path resource [mybatis-config.xml]
+2023-07-05 22:44:32.201 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2023-07-05 22:44:32.227 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-07-05 22:46:52.461 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 14716 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-05 22:46:52.494 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-05 22:46:54.404 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-05 22:46:54.408 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-05 22:46:54.447 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2023-07-05 22:46:55.529 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-05 22:46:55.546 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-05 22:46:55.548 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-05 22:46:55.549 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-05 22:46:55.969 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-05 22:46:55.969 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3304 ms
+2023-07-05 22:46:56.496 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentController': Unsatisfied dependency expressed through field 'departmentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentServiceImpl': Unsatisfied dependency expressed through field 'departmentMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'departmentMapper' defined in file [C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes\com\example\employee\mapper\DepartmentMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse config resource: class path resource [mybatis-config.xml]
+2023-07-05 22:46:56.504 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2023-07-05 22:46:56.531 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-07-05 22:49:38.403 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 22420 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-05 22:49:38.428 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-05 22:49:40.058 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-05 22:49:40.061 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-05 22:49:40.124 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2023-07-05 22:49:41.079 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-05 22:49:41.094 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-05 22:49:41.097 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-05 22:49:41.097 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-05 22:49:41.459 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-05 22:49:41.460 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2931 ms
+2023-07-05 22:49:43.368 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-05 22:49:45.238 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-05 22:49:45.264 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-05 22:49:45.267 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-05 22:49:45.316 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-05 22:49:45.374 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-05 22:49:45.705 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-05 22:49:45.859 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-05 22:49:45.872 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 8.405 seconds (JVM running for 11.872)
+2023-07-05 22:50:07.867 - INFO  [nio-8081-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-05 22:50:07.868 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-05 22:50:07.875 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 6 ms
+2023-07-05 22:50:22.792 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2023-07-05 22:50:24.693 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2023-07-05 22:50:24.707 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from department where is_deleted = 0 and parent_department_id=?
+2023-07-05 22:50:24.925 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from department where is_deleted = 0 and parent_department_id=?
+2023-07-05 22:50:24.932 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from department where is_deleted = 0 and parent_department_id=?
+2023-07-05 22:50:24.940 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from department where is_deleted = 0 and parent_department_id=?
+2023-07-05 22:50:24.948 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from department where is_deleted = 0 and parent_department_id=?
+2023-07-05 22:50:24.957 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from department where is_deleted = 0 and parent_department_id=?
