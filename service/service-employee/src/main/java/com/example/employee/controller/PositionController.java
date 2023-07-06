@@ -25,7 +25,6 @@ import java.util.List;
 public class PositionController {
     @Autowired
     PositionService positionService;
-
     @Autowired
     PositionMapper positionMapper;
     //增

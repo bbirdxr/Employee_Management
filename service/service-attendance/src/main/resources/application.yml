@@ -30,3 +30,16 @@ mybatis:
 
 logging:
   config: classpath:log4j2.yml
+  level:
+    # feign 日志以什么级别监控哪个接口
+    com.example.employee.client.EmployeeFeignClient: debug
+
+# 配置 Eureka Server 注册中心
+eureka:
+  instance:
+    hostname: localhost # 主机名，不配置的时候将根据操作系统的主机名来获取
+  client:
+    register-with-eureka: false # 是否将自己注册到注册中心，默认为 true
+    fetch-registry: false # 是否从注册中心获取服务注册信息，默认为 true
+    service-url: # 注册中心对外暴露的注册地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

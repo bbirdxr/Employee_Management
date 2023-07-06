@@ -18,6 +18,7 @@
         <module>model</module>
         <module>common</module>
         <module>service</module>
+        <module>service-client</module>
     </modules>
 
     <properties>
@@ -30,6 +31,7 @@
         <mysql.version>8.0.29</mysql.version>
         <redis.version>2.6.3</redis.version>
         <pagehelper.version>1.4.7</pagehelper.version>
+        <cloud.version>2021.0.7</cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -38,6 +40,14 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>

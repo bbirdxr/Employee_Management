@@ -1,16 +1,11 @@
-package com.example.employee.entity;
+package com.example.entity;
 
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
-
-import java.io.Serializable;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>

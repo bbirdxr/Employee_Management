@@ -7,11 +7,7 @@
     </settings>
 
     <plugins>
-<<<<<<< HEAD:src/main/resources/mybatis-config.xml
-        <plugin interceptor="com.example.employee.config.SqlStatementHandlerInterceptor"></plugin>
-=======
         <plugin interceptor="com.example.config.SqlStatementHandlerInterceptor"></plugin>
->>>>>>> 1479f60d452688bdeb270529713527b3da1776a2:service/service-attendance/src/main/resources/mybatis-config.xml
     </plugins>
 
     <environments default="development">

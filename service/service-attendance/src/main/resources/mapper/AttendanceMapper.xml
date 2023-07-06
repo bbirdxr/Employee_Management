@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.employee.mapper.AttendanceMapper">
+<mapper namespace="com.example.attendance.mapper.AttendanceMapper">
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.example.entity.Attendance">
@@ -19,11 +19,7 @@
         id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
     </sql>
 
-<<<<<<< HEAD:src/main/resources/mapper/AttendanceMapper.xml
-    <select id="selectById" resultType="com.example.employee.entity.Attendance">
-=======
     <select id="selectById" resultType="com.example.entity.Attendance">
->>>>>>> 1479f60d452688bdeb270529713527b3da1776a2:service/service-attendance/src/main/resources/mapper/AttendanceMapper.xml
         select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
         from attendance
         where id = #{id}
@@ -57,11 +53,8 @@
         where id = #{id,jdbcType=BIGINT}
     </update>
 
-<<<<<<< HEAD:src/main/resources/mapper/AttendanceMapper.xml
-    <select id="selectByAttendanceQuery" resultType="com.example.employee.entity.Attendance" parameterType="com.example.employee.model.dto.AttendanceQuery">
-=======
-    <select id="selectByAttendanceQuery" resultType="com.example.entity.Attendance" parameterType="com.example.employee.model.dto.AttendanceQuery">
->>>>>>> 1479f60d452688bdeb270529713527b3da1776a2:service/service-attendance/src/main/resources/mapper/AttendanceMapper.xml
+
+    <select id="selectByAttendanceQuery" resultType="com.example.entity.Attendance" parameterType="com.example.dto.AttendanceQuery">
         select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
         from attendance
         where 1=1

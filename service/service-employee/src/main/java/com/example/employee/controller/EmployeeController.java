@@ -26,7 +26,6 @@ import java.util.List;
  */
 @RestController
 @Slf4j
-
 @RequestMapping(value = "/employee",consumes = {"application/json"})
 public class EmployeeController {
     @Autowired
@@ -93,6 +92,11 @@ public class EmployeeController {
             log.debug("delete employee failed: does not exsit employee id:"+id);
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"the user does not exsit");
         }
+    }
+
+    @GetMapping("/inner/selectById/{id}")
+    public Employee selectById(@PathVariable Long id) {
+        return employeeService.selectById(id);
     }
 }
 
