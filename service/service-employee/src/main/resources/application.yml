@@ -30,4 +30,7 @@ mybatis:
 
 logging:
   config: classpath:log4j2.yml
+  level:
+    # feign 日志以什么级别监控哪个接口
+    com.example.employee.client.EmployeeFeignClient: debug
 

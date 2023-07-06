@@ -4,6 +4,8 @@ import com.alibaba.excel.EasyExcel;
 import com.example.attendance.mapper.AttendanceMapper;
 import com.example.attendance.service.AttendanceService;
 import com.example.dto.AttendanceQuery;
+import com.example.employee.client.EmployeeFeignClient;
+import com.example.entity.Attendance;
 import com.example.entity.Employee;
 import com.example.exception.BusinessException;
 import com.example.result.ErrorCode;
@@ -27,10 +29,10 @@ public class AttendanceServiceImpl implements AttendanceService {
     private AttendanceMapper attendanceMapper;
 
     @Autowired
-    private EmployeeService employeeService;
+    private EmployeeFeignClient employeeFeignClient;
 
     @Override
-    public com.example.employee.entity.Attendance selectById(Long id) {
+    public Attendance selectById(Long id) {
         if (id == null || id <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -38,7 +40,7 @@ public class AttendanceServiceImpl implements AttendanceService {
     }
 
     @Override
-    public List<com.example.employee.entity.Attendance> selectByAttendanceQuery(AttendanceQuery attendanceQuery) {
+    public List<Attendance> selectByAttendanceQuery(AttendanceQuery attendanceQuery) {
         if (attendanceQuery == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -50,18 +52,18 @@ public class AttendanceServiceImpl implements AttendanceService {
         if (employeeId == null || employeeId <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        Employee employee = employeeService.selectById(employeeId);
+        Employee employee = employeeFeignClient.selectById(employeeId);
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
         AttendanceQuery attendanceQuery = new AttendanceQuery();
         attendanceQuery.setEmployeeId(employeeId);
         attendanceQuery.setAttendanceDate(LocalDate.now());
-        List<com.example.employee.entity.Attendance> attendances = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
+        List<Attendance> attendances = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
         if (attendances.size() > 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "员工已打卡");
         }
-        com.example.employee.entity.Attendance attendance = new com.example.employee.entity.Attendance();
+        Attendance attendance = new Attendance();
         attendance.setEmployeeId(employeeId);
         attendance.setDepartmentId(employee.getDepartmentId());
         attendance.setClockInTime(new Date());
@@ -76,11 +78,11 @@ public class AttendanceServiceImpl implements AttendanceService {
         AttendanceQuery attendanceQuery = new AttendanceQuery();
         attendanceQuery.setEmployeeId(employeeId);
         attendanceQuery.setAttendanceDate(LocalDate.now());
-        List<com.example.employee.entity.Attendance> attendances = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
+        List<Attendance> attendances = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
         if (attendances == null || attendances.size() == 0) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工未打卡");
         }
-        com.example.employee.entity.Attendance attendance = attendances.get(0);
+        Attendance attendance = attendances.get(0);
         attendance.setClockOutTime(new Date());
         return attendanceMapper.updateById(attendance);
     }
@@ -99,7 +101,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         if (employeeId == null || employeeId <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        Employee employee = employeeService.selectById(employeeId);
+        Employee employee = employeeFeignClient.selectById(employeeId);
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
@@ -110,9 +112,9 @@ public class AttendanceServiceImpl implements AttendanceService {
 
         AttendanceQuery attendanceQuery = new AttendanceQuery();
         attendanceQuery.setEmployeeId(employeeId);
-        List<com.example.employee.entity.Attendance> attendanceList = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
+        List<Attendance> attendanceList = attendanceMapper.selectByAttendanceQuery(attendanceQuery);
         List<AttendanceVO> attendanceVOList = new ArrayList<>(attendanceList.size());
-        for (com.example.employee.entity.Attendance attendance : attendanceList) {
+        for (Attendance attendance : attendanceList) {
             AttendanceVO attendanceVO = new AttendanceVO();
             BeanUtils.copyProperties(attendance, attendanceVO);
             attendanceVOList.add(attendanceVO);

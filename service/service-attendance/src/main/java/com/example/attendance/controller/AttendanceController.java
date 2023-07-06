@@ -3,7 +3,7 @@ package com.example.attendance.controller;
 
 import com.example.attendance.service.AttendanceService;
 import com.example.dto.AttendanceQuery;
-import com.example.employee.entity.Attendance;
+import com.example.entity.Attendance;
 import com.example.exception.BusinessException;
 import com.example.result.BaseResponse;
 import com.example.result.ErrorCode;

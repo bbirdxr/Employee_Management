@@ -6,6 +6,7 @@ import com.example.attendance.service.LeaveBackupService;
 import com.example.attendance.service.LeaveCopyService;
 import com.example.attendance.service.LeaveService;
 import com.example.dto.LeaveDTO;
+import com.example.employee.client.EmployeeFeignClient;
 import com.example.entity.Employee;
 import com.example.entity.Leave;
 import com.example.enums.ApproveStatusEnum;
@@ -28,7 +29,7 @@ public class LeaveServiceImpl implements LeaveService {
     private LeaveMapper leaveMapper;
 
     @Autowired
-    private EmployeeService employeeService;
+    private EmployeeFeignClient employeeFeignClient;
 
     @Autowired
     private LeaveBackupService leaveBackupService;
@@ -57,7 +58,7 @@ public class LeaveServiceImpl implements LeaveService {
         } catch (Exception e) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        Employee employee = employeeService.selectById(employeeId);
+        Employee employee = employeeFeignClient.selectById(employeeId);
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
@@ -77,7 +78,7 @@ public class LeaveServiceImpl implements LeaveService {
             insertLeaveBackup(leave, id, employee.getDepartmentId());
         }
         for (Long id : leaveDTO.getLeaveCopyReceivers()) {
-            Employee employee1 = employeeService.selectById(id);
+            Employee employee1 = employeeFeignClient.selectById(id);
             if (employee1 == null) {
                 throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
             }
@@ -152,11 +153,11 @@ public class LeaveServiceImpl implements LeaveService {
         if (leave == null || leave.getApproveStatus() != 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "请假申请不存在或已审批");
         }
-        Employee employee = employeeService.selectById(employeeId);
+        Employee employee = employeeFeignClient.selectById(employeeId);
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
-        Employee approver = employeeService.selectById(approverId);
+        Employee approver = employeeFeignClient.selectById(approverId);
         if (approver == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "审批人不存在");
         }
@@ -193,7 +194,7 @@ public class LeaveServiceImpl implements LeaveService {
     }
 
     private void insertLeaveBackup(Leave leave, Long id, Long departmentId) {
-        Employee employee = employeeService.selectById(id);
+        Employee employee = employeeFeignClient.selectById(id);
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }

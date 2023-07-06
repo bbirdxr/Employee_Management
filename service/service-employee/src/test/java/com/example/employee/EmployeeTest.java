@@ -1,8 +1,5 @@
 package com.example.employee;
 
-
-
-import com.example.employee.entity.Employee;
 import com.example.employee.mapper.DepartmentMapper;
 import com.example.employee.mapper.EmployeeMapper;
 import org.apache.ibatis.io.Resources;

@@ -28,7 +28,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
-@RequestMapping(value = "/employee",consumes = {"application/json"})
+@RequestMapping(value = "/employee")
 public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
@@ -89,6 +89,11 @@ public class EmployeeController {
         }else {
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"不存在该用户");
         }
+    }
+
+    @GetMapping("/inner/selectById/{id}")
+    public Employee selectById(@PathVariable Long id) {
+        return employeeService.selectById(id);
     }
 }
 

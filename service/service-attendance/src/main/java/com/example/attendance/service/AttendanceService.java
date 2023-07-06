@@ -1,7 +1,7 @@
 package com.example.attendance.service;
 
 import com.example.dto.AttendanceQuery;
-import com.example.employee.entity.Attendance;
+import com.example.entity.Attendance;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;

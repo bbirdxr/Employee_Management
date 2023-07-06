@@ -1,7 +1,7 @@
 package com.example.attendance.mapper;
 
 import com.example.dto.AttendanceQuery;
-import com.example.employee.entity.Attendance;
+import com.example.entity.Attendance;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
