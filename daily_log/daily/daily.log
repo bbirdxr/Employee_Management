@@ -12921,3 +12921,49 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2023-07-06 11:55:13.002 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
 2023-07-06 11:55:13.004 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
 2023-07-06 11:57:08.963 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-ATTENDANCE with eureka with status DOWN
+2023-07-06 11:57:19.358 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 16264 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-06 11:57:19.380 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-06 11:57:21.315 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-06 11:57:21.320 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-06 11:57:21.362 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-07-06 11:57:21.977 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=131abad9-ed81-3017-bcf1-123e6130bd67
+2023-07-06 11:57:22.895 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-06 11:57:22.912 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-06 11:57:22.915 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-06 11:57:22.915 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-06 11:57:23.382 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-06 11:57:23.382 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3900 ms
+2023-07-06 11:57:25.306 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-06 11:57:27.947 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-06 11:57:29.590 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-06 11:57:30.173 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-06 11:57:30.406 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-06 11:57:30.408 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-06 11:57:30.448 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688615850443 with initial instances count: 0
+2023-07-06 11:57:30.485 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-ATTENDANCE with eureka with status UP
+2023-07-06 11:57:30.491 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8082"]
+2023-07-06 11:57:30.536 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8082 (http) with context path ''
+2023-07-06 11:57:30.539 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8082
+2023-07-06 11:57:31.481 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-06 11:57:31.520 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-06 11:57:31.614 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-06 11:57:32.528 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-06 11:57:32.541 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceAttendanceApplication in 15.667 seconds (JVM running for 21.708)
+2023-07-06 11:57:41.782 - INFO  [nio-8082-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-06 11:57:41.782 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-06 11:57:41.786 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
+2023-07-06 11:57:42.062 - INFO  [nio-8082-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2023-07-06 11:57:42.974 - INFO  [nio-8082-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2023-07-06 11:57:42.982 - INFO  [nio-8082-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
+        from attendance
+        where is_deleted = 0 and 1=1
+         
+            and employee_id = ?
+         
+         
+         
+            and clock_in_time BETWEEN ? AND DATE_ADD(?, INTERVAL 1 DAY)
+2023-07-06 11:57:43.078 - INFO  [nio-8082-exec-1] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
+        values (?, ?,
+        ?, ?)
+2023-07-06 11:57:43.098 - INFO  [nio-8082-exec-1] SqlStatementHandlerInterceptor : sql: SELECT LAST_INSERT_ID()
