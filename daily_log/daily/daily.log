@@ -1,0 +1,20 @@
+2023-07-06 09:50:56.376 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_342 on LAPTOP-T5ICR3J1 with PID 10780 (D:\Employee_Management\service\service-employee\target\classes started by 48518 in D:\Employee_Management)
+2023-07-06 09:50:56.388 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-06 09:50:57.160 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-06 09:50:57.160 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-06 09:50:57.192 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2023-07-06 09:50:57.718 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-06 09:50:57.733 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-06 09:50:57.733 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-06 09:50:57.733 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-06 09:50:57.834 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-06 09:50:57.834 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1405 ms
+2023-07-06 09:50:58.768 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-06 09:50:59.789 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-06 09:50:59.797 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-06 09:50:59.797 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-06 09:50:59.807 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-06 09:50:59.838 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-06 09:50:59.969 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-06 09:51:00.038 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-06 09:51:00.054 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 4.035 seconds (JVM running for 5.529)
