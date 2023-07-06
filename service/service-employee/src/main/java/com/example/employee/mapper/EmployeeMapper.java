@@ -49,7 +49,7 @@ public interface EmployeeMapper {
 
     void update(Employee e);
 
-    @Delete("delete from employee where id=#{id}")
+    @Update("update employee set is_deleted=1  where id=#{id}")
     void deleteOneById(Long id);
 
 }

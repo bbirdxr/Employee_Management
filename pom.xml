@@ -34,7 +34,6 @@
         <cloud.version>2021.0.7</cloud.version>
     </properties>
 
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -62,6 +61,9 @@
 <!--                <artifactId>junit-jupiter</artifactId>-->
 <!--                <version>5.8.2</version>-->
 <!--            </dependency>-->
+
+
+
 
             <!--解决返回视图层406错误的jar包 start-->
             <dependency>

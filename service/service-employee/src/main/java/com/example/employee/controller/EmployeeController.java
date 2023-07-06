@@ -1,5 +1,4 @@
 package com.example.employee.controller;
-
 import com.example.employee.mapper.EmployeeMapper;
 import com.example.entity.Employee;
 import com.example.result.BaseResponse;
@@ -34,9 +33,6 @@ public class EmployeeController {
     EmployeeServiceImpl employeeService;
 
     @Autowired
-    private RedisTemplate redisTemplate;
-
-    @Autowired
     private EmployeeMapper employeeMapper;
 
     @PostMapping("/all")
@@ -58,21 +54,27 @@ public class EmployeeController {
     @PostMapping("/person")
     BaseResponse add(@RequestBody Employee employee){
         employeeService.add(employee);
+        log.info("successfully insert an employee:"+employee.getName());
         return ResultUtils.success("true");
     }
 
     @PutMapping(value = "/person/{id}/{field}/{value}")//精确
     BaseResponse updateSingleField(@PathVariable Long id,@PathVariable String field,@PathVariable Object value){
         try {
-            log.debug("获取Employee字段");
             Employee.class.getDeclaredField(field);
-        } catch (NoSuchFieldException e) {//二级catch
-            log.error("Employee对象没有"+field+"字段");
+        } catch (NoSuchFieldException e) {
+            log.debug("Employee class does not have a field:"+field);
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"没有该字段");
+        }catch (Exception e){//二级catch处理未知异常
+            log.error("internal error:"+e.getMessage());
         }
+
+        Employee e=employeeService.selectById(id);
+        if(e==null)
+            return ResultUtils.error(ErrorCode.PARAMS_ERROR,"no employee id:"+id);
         employeeService.updateSingleField(id,field,value);
-        log.info("更新Employee字段成功：id："+id+" field:"+field+" value:"+value);
-        return ResultUtils.success("更新字段成功");
+        log.info("successfully update the Employee: id: "+id+" field:"+field+" value:"+value);
+        return ResultUtils.success("successfully update the field");
     }
 
 
@@ -85,9 +87,11 @@ public class EmployeeController {
     BaseResponse deleteById(@PathVariable Long id){
         if(employeeService.selectById(id)!=null){
             employeeService.deleteById(id);
-            return ResultUtils.success("删除成功");
+            log.info("successfully delete employee id:"+id);
+            return ResultUtils.success("delete successfully");
         }else {
-            return ResultUtils.error(ErrorCode.PARAMS_ERROR,"不存在该用户");
+            log.debug("delete employee failed: does not exsit employee id:"+id);
+            return ResultUtils.error(ErrorCode.PARAMS_ERROR,"the user does not exsit");
         }
     }
 
