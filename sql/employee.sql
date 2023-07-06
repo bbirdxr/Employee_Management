@@ -11,11 +11,6 @@
  Target Server Version : 50739
  File Encoding         : 65001
 
-<<<<<<< HEAD
- Date: 03/07/2023 10:57:35
-=======
- Date: 03/07/2023 15:14:50
->>>>>>> 1479f60d452688bdeb270529713527b3da1776a2
 */
 
 SET NAMES utf8mb4;
@@ -37,10 +32,6 @@ CREATE TABLE `attendance`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_employee_id`(`employee_id`) USING BTREE,
   INDEX `idx_department_id`(`department_id`) USING BTREE
-<<<<<<< HEAD
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '考勤表' ROW_FORMAT = Dynamic;
-
-=======
 ) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '考勤表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -94,9 +85,6 @@ CREATE TABLE `employee`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `id`(`id`) USING BTREE,
   UNIQUE INDEX `union key`(`name`, `phone_number`) USING BTREE
-<<<<<<< HEAD
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '员工信息' ROW_FORMAT = Dynamic;
-=======
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '员工信息' ROW_FORMAT = Dynamic;
 
 -- ----------------------------

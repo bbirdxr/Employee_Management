@@ -1,0 +1,83 @@
+2023-07-06 09:50:56.376 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_342 on LAPTOP-T5ICR3J1 with PID 10780 (D:\Employee_Management\service\service-employee\target\classes started by 48518 in D:\Employee_Management)
+2023-07-06 09:50:56.388 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-06 09:50:57.160 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-06 09:50:57.160 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-06 09:50:57.192 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2023-07-06 09:50:57.718 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-06 09:50:57.733 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-06 09:50:57.733 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-06 09:50:57.733 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-06 09:50:57.834 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-06 09:50:57.834 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1405 ms
+2023-07-06 09:50:58.768 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-06 09:50:59.789 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-06 09:50:59.797 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-06 09:50:59.797 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-06 09:50:59.807 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-06 09:50:59.838 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-06 09:50:59.969 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-06 09:51:00.038 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-06 09:51:00.054 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 4.035 seconds (JVM running for 5.529)
+2023-07-06 13:34:41.839 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 12364 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-06 13:34:41.850 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-06 13:34:43.007 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-06 13:34:43.010 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-06 13:34:43.040 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2023-07-06 13:34:43.420 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=0787a167-fc42-369c-936c-4d60df824850
+2023-07-06 13:34:43.985 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-06 13:34:43.996 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-06 13:34:43.999 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-06 13:34:44.000 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-06 13:34:44.226 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-06 13:34:44.227 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2321 ms
+2023-07-06 13:34:45.529 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-06 13:34:47.822 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-06 13:34:48.343 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-06 13:34:48.456 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-06 13:34:48.508 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-06 13:34:48.508 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-06 13:34:48.516 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688621688515 with initial instances count: 0
+2023-07-06 13:34:48.524 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-EMPLOYEE with eureka with status UP
+2023-07-06 13:34:48.526 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-06 13:34:48.537 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-06 13:34:48.538 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8081
+2023-07-06 13:34:48.943 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-06 13:34:48.962 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-06 13:34:49.008 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-06 13:34:49.247 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-06 13:34:49.350 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-06 13:34:49.516 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 8.717 seconds (JVM running for 10.953)
+2023-07-06 13:36:44.271 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 15000 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-06 13:36:44.282 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-06 13:36:45.622 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-06 13:36:45.627 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-06 13:36:45.676 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2023-07-06 13:36:46.230 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=131abad9-ed81-3017-bcf1-123e6130bd67
+2023-07-06 13:36:46.879 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-06 13:36:46.890 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-06 13:36:46.892 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-06 13:36:46.892 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-06 13:36:47.180 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-06 13:36:47.180 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2842 ms
+2023-07-06 13:36:47.462 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceController': Unsatisfied dependency expressed through field 'attendanceService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceServiceImpl': Unsatisfied dependency expressed through field 'attendanceMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceMapper' defined in file [C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes\com\example\attendance\mapper\AttendanceMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 10; columnNumber: 2; 元素内容必须由格式正确的字符数据或标记组成。
+2023-07-06 13:36:47.466 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2023-07-06 13:36:47.480 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-07-06 13:38:14.223 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 10664 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-06 13:38:14.233 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-06 13:38:15.373 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-06 13:38:15.376 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-06 13:38:15.400 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-07-06 13:38:15.791 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=131abad9-ed81-3017-bcf1-123e6130bd67
+2023-07-06 13:38:16.381 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-06 13:38:16.392 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-06 13:38:16.394 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-06 13:38:16.395 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-06 13:38:16.700 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-06 13:38:16.700 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2417 ms
+2023-07-06 13:38:16.933 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceController': Unsatisfied dependency expressed through field 'attendanceService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceServiceImpl': Unsatisfied dependency expressed through field 'attendanceMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceMapper' defined in file [C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes\com\example\attendance\mapper\AttendanceMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 10; columnNumber: 2; 元素内容必须由格式正确的字符数据或标记组成。
+2023-07-06 13:38:16.936 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2023-07-06 13:38:16.951 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.

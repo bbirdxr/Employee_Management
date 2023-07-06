@@ -1,15 +1,5 @@
 package com.example.attendance.controller;
 
-<<<<<<< HEAD:src/main/java/com/example/employee/controller/LeaveController.java
-
-import com.example.employee.common.BaseResponse;
-import com.example.employee.common.ErrorCode;
-import com.example.employee.common.ResultUtils;
-import com.example.employee.entity.Leave;
-import com.example.employee.exception.BusinessException;
-import com.example.employee.model.dto.LeaveDTO;
-import com.example.employee.service.LeaveService;
-=======
 import com.example.attendance.service.LeaveService;
 import com.example.dto.LeaveDTO;
 import com.example.entity.Leave;
@@ -17,7 +7,6 @@ import com.example.exception.BusinessException;
 import com.example.result.BaseResponse;
 import com.example.result.ErrorCode;
 import com.example.result.ResultUtils;
->>>>>>> 1479f60d452688bdeb270529713527b3da1776a2:service/service-attendance/src/main/java/com/example/attendance/controller/LeaveController.java
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
