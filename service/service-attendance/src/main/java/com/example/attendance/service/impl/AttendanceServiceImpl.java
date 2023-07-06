@@ -5,6 +5,7 @@ import com.example.attendance.mapper.AttendanceMapper;
 import com.example.attendance.service.AttendanceService;
 import com.example.dto.AttendanceQuery;
 import com.example.employee.client.EmployeeFeignClient;
+import com.example.employee.client.EmployeeRestTemplate;
 import com.example.entity.Attendance;
 import com.example.entity.Employee;
 import com.example.exception.BusinessException;
@@ -17,6 +18,8 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,6 +33,9 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Autowired
     private EmployeeFeignClient employeeFeignClient;
+
+    @Autowired
+    private EmployeeRestTemplate employeeRestTemplate;
 
     @Override
     public Attendance selectById(Long id) {
@@ -52,7 +58,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         if (employeeId == null || employeeId <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        Employee employee = employeeFeignClient.selectById(employeeId);
+        Employee employee = employeeRestTemplate.selectById(employeeId);
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
@@ -107,8 +113,13 @@ public class AttendanceServiceImpl implements AttendanceService {
         }
         response.setContentType("application/vnd.ms-excel");
         response.setCharacterEncoding("utf-8");
-        String fileName = employee.getName() + "的考勤记录";
-        response.setHeader("Content-disposition", "attachment;filename="+ fileName + ".xlsx");
+        String fileName;
+        try {
+            fileName = URLEncoder.encode(employee.getName() + "的考勤记录", "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+        response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
 
         AttendanceQuery attendanceQuery = new AttendanceQuery();
         attendanceQuery.setEmployeeId(employeeId);

@@ -43,7 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    @Cacheable(key = "#p0")
+    // @Cacheable(key = "#p0")
     public Employee selectById(Long id) {
         return employeeMapper.findByIdWithSalary(id);
     }

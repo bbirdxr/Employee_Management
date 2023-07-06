@@ -27,7 +27,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
-@RequestMapping(value = "/employee")
+@RequestMapping("/employee")
 public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
@@ -95,7 +95,7 @@ public class EmployeeController {
         }
     }
 
-    @GetMapping("/inner/selectById/{id}")
+    @GetMapping("/inner/{id}")
     public Employee selectById(@PathVariable Long id) {
         return employeeService.selectById(id);
     }
