@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.employee.mapper.AttendanceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.entity.Attendance">
+        <id column="id" property="id" />
+        <result column="employee_id" property="employeeId" />
+        <result column="department_id" property="departmentId" />
+        <result column="clock_in_time" property="clockInTime" />
+        <result column="clock_out_time" property="clockOutTime" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_deleted" property="isDeleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
+    </sql>
+
+<<<<<<< HEAD:src/main/resources/mapper/AttendanceMapper.xml
+    <select id="selectById" resultType="com.example.employee.entity.Attendance">
+=======
+    <select id="selectById" resultType="com.example.entity.Attendance">
+>>>>>>> 1479f60d452688bdeb270529713527b3da1776a2:service/service-attendance/src/main/resources/mapper/AttendanceMapper.xml
+        select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
+        from attendance
+        where id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.example.entity.Attendance">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
+        values (#{employeeId,jdbcType=BIGINT}, #{departmentId,jdbcType=BIGINT},
+        #{clockInTime,jdbcType=TIMESTAMP}, #{clockOutTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <update id="deleteById" parameterType="java.lang.Long">
+        update attendance
+        set is_deleted = 1
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateById" parameterType="com.example.entity.Attendance">
+        update attendance
+        <set>
+            <if test="clockInTime != null">
+                clock_in_time = #{clockInTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="clockOutTime != null">
+                clock_out_time = #{clockOutTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+<<<<<<< HEAD:src/main/resources/mapper/AttendanceMapper.xml
+    <select id="selectByAttendanceQuery" resultType="com.example.employee.entity.Attendance" parameterType="com.example.employee.model.dto.AttendanceQuery">
+=======
+    <select id="selectByAttendanceQuery" resultType="com.example.entity.Attendance" parameterType="com.example.employee.model.dto.AttendanceQuery">
+>>>>>>> 1479f60d452688bdeb270529713527b3da1776a2:service/service-attendance/src/main/resources/mapper/AttendanceMapper.xml
+        select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
+        from attendance
+        where 1=1
+        <if test="employeeId != null">
+            and employee_id = #{employeeId}
+        </if>
+        <if test="departmentId != null">
+            and department_id = #{departmentId}
+        </if>
+        <if test="attendanceDate != null">
+            and clock_in_time BETWEEN #{attendanceDate} AND DATE_ADD(#{attendanceDate}, INTERVAL 1 DAY)
+        </if>
+    </select>
+
+</mapper>

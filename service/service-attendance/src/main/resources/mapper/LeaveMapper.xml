@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.employee.mapper.LeaveMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.entity.Leave">
+        <id column="id" property="id" />
+        <result column="employee_id" property="employeeId" />
+        <result column="department_id" property="departmentId" />
+        <result column="start_date" property="startDate" />
+        <result column="end_date" property="endDate" />
+        <result column="leave_type" property="leaveType" />
+        <result column="leave_reason" property="leaveReason" />
+        <result column="approver_id" property="approverId" />
+        <result column="approve_status" property="approveStatus" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_deleted" property="isDeleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, employee_id, department_id, start_date, end_date, leave_type, leave_reason, approver_id, approve_status, create_time, update_time, is_deleted
+    </sql>
+
+    <select id="selectById" resultType="com.example.entity.Leave">
+        select id, employee_id, department_id, start_date, end_date, leave_type, leave_reason, approver_id, approve_status, create_time, update_time, is_deleted
+        from `leave`
+        where id = #{id}
+    </select>
+
+    <insert id="insertLeave" parameterType="com.example.entity.Leave">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+<<<<<<< HEAD:src/main/resources/mapper/LeaveMapper.xml
+        insert into `leave` (employee_id, department_id, start_date, end_date, leave_type, leave_reason)
+        values (#{employeeId,jdbcType=BIGINT}, #{departmentId,jdbcType=BIGINT}, #{startDate,jdbcType=TIMESTAMP},
+        #{endDate,jdbcType=TIMESTAMP}, #{leaveType,jdbcType=TINYINT}, #{leaveReason,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="deleteById" parameterType="java.lang.Long">
+        delete from `leave`
+=======
+        insert into `leave` (
+        <trim suffixOverrides=",">
+            <if test="employeeId != null">
+                employee_id,
+            </if>
+            <if test="departmentId != null">
+                department_id,
+            </if>
+            <if test="startDate != null">
+                start_date,
+            </if>
+            <if test="endDate != null">
+                end_date,
+            </if>
+            <if test="leaveType != null">
+                leave_type,
+            </if>
+            <if test="leaveReason != null">
+                leave_reason,
+            </if>
+        </trim>
+        ) values (
+        <trim suffixOverrides=",">
+            <if test="employeeId != null">
+                #{employeeId,jdbcType=BIGINT},
+            </if>
+            <if test="departmentId != null">
+                #{departmentId,jdbcType=BIGINT},
+            </if>
+            <if test="startDate != null">
+                #{startDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endDate != null">
+                #{endDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="leaveType != null">
+                #{leaveType,jdbcType=TINYINT},
+            </if>
+            <if test="leaveReason != null">
+                #{leaveReason,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        )
+    </insert>
+
+    <update id="deleteById" parameterType="java.lang.Long">
+        update `leave`
+        set is_deleted = 1
+>>>>>>> 1479f60d452688bdeb270529713527b3da1776a2:service/service-attendance/src/main/resources/mapper/LeaveMapper.xml
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="update" parameterType="com.example.entity.Leave">
+        update `leave`
+        <set>
+            <if test="startDate != null">
+                start_date = #{startDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endDate != null">
+                end_date = #{endDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="leaveType != null">
+                leave_type = #{leaveType,jdbcType=TINYINT},
+            </if>
+            <if test="leaveReason != null">
+                leave_reason = #{leaveReason,jdbcType=VARCHAR},
+            </if>
+            <if test="approverId != null">
+                approver_id = #{approverId,jdbcType=BIGINT},
+            </if>
+            <if test="approveStatus != null">
+                approve_status = #{approveStatus,jdbcType=TINYINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="approveById">
+        update `leave`
+        set approver_id = #{approverId,jdbcType=BIGINT},
+            approve_status = #{approveStatus,jdbcType=TINYINT}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectRecentLeaveByEmployeeId" parameterType="java.lang.Long" resultType="com.example.entity.Leave">
+        select id, employee_id, department_id, start_date, end_date, leave_type, leave_reason, approver_id, approve_status, create_time, update_time
+        from `leave`
+        where employee_id = #{employeeId,jdbcType=BIGINT}
+        order by create_time desc
+        limit 1
+    </select>
+
+    <select id="selectByEmployeeId" parameterType="java.lang.Long" resultType="com.example.entity.Leave">
+        select
+        <include refid="Base_Column_List" />
+        from `leave`
+        where employee_id = #{employeeId,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectByDepartmentId" parameterType="java.lang.Long" resultType="com.example.entity.Leave">
+        select
+        <include refid="Base_Column_List" />
+        from `leave`
+        where department_id = #{departmentId,jdbcType=BIGINT}
+    </select>
+
+</mapper>

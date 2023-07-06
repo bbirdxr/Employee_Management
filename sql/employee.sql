@@ -11,7 +11,11 @@
  Target Server Version : 50739
  File Encoding         : 65001
 
+<<<<<<< HEAD
  Date: 03/07/2023 10:57:35
+=======
+ Date: 03/07/2023 15:14:50
+>>>>>>> 1479f60d452688bdeb270529713527b3da1776a2
 */
 
 SET NAMES utf8mb4;
@@ -33,8 +37,18 @@ CREATE TABLE `attendance`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_employee_id`(`employee_id`) USING BTREE,
   INDEX `idx_department_id`(`department_id`) USING BTREE
+<<<<<<< HEAD
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '考勤表' ROW_FORMAT = Dynamic;
 
+=======
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '考勤表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of attendance
+-- ----------------------------
+INSERT INTO `attendance` VALUES (12, 1, 1, '2023-07-03 14:07:16', '2023-07-03 14:07:22', '2023-07-03 14:07:16', '2023-07-03 14:07:21', 0);
+
+>>>>>>> 1479f60d452688bdeb270529713527b3da1776a2
 -- ----------------------------
 -- Table structure for department
 -- ----------------------------
@@ -80,7 +94,16 @@ CREATE TABLE `employee`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `id`(`id`) USING BTREE,
   UNIQUE INDEX `union key`(`name`, `phone_number`) USING BTREE
+<<<<<<< HEAD
 ) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '员工信息' ROW_FORMAT = Dynamic;
+=======
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '员工信息' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of employee
+-- ----------------------------
+INSERT INTO `employee` VALUES (0, 1, '', '', '', '2023-07-03 11:47:12', 0.00, '2023-07-03 11:47:12', '2023-07-03 13:34:12', 0, 0, 0, -1, '0');
+>>>>>>> 1479f60d452688bdeb270529713527b3da1776a2
 
 -- ----------------------------
 -- Table structure for employee_department
@@ -138,6 +161,36 @@ CREATE TABLE `leave`  (
   INDEX `idx_employee_id`(`employee_id`) USING BTREE,
   INDEX `idx_department_id`(`department_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '请假表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for leave_backup
+-- ----------------------------
+DROP TABLE IF EXISTS `leave_backup`;
+CREATE TABLE `leave_backup`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `leave_id` bigint(20) NOT NULL DEFAULT 0,
+  `employee_id` bigint(20) NOT NULL DEFAULT 0 COMMENT 'For the specified leave_id, employee_id represents who will hand over the work after taking leave',
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_leave_id`(`leave_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '请假交接表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for leave_copy
+-- ----------------------------
+DROP TABLE IF EXISTS `leave_copy`;
+CREATE TABLE `leave_copy`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `leave_id` bigint(20) NOT NULL DEFAULT 0,
+  `employee_id` bigint(20) NOT NULL DEFAULT 0 COMMENT 'For the specified leave_id, employee_id represents who the leave information is copied to',
+  `create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  `is_deleted` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0: not deleted 1: deleted',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_leave_id`(`leave_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '请假抄送表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for position
