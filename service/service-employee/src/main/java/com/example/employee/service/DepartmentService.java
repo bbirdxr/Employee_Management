@@ -6,10 +6,6 @@ import java.util.List;
 
 
 public interface DepartmentService {
-    boolean ifDepartmentExist(Long departmentId);
-
-    Department selectById(Long id);
-
     List<Department> getAllDepartment();
 
     void deleteDepartmentIfExist(Long departmentId);
@@ -19,9 +15,14 @@ public interface DepartmentService {
     Department findDepartmentById(Long departmentId);
 
     Department filledWithSons(Department department);
+
     void addDepartment(String departmentName,Long parentDepartmentId);
+
     void addRootDepartment(String department);
+
     boolean ifReplicateName(String departmentName,Long parentDepartmentId);
+
     void changeDepartmentName(String newName,Long departmentId);
+
     String toString(Long departmentId);
 }

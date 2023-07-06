@@ -13,7 +13,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
     private DepartmentMapper departmentMapper;
 
-    @Override
     public boolean ifDepartmentExist(Long departmentId) {
         Department d=departmentMapper.selectByDepartmentId(departmentId);
         if(d==null)return true;
@@ -72,11 +71,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public void addRootDepartment(String departmentName) {
         departmentMapper.addDepartment(departmentName,0L);
-    }
-
-    @Override
-    public Department selectById(Long id) {
-        return null;
     }
 
     public boolean ifReplicateName(String departmentName, Long parentDepartmentId) {
