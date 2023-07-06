@@ -39,6 +39,7 @@
             <artifactId>model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!--openfeign-->
 
         <dependency>
             <groupId>com.example</groupId>

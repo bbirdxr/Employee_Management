@@ -26,6 +26,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
+
 @RequestMapping(value = "/employee",consumes = {"application/json"})
 public class EmployeeController {
     @Autowired
