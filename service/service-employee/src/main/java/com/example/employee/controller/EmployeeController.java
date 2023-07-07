@@ -6,6 +6,7 @@ import com.example.result.ErrorCode;
 import com.example.result.ResultUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.employee.service.impl.EmployeeServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.SendResult;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -93,7 +96,6 @@ public class EmployeeController {
             return ResultUtils.error(ErrorCode.PARAMS_ERROR,"the user does not exsit");
         }
     }
-
 
     @GetMapping("/inner/{id}")
     public Employee selectById(@PathVariable Long id) {

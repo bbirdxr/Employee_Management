@@ -1,5 +1,6 @@
 package com.example.employee.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.example.dto.EmployeeDTO;
 import com.example.employee.mapper.EmployeeMapper;
 import com.example.employee.service.EmployeeService;
@@ -10,6 +11,11 @@ import com.example.result.ErrorCode;
 import com.example.util.MapObjectUtil;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.client.exception.MQBrokerException;
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -17,6 +23,7 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.apache.rocketmq.common.message.Message;
 
 import java.util.List;
 import java.util.Map;
@@ -38,6 +45,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+
+    @Autowired
+    private DefaultMQProducer defaultMQProducer;
 
 
 
@@ -135,10 +145,20 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.deleteOneById(employeeId);
     }
 
-//    @CachePut(key = "#p0.id")
-    public Employee add(Employee employee) {
-        Long generateId=employeeMapper.addNewEmployee(employee);
 
-        return selectById(employee.getId());
+    // @CachePut(key = "#p0.id")
+    public Employee add(Employee employee) {
+        Long generateId = employeeMapper.addNewEmployee(employee);
+        employee = selectById(employee.getId());
+        Message message = new Message("topic", "employee", JSON.toJSONString(employee.getId()).getBytes());
+        try {
+            SendResult sendResult = defaultMQProducer.send(message); // 同步消息
+            log.info("发送状态：" + sendResult.getSendStatus() +
+                    ",消息ID：" + sendResult.getMsgId() +
+                    ",队列:" + sendResult.getMessageQueue().getQueueId());
+        } catch (RemotingException | MQBrokerException | InterruptedException | MQClientException e) {
+            log.error("发送消息失败", e);
+        }
+        return employee;
     }
 }

@@ -35,43 +35,43 @@
         </selectKey>
         insert into `leave` (
         <trim suffixOverrides=",">
-            <if test="employeeId != null">
+            <if test="employeeId != null and employeeId != ''">
                 employee_id,
             </if>
-            <if test="departmentId != null">
+            <if test="departmentId != null and departmentId != ''">
                 department_id,
             </if>
-            <if test="startDate != null">
+            <if test="startDate != null and startDate != ''">
                 start_date,
             </if>
-            <if test="endDate != null">
+            <if test="endDate != null and endDate != ''">
                 end_date,
             </if>
-            <if test="leaveType != null">
+            <if test="leaveType != null and leaveType != ''">
                 leave_type,
             </if>
-            <if test="leaveReason != null">
+            <if test="leaveReason != null and leaveReason != ''">
                 leave_reason,
             </if>
         </trim>
         ) values (
         <trim suffixOverrides=",">
-            <if test="employeeId != null">
+            <if test="employeeId != null and employeeId != ''">
                 #{employeeId,jdbcType=BIGINT},
             </if>
-            <if test="departmentId != null">
+            <if test="departmentId != null and departmentId != ''">
                 #{departmentId,jdbcType=BIGINT},
             </if>
-            <if test="startDate != null">
+            <if test="startDate != null and startDate != ''">
                 #{startDate,jdbcType=TIMESTAMP},
             </if>
-            <if test="endDate != null">
+            <if test="endDate != null and endDate != ''">
                 #{endDate,jdbcType=TIMESTAMP},
             </if>
-            <if test="leaveType != null">
+            <if test="leaveType != null and leaveType != ''">
                 #{leaveType,jdbcType=TINYINT},
             </if>
-            <if test="leaveReason != null">
+            <if test="leaveReason != null and leaveReason != ''">
                 #{leaveReason,jdbcType=VARCHAR},
             </if>
         </trim>
@@ -87,22 +87,22 @@
     <update id="update" parameterType="com.example.entity.Leave">
         update `leave`
         <set>
-            <if test="startDate != null">
+            <if test="startDate != null and startDate != ''">
                 start_date = #{startDate,jdbcType=TIMESTAMP},
             </if>
-            <if test="endDate != null">
+            <if test="endDate != null and endDate != ''">
                 end_date = #{endDate,jdbcType=TIMESTAMP},
             </if>
-            <if test="leaveType != null">
+            <if test="leaveType != null and leaveType != ''">
                 leave_type = #{leaveType,jdbcType=TINYINT},
             </if>
-            <if test="leaveReason != null">
+            <if test="leaveReason != null and leaveReason != ''">
                 leave_reason = #{leaveReason,jdbcType=VARCHAR},
             </if>
-            <if test="approverId != null">
+            <if test="approverId != null and approverId != ''">
                 approver_id = #{approverId,jdbcType=BIGINT},
             </if>
-            <if test="approveStatus != null">
+            <if test="approveStatus != null and approveStatus != ''">
                 approve_status = #{approveStatus,jdbcType=TINYINT},
             </if>
         </set>

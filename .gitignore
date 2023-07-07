@@ -5,7 +5,11 @@ daily_log/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+<<<<<<< HEAD
 
+=======
+daily_log/
+>>>>>>> 542627d2480289bd2acb301f8bacfc32de23d90e
 
 ### STS ###
 .apt_generated

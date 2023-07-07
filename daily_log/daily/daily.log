@@ -174,3 +174,123 @@
 2023-07-07 15:23:27.701 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
 2023-07-07 15:23:27.743 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from employee where is_deleted = 0 and id=?
 2023-07-07 15:23:27.751 - INFO  [nio-8081-exec-1] c.e.e.c.EmployeeController     : successfully insert an employee:dsadasd
+2023-07-07 15:43:43.296 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-EMPLOYEE with eureka with status DOWN
+2023-07-07 15:43:43.832 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2023-07-07 15:43:43.842 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2023-07-07 15:43:43.843 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-07 15:43:43.850 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 15:44:26.483 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_342 on LAPTOP-T5ICR3J1 with PID 17128 (D:\Employee_Management\service\service-employee\target\classes started by 48518 in D:\Employee_Management)
+2023-07-07 15:44:26.490 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 15:44:27.286 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 15:44:27.287 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 15:44:27.306 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2023-07-07 15:44:27.581 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=0a7ace8c-011c-3e32-8d88-dd5d7482b573
+2023-07-07 15:44:27.988 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-07 15:44:27.995 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-07 15:44:27.996 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 15:44:27.997 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 15:44:28.158 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 15:44:28.158 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1631 ms
+2023-07-07 15:44:30.851 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 15:44:32.120 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 15:44:32.643 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:44:32.732 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:44:32.817 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 15:44:32.949 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 15:44:32.949 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 15:44:32.954 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688715872953 with initial instances count: 0
+2023-07-07 15:44:32.960 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-EMPLOYEE with eureka with status UP
+2023-07-07 15:44:32.962 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-07 15:44:32.972 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-07 15:44:32.973 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8081
+2023-07-07 15:44:33.486 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 15:44:33.497 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 15:44:33.527 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 15:44:33.692 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-07 15:44:33.770 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 15:44:33.777 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 8.164 seconds (JVM running for 9.819)
+2023-07-07 15:45:02.554 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:45:23.845 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-ATTENDANCE with eureka with status DOWN
+2023-07-07 15:45:24.371 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-07 15:45:24.380 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 15:45:32.548 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:46:02.553 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:46:32.550 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:46:59.600 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_342 on LAPTOP-T5ICR3J1 with PID 24808 (D:\Employee_Management\service\service-attendance\target\classes started by 48518 in D:\Employee_Management)
+2023-07-07 15:46:59.608 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 15:47:00.452 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 15:47:00.454 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 15:47:00.472 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2023-07-07 15:47:00.755 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=a195ba9f-a8b1-35d9-87d2-b7b4636bb2d0
+2023-07-07 15:47:01.182 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-07 15:47:01.189 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:47:01.190 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 15:47:01.191 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 15:47:01.355 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 15:47:01.356 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1707 ms
+2023-07-07 15:47:02.544 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:47:05.911 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rocketMQConsumerService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [127.0.0.1:9876] failed
+2023-07-07 15:47:05.914 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2023-07-07 15:47:05.925 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-07-07 15:47:32.531 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:48:02.563 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:48:32.537 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:49:02.547 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:49:32.564 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:50:02.544 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:50:32.576 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:51:02.546 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:51:32.549 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:52:02.537 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:52:32.553 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:53:02.552 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:53:32.529 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:54:02.536 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:54:32.550 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:55:02.546 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:55:32.567 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:56:02.552 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:56:32.558 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:57:02.547 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:57:32.555 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:58:02.572 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:58:32.568 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:59:02.561 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:59:32.562 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:00:02.527 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:00:32.568 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:01:02.545 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:01:32.553 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:02:02.538 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:02:32.566 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:03:02.561 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:03:32.565 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:04:02.552 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:04:32.564 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:05:02.554 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:05:32.525 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:06:02.564 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:06:32.542 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:07:02.541 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:07:32.546 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:08:02.558 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:08:32.555 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:09:02.576 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:09:32.569 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:10:02.544 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:10:32.539 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:11:02.546 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:11:32.539 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:12:02.553 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:12:37.505 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:13:02.499 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:13:32.470 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:14:02.484 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:14:32.454 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:15:02.454 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:15:32.479 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:16:02.455 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:16:32.470 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 16:17:02.484 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
