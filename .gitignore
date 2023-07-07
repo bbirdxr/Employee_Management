@@ -1,10 +1,11 @@
 HELP.md
 target/
+daily_log/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-daily_log/
+
 
 ### STS ###
 .apt_generated
