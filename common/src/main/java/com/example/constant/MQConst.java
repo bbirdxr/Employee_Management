@@ -13,5 +13,5 @@ public class MQConst {
 
     public static final Integer SEND_MSG_TIMEOUT = 3000;
 
-    public static final Integer RETRY_TIMES_WHEN_SEND_FAILED = 2;
+    public static final Integer RETRY_TIMES_WHEN_SEND_FAILED = 3;
 }

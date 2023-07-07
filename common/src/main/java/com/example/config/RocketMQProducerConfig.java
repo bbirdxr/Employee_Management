@@ -5,6 +5,7 @@ import com.example.constant.MQConst;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -24,7 +25,8 @@ public class RocketMQProducerConfig {
 
     private DefaultMQProducer defaultMQProducer;
 
-    public DefaultMQProducer getMqProducer() {
+    @Bean
+    public DefaultMQProducer defaultMQProducer() {
         return defaultMQProducer;
     }
 

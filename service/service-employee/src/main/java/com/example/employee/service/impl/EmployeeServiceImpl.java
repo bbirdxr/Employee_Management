@@ -146,7 +146,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.deleteOneById(employeeId);
     }
 
-    @CachePut(key = "#p0.id")
+    // @CachePut(key = "#p0.id")
     public Employee add(Employee employee) {
         Long generateId = employeeMapper.addNewEmployee(employee);
         employee = selectById(employee.getId());
