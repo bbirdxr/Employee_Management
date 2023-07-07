@@ -37,11 +37,11 @@ public class AttendanceController {
         return ResultUtils.success(attendanceService.selectById(id));
     }
 
-    @PostMapping("attendanceQuery/{pageNum}/{pageSize}")
+    @GetMapping("attendanceQuery/{pageNum}/{pageSize}")
     public BaseResponse<PageInfo<Attendance>> selectByAttendanceQuery(
             @PathVariable Integer pageNum,
             @PathVariable Integer pageSize,
-            @RequestBody AttendanceQuery attendanceQuery) {
+            AttendanceQuery attendanceQuery) {
         PageHelper.startPage(pageNum, pageSize);
         List<Attendance> list = attendanceService.selectByAttendanceQuery(attendanceQuery);
         PageInfo<Attendance> pageInfo = new PageInfo<>(list);

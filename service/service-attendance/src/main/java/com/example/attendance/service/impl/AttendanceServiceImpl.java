@@ -10,6 +10,7 @@ import com.example.entity.Attendance;
 import com.example.entity.Employee;
 import com.example.exception.BusinessException;
 import com.example.result.ErrorCode;
+import com.example.vo.AttendanceByDepartmentIdVO;
 import com.example.vo.AttendanceVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -47,8 +48,16 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public List<Attendance> selectByAttendanceQuery(AttendanceQuery attendanceQuery) {
-        if (attendanceQuery == null) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        if (attendanceQuery != null) {
+            if (attendanceQuery.getEmployeeId() != null && attendanceQuery.getEmployeeId() <= 0) {
+                throw new BusinessException(ErrorCode.PARAMS_ERROR);
+            }
+            if (attendanceQuery.getDepartmentId() != null && attendanceQuery.getDepartmentId() <= 0) {
+                throw new BusinessException(ErrorCode.PARAMS_ERROR);
+            }
+            if (attendanceQuery.getAttendanceDate() != null && attendanceQuery.getAttendanceDate().isAfter(LocalDate.now())) {
+                throw new BusinessException(ErrorCode.PARAMS_ERROR);
+            }
         }
         return attendanceMapper.selectByAttendanceQuery(attendanceQuery);
     }
