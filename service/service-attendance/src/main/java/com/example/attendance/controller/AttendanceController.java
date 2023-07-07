@@ -26,18 +26,18 @@ import java.util.List;
  * @since 2023-06-27
  */
 @RestController
-@RequestMapping( "/attendance")
+@RequestMapping("/attendance")
 @Slf4j
 public class AttendanceController {
     @Autowired
     private AttendanceService attendanceService;
 
-    @GetMapping("selectById/{id}")
+    @GetMapping("/{id}")
     public BaseResponse<Attendance> selectById(@PathVariable Long id) {
         return ResultUtils.success(attendanceService.selectById(id));
     }
 
-    @PostMapping("selectByAttendanceQuery/{pageNum}/{pageSize}")
+    @PostMapping("attendanceQuery/{pageNum}/{pageSize}")
     public BaseResponse<PageInfo<Attendance>> selectByAttendanceQuery(
             @PathVariable Integer pageNum,
             @PathVariable Integer pageSize,
@@ -54,13 +54,13 @@ public class AttendanceController {
         return ResultUtils.success("打卡成功");
     }
 
-    @PostMapping("clockOut/{employeeId}")
+    @PutMapping("clockOut/{employeeId}")
     public BaseResponse clockOut(@PathVariable Long employeeId) {
         attendanceService.clockOut(employeeId);
         return ResultUtils.success("打卡成功");
     }
 
-    @DeleteMapping("deleteById/{id}")
+    @DeleteMapping("/{id}")
     public BaseResponse deleteById(@PathVariable Long id) {
         if (attendanceService.deleteById(id) == 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "删除失败");
@@ -68,10 +68,9 @@ public class AttendanceController {
         return ResultUtils.success("删除成功");
     }
 
-    @GetMapping("exportAttendanceRecords/{employeeId}")
-    public BaseResponse exportAttendanceRecords(@PathVariable Long employeeId, HttpServletResponse response) {
+    @GetMapping("excel/{employeeId}")
+    public void exportAttendanceRecords(@PathVariable Long employeeId, HttpServletResponse response) {
         attendanceService.exportAttendanceRecords(employeeId, response);
-        return ResultUtils.success("导出成功");
     }
 }
 

@@ -29,28 +29,28 @@ public class LeaveController {
     @Autowired
     private LeaveService leaveService;
 
-    @GetMapping("selectByEmployeeId/{employeeId}")
+    @GetMapping("/employee/{employeeId}")
     public BaseResponse<List<Leave>> selectByEmployeeId(@PathVariable Long employeeId) {
         return ResultUtils.success(leaveService.selectByEmployeeId(employeeId));
     }
 
-    @GetMapping("selectByDepartmentId/{departmentId}")
+    @GetMapping("/department/{departmentId}")
     public BaseResponse<List<Leave>> selectByDepartmentId(@PathVariable Long departmentId) {
         return ResultUtils.success(leaveService.selectByDepartmentId(departmentId));
     }
 
-    @PutMapping("updateLeave/{employeeId}")
+    @PutMapping("/{employeeId}")
     public BaseResponse updateLeave(@PathVariable Long employeeId, @RequestBody LeaveDTO leaveDTO) {
         return ResultUtils.success(leaveService.updateLeave(employeeId, leaveDTO));
     }
 
-    @PostMapping("insertLeave/{employeeId}")
+    @PostMapping("/{employeeId}")
     public BaseResponse insertLeave(@PathVariable Long employeeId, @RequestBody LeaveDTO leaveDTO) {
         leaveService.insertLeave(employeeId, leaveDTO);
         return ResultUtils.success(true);
     }
 
-    @PostMapping("cancelLeave/{employeeId}")
+    @PutMapping("cancel/{employeeId}")
     public BaseResponse cancelLeave(@PathVariable Long employeeId) {
         if (leaveService.cancelLeave(employeeId) == 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "取消失败");
@@ -58,7 +58,7 @@ public class LeaveController {
         return ResultUtils.success(true);
     }
 
-    @PostMapping("approveLeave/{employeeId}/{approverId}/{status}")
+    @PutMapping("approve/{employeeId}/{approverId}/{status}")
     public BaseResponse approveLeave(@PathVariable Long employeeId, @PathVariable Long approverId, @PathVariable Integer status) {
         if (leaveService.approveLeave(employeeId, approverId, status) == 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "审批失败");

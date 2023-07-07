@@ -12,10 +12,8 @@ import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -25,7 +23,7 @@ import java.util.Map;
 import java.util.Set;
 
 @Service
-@CacheConfig(cacheNames = "employees")
+//@CacheConfig(cacheNames = "employees")
 @Slf4j
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -42,8 +40,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     private RedisTemplate<String, Object> redisTemplate;
 
 
+
     @Override
-    @Cacheable(key = "#p0")
+//     @Cacheable(key = "#p0")
     public Employee selectById(Long id) {
         return employeeMapper.findByIdWithSalary(id);
     }
@@ -136,9 +135,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.deleteOneById(employeeId);
     }
 
-    @CachePut(key = "#p0.id")
+//    @CachePut(key = "#p0.id")
     public Employee add(Employee employee) {
         Long generateId=employeeMapper.addNewEmployee(employee);
+
         return selectById(employee.getId());
     }
 }
