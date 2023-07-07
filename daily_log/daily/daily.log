@@ -371,3 +371,435 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2023-07-07 15:20:47.533 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
 2023-07-07 15:20:47.569 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
 2023-07-07 15:20:47.585 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 15:42:46.534 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 2284 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 15:42:46.556 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 15:42:48.498 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 15:42:48.504 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 15:42:48.571 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2023-07-07 15:42:49.339 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=a195ba9f-a8b1-35d9-87d2-b7b4636bb2d0
+2023-07-07 15:42:50.564 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-07 15:42:50.584 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:42:50.588 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 15:42:50.588 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 15:42:51.059 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 15:42:51.059 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4398 ms
+2023-07-07 15:43:00.861 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 15:43:01.303 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 22984 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 15:43:01.327 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 15:43:03.188 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 15:43:03.193 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 15:43:03.232 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-07-07 15:43:03.435 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 15:43:03.712 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=1166eb56-2cbe-39f4-8998-8e80b8e548c4
+2023-07-07 15:43:04.204 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:43:04.366 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 15:43:04.467 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 15:43:04.467 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 15:43:04.484 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688715784482 with initial instances count: 0
+2023-07-07 15:43:04.501 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-ATTENDANCE with eureka with status UP
+2023-07-07 15:43:04.504 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:43:04.529 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8082 (http) with context path ''
+2023-07-07 15:43:04.531 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8082
+2023-07-07 15:43:04.653 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-07 15:43:04.668 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-07 15:43:04.671 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 15:43:04.672 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 15:43:05.405 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 15:43:05.406 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3996 ms
+2023-07-07 15:43:05.617 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 15:43:05.680 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 15:43:05.871 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 15:43:06.917 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 15:43:06.959 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceAttendanceApplication in 23.298 seconds (JVM running for 27.095)
+2023-07-07 15:43:12.952 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 15:43:15.539 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 15:43:16.288 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:43:16.500 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 15:43:16.602 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 15:43:16.602 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 15:43:16.615 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688715796612 with initial instances count: 0
+2023-07-07 15:43:16.632 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-EMPLOYEE with eureka with status UP
+2023-07-07 15:43:16.635 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-07 15:43:16.656 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-07 15:43:16.658 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8081
+2023-07-07 15:43:17.273 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 15:43:17.297 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 15:43:17.360 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 15:43:17.681 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-07 15:43:17.817 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 15:43:17.830 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 18.094 seconds (JVM running for 22.182)
+2023-07-07 15:44:16.310 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-ATTENDANCE with eureka with status DOWN
+2023-07-07 15:44:45.649 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 19696 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 15:44:45.670 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 15:44:47.620 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 15:44:47.625 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 15:44:47.670 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2023-07-07 15:44:48.204 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=a195ba9f-a8b1-35d9-87d2-b7b4636bb2d0
+2023-07-07 15:44:49.187 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-07 15:44:49.214 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:44:49.217 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 15:44:49.218 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 15:44:49.814 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 15:44:49.815 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4046 ms
+2023-07-07 15:45:07.175 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 15:45:10.369 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 15:45:11.122 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:45:11.235 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 15:45:11.298 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 15:45:11.298 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 15:45:11.315 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688715911313 with initial instances count: 0
+2023-07-07 15:45:11.330 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-ATTENDANCE with eureka with status UP
+2023-07-07 15:45:11.334 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:45:11.360 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8082 (http) with context path ''
+2023-07-07 15:45:11.362 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8082
+2023-07-07 15:45:11.982 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 15:45:12.008 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 15:45:12.078 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 15:45:12.598 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 15:45:12.613 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceAttendanceApplication in 29.107 seconds (JVM running for 33.758)
+2023-07-07 15:45:17.128 - INFO  [nio-8081-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 15:45:17.135 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-07 15:45:17.271 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 135 ms
+2023-07-07 15:45:17.835 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2023-07-07 15:45:19.091 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2023-07-07 15:45:19.111 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:45:56.758 - INFO  [nio-8081-exec-3] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:45:56.794 - INFO  [nio-8081-exec-3] SqlStatementHandlerInterceptor : sql: select * from employee where is_deleted = 0 and id=?
+2023-07-07 15:45:57.198 - INFO  [nio-8081-exec-3] c.e.e.c.EmployeeController     : successfully insert an employee:
+2023-07-07 15:49:08.858 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[192.168.56.1:10911] result: true
+2023-07-07 15:49:15.463 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:49:45.406 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:49:46.034 - INFO  [nio-8081-exec-5] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:49:54.682 - INFO  [nio-8081-exec-4] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:49:54.694 - INFO  [nio-8081-exec-4] SqlStatementHandlerInterceptor : sql: select * from employee where is_deleted = 0 and id=?
+2023-07-07 15:49:54.784 - INFO  [nio-8081-exec-4] c.e.e.c.EmployeeController     : successfully insert an employee:
+2023-07-07 15:50:12.574 - INFO  [nio-8081-exec-9] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:50:20.210 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:50:20.224 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from employee where is_deleted = 0 and id=?
+2023-07-07 15:50:20.352 - INFO  [nio-8081-exec-1] c.e.e.c.EmployeeController     : successfully insert an employee:
+2023-07-07 15:51:29.117 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[192.168.56.1:10911] result: true
+2023-07-07 15:51:45.393 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:51:57.810 - INFO  [nio-8081-exec-3] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:51:57.917 - INFO  [nio-8081-exec-3] SqlStatementHandlerInterceptor : sql: select * from employee where is_deleted = 0 and id=?
+2023-07-07 15:52:00.014 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:52:02.059 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-07 15:52:02.127 - INFO  [nio-8081-exec-3] c.e.e.c.EmployeeController     : successfully insert an employee:
+2023-07-07 15:52:32.362 - INFO  [nio-8081-exec-5] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:52:32.370 - INFO  [nio-8081-exec-5] SqlStatementHandlerInterceptor : sql: select * from employee where is_deleted = 0 and id=?
+2023-07-07 15:52:32.467 - INFO  [nio-8081-exec-5] c.e.e.s.i.EmployeeServiceImpl  : 发送状态：SEND_OK,消息ID：7F00000159C818B4AAC2224E3B770004,队列:3
+2023-07-07 15:52:32.468 - INFO  [nio-8081-exec-5] c.e.e.c.EmployeeController     : successfully insert an employee:
+2023-07-07 15:52:32.640 - INFO  [onsumer_group_1] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688716352000,"departmentId":1,"email":"","hireDate":1688716352000,"id":10,"level":0,"name":"","phoneNumber":"124122","positionId":1,"salary":1000.00,"updateTime":1688716352000}
+2023-07-07 15:52:43.311 - INFO  [onsumer_group_2] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688716352000,"departmentId":1,"email":"","hireDate":1688716352000,"id":10,"level":0,"name":"","phoneNumber":"124122","positionId":1,"salary":1000.00,"updateTime":1688716352000}
+2023-07-07 15:53:13.394 - INFO  [onsumer_group_3] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688716352000,"departmentId":1,"email":"","hireDate":1688716352000,"id":10,"level":0,"name":"","phoneNumber":"124122","positionId":1,"salary":1000.00,"updateTime":1688716352000}
+2023-07-07 15:53:19.783 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-ATTENDANCE with eureka with status DOWN
+2023-07-07 15:53:24.436 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-EMPLOYEE with eureka with status DOWN
+2023-07-07 15:55:21.692 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 21892 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 15:55:21.727 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 15:55:25.147 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 15:55:25.153 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 15:55:25.222 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2023-07-07 15:55:26.100 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=a195ba9f-a8b1-35d9-87d2-b7b4636bb2d0
+2023-07-07 15:55:26.199 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 19884 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 15:55:26.235 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 15:55:27.517 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-07 15:55:27.538 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:55:27.541 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 15:55:27.542 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 15:55:28.381 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 15:55:28.382 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6469 ms
+2023-07-07 15:55:28.726 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 15:55:28.734 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 15:55:28.812 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2023-07-07 15:55:29.955 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=1166eb56-2cbe-39f4-8998-8e80b8e548c4
+2023-07-07 15:55:31.473 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-07 15:55:31.497 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-07 15:55:31.501 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 15:55:31.502 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 15:55:32.248 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 15:55:32.249 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5891 ms
+2023-07-07 15:55:35.976 - INFO  [onsumer_group_1] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688716352000,"departmentId":1,"email":"","hireDate":1688716352000,"id":10,"level":0,"name":"","phoneNumber":"124122","positionId":1,"salary":1000.00,"updateTime":1688716352000}
+2023-07-07 15:55:38.856 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 15:55:40.673 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 15:55:43.814 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 15:55:44.558 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 15:55:45.037 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:55:45.655 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 15:55:45.657 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:55:45.760 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 15:55:45.761 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 15:55:45.779 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688716545777 with initial instances count: 0
+2023-07-07 15:55:45.794 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-EMPLOYEE with eureka with status UP
+2023-07-07 15:55:45.797 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-07 15:55:45.822 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-07 15:55:45.824 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8081
+2023-07-07 15:55:45.837 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 15:55:45.922 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 15:55:45.923 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 15:55:45.944 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688716545942 with initial instances count: 0
+2023-07-07 15:55:45.959 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-ATTENDANCE with eureka with status UP
+2023-07-07 15:55:45.963 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:55:45.989 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8082 (http) with context path ''
+2023-07-07 15:55:45.991 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8082
+2023-07-07 15:55:46.818 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 15:55:46.854 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 15:55:46.939 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 15:55:46.957 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 15:55:46.988 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 15:55:47.119 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 15:55:47.726 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-07 15:55:48.062 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 15:55:48.100 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 23.841 seconds (JVM running for 29.056)
+2023-07-07 15:55:48.616 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 15:55:48.678 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceAttendanceApplication in 30.394 seconds (JVM running for 35.776)
+2023-07-07 15:56:01.125 - INFO  [nio-8081-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 15:56:01.125 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-07 15:56:01.129 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
+2023-07-07 15:56:01.332 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2023-07-07 15:56:02.280 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2023-07-07 15:56:02.288 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 15:56:02.351 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from employee where is_deleted = 0 and id=?
+2023-07-07 15:56:02.780 - INFO  [nio-8081-exec-1] c.e.e.s.i.EmployeeServiceImpl  : 发送状态：SEND_OK,消息ID：7F0000014DAC18B4AAC2225171490000,队列:3
+2023-07-07 15:56:02.780 - INFO  [nio-8081-exec-1] c.e.e.c.EmployeeController     : successfully insert an employee:
+2023-07-07 15:56:02.781 - INFO  [onsumer_group_2] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688716562000,"departmentId":1,"email":"","hireDate":1688716562000,"id":11,"level":0,"name":"","phoneNumber":"112413422","positionId":1,"salary":1000.00,"updateTime":1688716562000}
+2023-07-07 15:56:13.268 - INFO  [onsumer_group_3] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688716562000,"departmentId":1,"email":"","hireDate":1688716562000,"id":11,"level":0,"name":"","phoneNumber":"112413422","positionId":1,"salary":1000.00,"updateTime":1688716562000}
+2023-07-07 15:56:43.300 - INFO  [onsumer_group_4] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688716562000,"departmentId":1,"email":"","hireDate":1688716562000,"id":11,"level":0,"name":"","phoneNumber":"112413422","positionId":1,"salary":1000.00,"updateTime":1688716562000}
+2023-07-07 15:56:57.126 - INFO  [nio-8082-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 15:56:57.130 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-07 15:56:57.284 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 152 ms
+2023-07-07 15:57:43.373 - INFO  [onsumer_group_5] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688716562000,"departmentId":1,"email":"","hireDate":1688716562000,"id":11,"level":0,"name":"","phoneNumber":"112413422","positionId":1,"salary":1000.00,"updateTime":1688716562000}
+2023-07-07 15:58:43.084 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-ATTENDANCE with eureka with status DOWN
+2023-07-07 15:58:43.787 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-07 15:58:44.047 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 15:59:03.150 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 16616 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 15:59:03.167 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 15:59:04.904 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 15:59:04.909 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 15:59:04.955 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-07-07 15:59:05.532 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=a195ba9f-a8b1-35d9-87d2-b7b4636bb2d0
+2023-07-07 15:59:06.418 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-07 15:59:06.432 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:59:06.434 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 15:59:06.434 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 15:59:06.792 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 15:59:06.792 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3546 ms
+2023-07-07 15:59:11.693 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 15:59:13.934 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 15:59:14.552 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:59:14.664 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 15:59:14.730 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 15:59:14.730 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 15:59:14.741 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688716754739 with initial instances count: 0
+2023-07-07 15:59:14.753 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-ATTENDANCE with eureka with status UP
+2023-07-07 15:59:14.756 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8082"]
+2023-07-07 15:59:14.773 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8082 (http) with context path ''
+2023-07-07 15:59:14.775 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8082
+2023-07-07 15:59:15.289 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 15:59:15.313 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 15:59:15.384 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 15:59:15.821 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 15:59:15.830 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceAttendanceApplication in 14.318 seconds (JVM running for 20.226)
+2023-07-07 15:59:24.497 - INFO  [nio-8082-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 15:59:24.497 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-07 15:59:24.499 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
+2023-07-07 16:02:15.458 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-ATTENDANCE with eureka with status DOWN
+2023-07-07 16:02:15.999 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-07 16:02:16.019 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 16:02:26.508 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 20140 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 16:02:26.525 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 16:02:28.076 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 16:02:28.079 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 16:02:28.119 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2023-07-07 16:02:28.622 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=a195ba9f-a8b1-35d9-87d2-b7b4636bb2d0
+2023-07-07 16:02:29.475 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-07 16:02:29.491 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-07 16:02:29.493 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 16:02:29.494 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 16:02:29.946 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 16:02:29.947 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3349 ms
+2023-07-07 16:02:37.380 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 16:02:39.349 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 16:02:40.034 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:02:40.164 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 16:02:40.222 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 16:02:40.222 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 16:02:40.234 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688716960232 with initial instances count: 0
+2023-07-07 16:02:40.245 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-ATTENDANCE with eureka with status UP
+2023-07-07 16:02:40.248 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8082"]
+2023-07-07 16:02:40.269 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8082 (http) with context path ''
+2023-07-07 16:02:40.271 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8082
+2023-07-07 16:02:40.813 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 16:02:40.837 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 16:02:40.904 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 16:02:41.359 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 16:02:41.374 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceAttendanceApplication in 16.316 seconds (JVM running for 21.441)
+2023-07-07 16:02:50.830 - INFO  [nio-8082-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 16:02:50.831 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-07 16:02:50.835 - INFO  [nio-8082-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
+2023-07-07 16:02:50.931 - INFO  [nio-8082-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2023-07-07 16:02:51.767 - INFO  [nio-8082-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2023-07-07 16:02:51.776 - INFO  [nio-8082-exec-1] SqlStatementHandlerInterceptor : sql: select id, employee_id, department_id, clock_in_time, clock_out_time, create_time, update_time, is_deleted
+        from attendance
+        where is_deleted = 0 and 1=1
+         
+            and employee_id = ?
+         
+         
+         
+            and clock_in_time BETWEEN ? AND DATE_ADD(?, INTERVAL 1 DAY)
+2023-07-07 16:02:51.870 - INFO  [nio-8082-exec-1] SqlStatementHandlerInterceptor : sql: insert into attendance (employee_id, department_id, clock_in_time, clock_out_time)
+        values (?, ?,
+        ?, ?)
+2023-07-07 16:04:53.770 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-ATTENDANCE with eureka with status DOWN
+2023-07-07 16:04:53.802 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-EMPLOYEE with eureka with status DOWN
+2023-07-07 16:04:54.382 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2023-07-07 16:04:54.406 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2023-07-07 16:04:54.408 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-07 16:04:54.488 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 16:04:54.533 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2023-07-07 16:04:54.536 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[192.168.56.1:10911] result: true
+2023-07-07 16:04:54.697 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2023-07-07 16:04:54.746 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2023-07-07 16:04:54.754 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-07 16:04:54.807 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 16:07:14.391 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 18620 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 16:07:14.413 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 16:07:17.496 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 16:07:17.508 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 16:07:17.606 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2023-07-07 16:07:18.721 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=a195ba9f-a8b1-35d9-87d2-b7b4636bb2d0
+2023-07-07 16:07:20.189 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-07 16:07:20.221 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-07 16:07:20.227 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 16:07:20.228 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 16:07:20.946 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 16:07:20.946 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6411 ms
+2023-07-07 16:07:30.335 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 22360 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 16:07:30.354 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 16:07:32.174 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 16:07:32.181 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 16:07:32.243 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2023-07-07 16:07:32.545 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 16:07:33.074 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=1166eb56-2cbe-39f4-8998-8e80b8e548c4
+2023-07-07 16:07:34.318 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-07 16:07:34.355 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-07 16:07:34.359 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 16:07:34.360 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 16:07:35.337 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 16:07:35.338 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4894 ms
+2023-07-07 16:07:36.640 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 16:07:37.685 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:07:37.848 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 16:07:37.941 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 16:07:37.942 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 16:07:37.961 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688717257959 with initial instances count: 0
+2023-07-07 16:07:37.977 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-ATTENDANCE with eureka with status UP
+2023-07-07 16:07:37.981 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8082"]
+2023-07-07 16:07:38.005 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8082 (http) with context path ''
+2023-07-07 16:07:38.007 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8082
+2023-07-07 16:07:38.830 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 16:07:38.865 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 16:07:38.951 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 16:07:39.516 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 16:07:39.531 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceAttendanceApplication in 27.188 seconds (JVM running for 32.964)
+2023-07-07 16:07:41.166 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 16:07:43.809 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 16:07:44.406 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:07:44.525 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 16:07:44.566 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 16:07:44.566 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 16:07:44.574 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688717264573 with initial instances count: 0
+2023-07-07 16:07:44.583 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-EMPLOYEE with eureka with status UP
+2023-07-07 16:07:44.584 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-07 16:07:44.597 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-07 16:07:44.599 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8081
+2023-07-07 16:07:45.324 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 16:07:45.351 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 16:07:45.416 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 16:07:45.773 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-07 16:07:45.905 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 16:07:45.918 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 17.445 seconds (JVM running for 22.107)
+2023-07-07 16:09:40.802 - INFO  [nio-8081-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 16:09:40.804 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-07 16:09:40.845 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 41 ms
+2023-07-07 16:09:41.049 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2023-07-07 16:09:41.844 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2023-07-07 16:09:41.852 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)
+2023-07-07 16:09:41.920 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: select * from employee where is_deleted = 0 and id=?
+2023-07-07 16:09:42.315 - INFO  [nio-8081-exec-1] c.e.e.s.i.EmployeeServiceImpl  : 发送状态：SEND_OK,消息ID：7F000001575818B4AAC2225DF2930000,队列:2
+2023-07-07 16:09:42.316 - INFO  [nio-8081-exec-1] c.e.e.c.EmployeeController     : successfully insert an employee:
+2023-07-07 16:09:42.347 - INFO  [onsumer_group_1] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688717381000,"departmentId":1,"email":"","hireDate":1688717381000,"id":12,"level":0,"name":"","phoneNumber":"112123413422","positionId":1,"salary":1000.00,"updateTime":1688717381000}
+2023-07-07 16:09:52.788 - INFO  [onsumer_group_2] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688717381000,"departmentId":1,"email":"","hireDate":1688717381000,"id":12,"level":0,"name":"","phoneNumber":"112123413422","positionId":1,"salary":1000.00,"updateTime":1688717381000}
+2023-07-07 16:10:22.865 - INFO  [onsumer_group_3] .e.a.r.RocketMQConsumerService : 接收到来自topic Topic 的消息：{"createTime":1688717381000,"departmentId":1,"email":"","hireDate":1688717381000,"id":12,"level":0,"name":"","phoneNumber":"112123413422","positionId":1,"salary":1000.00,"updateTime":1688717381000}
+2023-07-07 16:10:47.252 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-ATTENDANCE with eureka with status DOWN
+2023-07-07 16:10:47.290 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-EMPLOYEE with eureka with status DOWN
+2023-07-07 16:10:47.761 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[192.168.56.1:10911] result: true
+2023-07-07 16:10:47.762 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2023-07-07 16:10:47.918 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2023-07-07 16:10:47.931 - INFO  [ionShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2023-07-07 16:10:47.933 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-07 16:10:47.941 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-07 16:10:47.952 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 16:10:47.983 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-07 16:10:59.370 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_202 on 元始天尊 with PID 20104 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-attendance\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 16:10:59.401 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 16:11:02.038 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 16:11:02.046 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 16:11:02.106 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2023-07-07 16:11:02.798 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=a195ba9f-a8b1-35d9-87d2-b7b4636bb2d0
+2023-07-07 16:11:02.828 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_202 on 元始天尊 with PID 22752 (C:\Users\DELL\IdeaProjects\Employee_Management\service\service-employee\target\classes started by DELL in C:\Users\DELL\IdeaProjects\Employee_Management)
+2023-07-07 16:11:02.843 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-07 16:11:03.816 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-07 16:11:03.832 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-07 16:11:03.835 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 16:11:03.836 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 16:11:04.287 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 16:11:04.288 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4740 ms
+2023-07-07 16:11:04.464 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-07 16:11:04.469 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 16:11:04.512 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-07-07 16:11:05.124 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=1166eb56-2cbe-39f4-8998-8e80b8e548c4
+2023-07-07 16:11:06.081 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-07 16:11:06.097 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-07 16:11:06.099 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-07 16:11:06.100 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-07 16:11:06.488 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-07 16:11:06.488 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3575 ms
+2023-07-07 16:11:11.401 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 16:11:12.237 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-07 16:11:14.661 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 16:11:14.836 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-07 16:11:15.353 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:11:15.470 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:11:15.489 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 16:11:15.561 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 16:11:15.561 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 16:11:15.576 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688717475574 with initial instances count: 0
+2023-07-07 16:11:15.586 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-07 16:11:15.590 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-EMPLOYEE with eureka with status UP
+2023-07-07 16:11:15.592 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-07 16:11:15.612 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-07 16:11:15.613 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8081
+2023-07-07 16:11:15.644 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-07 16:11:15.644 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-07 16:11:15.657 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688717475655 with initial instances count: 0
+2023-07-07 16:11:15.669 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-ATTENDANCE with eureka with status UP
+2023-07-07 16:11:15.671 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8082"]
+2023-07-07 16:11:15.688 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8082 (http) with context path ''
+2023-07-07 16:11:15.689 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8082
+2023-07-07 16:11:16.050 - INFO  [nio-8081-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 16:11:16.050 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-07 16:11:16.053 - INFO  [nio-8081-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
+2023-07-07 16:11:16.389 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2023-07-07 16:11:16.497 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 16:11:16.533 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 16:11:16.584 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-07 16:11:16.622 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-07 16:11:16.627 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 16:11:16.725 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-07 16:11:17.041 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-07 16:11:17.226 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 16:11:17.251 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 15.936 seconds (JVM running for 19.757)
+2023-07-07 16:11:17.411 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-07 16:11:17.429 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceAttendanceApplication in 20.272 seconds (JVM running for 23.069)
+2023-07-07 16:11:17.762 - INFO  [nio-8081-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2023-07-07 16:11:17.786 - INFO  [nio-8081-exec-1] SqlStatementHandlerInterceptor : sql: insert into employee(name,email,phone_number,hire_date,salary,level,position_id,department_id) values(?,?,?,?,?,?,?,?)

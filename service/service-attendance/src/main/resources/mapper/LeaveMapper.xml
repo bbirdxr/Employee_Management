@@ -41,10 +41,10 @@
             <if test="departmentId != null and departmentId != ''">
                 department_id,
             </if>
-            <if test="startDate != null and startDate != ''">
+            <if test="startDate != null">
                 start_date,
             </if>
-            <if test="endDate != null and endDate != ''">
+            <if test="endDate != null">
                 end_date,
             </if>
             <if test="leaveType != null and leaveType != ''">
@@ -62,10 +62,10 @@
             <if test="departmentId != null and departmentId != ''">
                 #{departmentId,jdbcType=BIGINT},
             </if>
-            <if test="startDate != null and startDate != ''">
+            <if test="startDate != null">
                 #{startDate,jdbcType=TIMESTAMP},
             </if>
-            <if test="endDate != null and endDate != ''">
+            <if test="endDate != null">
                 #{endDate,jdbcType=TIMESTAMP},
             </if>
             <if test="leaveType != null and leaveType != ''">
@@ -87,10 +87,10 @@
     <update id="update" parameterType="com.example.entity.Leave">
         update `leave`
         <set>
-            <if test="startDate != null and startDate != ''">
+            <if test="startDate != null">
                 start_date = #{startDate,jdbcType=TIMESTAMP},
             </if>
-            <if test="endDate != null and endDate != ''">
+            <if test="endDate != null">
                 end_date = #{endDate,jdbcType=TIMESTAMP},
             </if>
             <if test="leaveType != null and leaveType != ''">

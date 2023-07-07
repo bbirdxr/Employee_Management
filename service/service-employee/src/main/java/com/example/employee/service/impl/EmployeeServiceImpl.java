@@ -150,7 +150,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee add(Employee employee) {
         Long generateId = employeeMapper.addNewEmployee(employee);
         employee = selectById(employee.getId());
-        Message message = new Message("topic", "employee", JSON.toJSONString(employee.getId()).getBytes());
+        Message message = new Message("topic", "employee", JSON.toJSONString(employee).getBytes());
         try {
             SendResult sendResult = defaultMQProducer.send(message); // 同步消息
             log.info("发送状态：" + sendResult.getSendStatus() +

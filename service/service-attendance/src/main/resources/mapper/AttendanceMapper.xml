@@ -43,10 +43,10 @@
     <update id="updateById" parameterType="com.example.entity.Attendance">
         update attendance
         <set>
-            <if test="clockInTime != null and clockInTime != ''">
+            <if test="clockInTime != null">
                 clock_in_time = #{clockInTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="clockOutTime != null and clockOutTime != ''">
+            <if test="clockOutTime != null">
                 clock_out_time = #{clockOutTime,jdbcType=TIMESTAMP},
             </if>
         </set>
@@ -64,7 +64,7 @@
         <if test="departmentId != null and departmentId != ''">
             and department_id = #{departmentId}
         </if>
-        <if test="attendanceDate != null and attendanceDate != ''">
+        <if test="attendanceDate != null">
             and clock_in_time BETWEEN #{attendanceDate} AND DATE_ADD(#{attendanceDate}, INTERVAL 1 DAY)
         </if>
     </select>
