@@ -53,3 +53,38 @@
 2023-07-06 15:22:06.240 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-EMPLOYEE with eureka with status DOWN
 2023-07-06 15:22:06.770 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
 2023-07-06 15:22:06.781 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
+2023-07-06 15:22:14.411 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_342 on LAPTOP-T5ICR3J1 with PID 13604 (D:\Employee_Management\service\service-employee\target\classes started by 48518 in D:\Employee_Management)
+2023-07-06 15:22:14.420 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-06 15:22:15.323 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-06 15:22:15.325 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-06 15:22:15.346 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2023-07-06 15:22:15.664 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=e11fedd5-3de0-3044-baea-ea6ceb2f0710
+2023-07-06 15:22:16.117 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-06 15:22:16.125 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-06 15:22:16.127 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-06 15:22:16.127 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-06 15:22:16.279 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-06 15:22:16.279 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1814 ms
+2023-07-06 15:22:17.413 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-06 15:22:20.129 - INFO  [           main] o.s.c.c.u.InetUtils            : Cannot determine local hostname
+2023-07-06 15:22:20.161 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-06 15:22:21.713 - INFO  [           main] o.s.c.c.u.InetUtils            : Cannot determine local hostname
+2023-07-06 15:22:21.779 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-06 15:22:21.871 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-06 15:22:21.906 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-06 15:22:21.906 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-06 15:22:21.913 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688628141911 with initial instances count: 0
+2023-07-06 15:22:21.920 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-EMPLOYEE with eureka with status UP
+2023-07-06 15:22:21.922 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-06 15:22:21.932 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-06 15:22:21.933 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8081
+2023-07-06 15:22:23.447 - INFO  [           main] o.s.c.c.u.InetUtils            : Cannot determine local hostname
+2023-07-06 15:22:23.447 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-06 15:22:23.460 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-06 15:22:23.495 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-06 15:22:23.781 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-06 15:22:23.864 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-06 15:22:23.873 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 11.424 seconds (JVM running for 13.863)
+2023-07-06 15:25:17.972 - INFO  [nio-8081-exec-2] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-06 15:25:17.972 - INFO  [nio-8081-exec-2] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2023-07-06 15:25:17.973 - INFO  [nio-8081-exec-2] o.s.w.s.FrameworkServlet       : Completed initialization in 1 ms
