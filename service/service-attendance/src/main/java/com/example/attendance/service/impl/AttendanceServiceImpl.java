@@ -34,8 +34,6 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Autowired
     private EmployeeFeignClient employeeFeignClient;
-
-
     @Autowired
     private EmployeeRestTemplate employeeRestTemplate;
 
