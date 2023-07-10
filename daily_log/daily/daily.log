@@ -3791,3 +3791,53 @@ com.example.exception.BusinessException: 系统内部异常
 2023-07-10 14:25:17.800 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
 2023-07-10 14:25:17.810 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
 >>>>>>> ba0863a92bed74b938c097e7218c38a40a23c806
+2023-07-10 17:26:42.297 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceAttendanceApplication using Java 1.8.0_372 on Sheh-MacBook-Pro.local with PID 6642 (/Users/sheh/IdeaProjects/Employee_Management/service/service-attendance/target/classes started by sheh in /Users/sheh/IdeaProjects/Employee_Management)
+2023-07-10 17:26:42.301 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-10 17:26:42.784 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-10 17:26:42.785 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-10 17:26:42.795 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2023-07-10 17:26:42.962 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=0f6db9e7-b9e1-300e-b906-65b77c349d34
+2023-07-10 17:26:43.255 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8082 (http)
+2023-07-10 17:26:43.261 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8082"]
+2023-07-10 17:26:43.262 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-10 17:26:43.262 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-10 17:26:43.337 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-10 17:26:43.337 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1012 ms
+2023-07-10 17:26:43.872 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rocketMQConsumerService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [127.0.0.1:9876] failed
+2023-07-10 17:26:43.874 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2023-07-10 17:26:43.882 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-07-10 17:26:44.937 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting ServiceEmployeeApplication using Java 1.8.0_372 on Sheh-MacBook-Pro.local with PID 6645 (/Users/sheh/IdeaProjects/Employee_Management/service/service-employee/target/classes started by sheh in /Users/sheh/IdeaProjects/Employee_Management)
+2023-07-10 17:26:44.941 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-10 17:26:45.373 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-10 17:26:45.374 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-10 17:26:45.383 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2023-07-10 17:26:45.536 - INFO  [           main] o.s.c.c.s.GenericScope         : BeanFactory id=4c167f62-1226-39ba-b931-799ef0f225d4
+2023-07-10 17:26:45.780 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8081 (http)
+2023-07-10 17:26:45.785 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-10 17:26:45.785 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2023-07-10 17:26:45.786 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-10 17:26:45.843 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2023-07-10 17:26:45.844 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 881 ms
+2023-07-10 17:26:46.662 - INFO  [lientSelector_1] Slf4jLoggerFactory$Slf4jLogger : closeChannel: close the connection to remote address[] result: true
+2023-07-10 17:26:46.817 - INFO  [           main] edRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-07-10 17:26:47.275 - INFO  [           main] lientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-10 17:26:47.379 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-10 17:26:47.430 - INFO  [           main] o.s.c.n.e.InstanceInfoFactory  : Setting initial instance status as: STARTING
+2023-07-10 17:26:47.445 - INFO  [           main] c.n.d.DiscoveryClient          : Initializing Eureka in region us-east-1
+2023-07-10 17:26:47.446 - INFO  [           main] c.n.d.DiscoveryClient          : Client configured to neither register nor query for data.
+2023-07-10 17:26:47.449 - INFO  [           main] c.n.d.DiscoveryClient          : Discovery Client initialized at timestamp 1688981207448 with initial instances count: 0
+2023-07-10 17:26:47.453 - INFO  [           main] .c.n.e.s.EurekaServiceRegistry : Registering application SERVICE-EMPLOYEE with eureka with status UP
+2023-07-10 17:26:47.454 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8081"]
+2023-07-10 17:26:47.460 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-10 17:26:47.461 - INFO  [           main] .EurekaAutoServiceRegistration : Updating port to 8081
+2023-07-10 17:26:47.462 - INFO  [           main] cumentationPluginsBootstrapper : Context refreshed
+2023-07-10 17:26:47.469 - INFO  [           main] cumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-07-10 17:26:47.489 - INFO  [           main] w.s.ApiListingReferenceScanner : Scanning for api listing references
+2023-07-10 17:26:47.597 - INFO  [           main] .CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-07-10 17:26:47.654 - INFO  [           main] ledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2023-07-10 17:26:47.658 - INFO  [           main] o.s.b.StartupInfoLogger        : Started ServiceEmployeeApplication in 2.94 seconds (JVM running for 3.559)
+2023-07-10 17:27:02.575 - INFO  [ionShutdownHook] .c.n.e.s.EurekaServiceRegistry : Unregistering application SERVICE-EMPLOYEE with eureka with status DOWN
+2023-07-10 17:27:03.765 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Shutting down DiscoveryClient ...
+2023-07-10 17:27:03.770 - INFO  [ionShutdownHook] c.n.d.DiscoveryClient          : Completed shut down of DiscoveryClient
