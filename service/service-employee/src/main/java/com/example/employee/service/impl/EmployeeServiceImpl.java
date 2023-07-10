@@ -55,6 +55,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     // @Cacheable(key = "#p0")
     public Employee selectById(Long id) {
+        if (id == null || id < 0) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "员工id不能为空");
+        }
         return employeeMapper.findByIdWithSalary(id);
     }
 
@@ -148,14 +151,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     // @CachePut(key = "#p0.id")
     public Employee add(Employee employee) {
-        Long generateId = employeeMapper.addNewEmployee(employee);
-        employee = selectById(employee.getId());
+        // catch database error
+        try {
+            employeeMapper.addNewEmployee(employee);
+            employee = selectById(employee.getId());
+        } catch (Exception e) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "数据库错误");
+        }
         Message message = new Message("topic", "employee", JSON.toJSONString(employee).getBytes());
         try {
             SendResult sendResult = defaultMQProducer.send(message); // 同步消息
-            log.info("发送状态：" + sendResult.getSendStatus() +
-                    ",消息ID：" + sendResult.getMsgId() +
-                    ",队列:" + sendResult.getMessageQueue().getQueueId());
+            log.info("Sending State: " + sendResult.getSendStatus() +
+                    ", Message ID: " + sendResult.getMsgId() +
+                    ", Message Queue: " + sendResult.getMessageQueue().getQueueId());
         } catch (RemotingException | MQBrokerException | InterruptedException | MQClientException e) {
             log.error("发送消息失败", e);
         }

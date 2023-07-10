@@ -113,9 +113,9 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public void exportAttendanceRecords(Long employeeId, HttpServletResponse response) {
-        if (employeeId == null || employeeId <= 0) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
+//        if (employeeId == null || employeeId <= 0) {
+//            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+//        }
         Employee employee = employeeFeignClient.selectById(employeeId);
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");

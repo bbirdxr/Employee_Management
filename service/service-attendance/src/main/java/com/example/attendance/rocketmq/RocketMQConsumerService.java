@@ -49,7 +49,7 @@ public class RocketMQConsumerService {
                 byte[] body = messageExt.getBody();
                 String tags = messageExt.getTags();
                 String message = new String(body);
-                log.info("接收到来自{} Topic 的消息：{}",topic, message);
+                log.info("Receiving messages from topic `{}`: {}",topic, message);
                 Long employeeId = JSONObject.parseObject(message).getLong("id");
                 attendanceService.clockIn(employeeId);
             } catch (Exception e) {

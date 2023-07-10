@@ -11,6 +11,7 @@
  Target Server Version : 50739
  File Encoding         : 65001
 
+ Date: 10/07/2023 07:53:04
 */
 
 SET NAMES utf8mb4;
@@ -32,14 +33,17 @@ CREATE TABLE `attendance`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_employee_id`(`employee_id`) USING BTREE,
   INDEX `idx_department_id`(`department_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '考勤表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '考勤表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of attendance
 -- ----------------------------
 INSERT INTO `attendance` VALUES (12, 1, 1, '2023-07-03 14:07:16', '2023-07-03 14:07:22', '2023-07-03 14:07:16', '2023-07-03 14:07:21', 0);
+INSERT INTO `attendance` VALUES (13, 1, 0, '2023-07-06 11:57:43', '2023-07-06 13:41:45', '2023-07-06 11:57:43', '2023-07-06 13:41:44', 0);
+INSERT INTO `attendance` VALUES (14, 12, 1, '2023-07-07 16:11:25', NULL, '2023-07-07 16:11:24', '2023-07-07 16:11:24', 0);
+INSERT INTO `attendance` VALUES (15, 14, 1, '2023-07-07 16:35:12', NULL, '2023-07-07 16:35:12', '2023-07-07 16:35:12', 0);
+INSERT INTO `attendance` VALUES (16, 16, 1, '2023-07-07 17:53:20', NULL, '2023-07-07 17:53:19', '2023-07-07 17:53:19', 0);
 
->>>>>>> 1479f60d452688bdeb270529713527b3da1776a2
 -- ----------------------------
 -- Table structure for department
 -- ----------------------------
@@ -85,13 +89,22 @@ CREATE TABLE `employee`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `id`(`id`) USING BTREE,
   UNIQUE INDEX `union key`(`name`, `phone_number`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '员工信息' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '员工信息' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of employee
 -- ----------------------------
-INSERT INTO `employee` VALUES (0, 1, '', '', '', '2023-07-03 11:47:12', 0.00, '2023-07-03 11:47:12', '2023-07-03 13:34:12', 0, 0, 0, -1, '0');
->>>>>>> 1479f60d452688bdeb270529713527b3da1776a2
+INSERT INTO `employee` VALUES (0, 1, 'abc', '', '123124', '2023-07-03 11:47:12', 0.00, '2023-07-22 11:47:12', '2023-07-07 15:45:51', 0, 0, 0, -1, '0');
+INSERT INTO `employee` VALUES (1, 2, '', '', '12341', '2023-07-07 15:13:48', 1000.00, '2023-07-07 15:13:48', '2023-07-07 15:45:48', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 4, '', '', '12432', '2023-07-07 15:45:56', 1000.00, '2023-07-07 15:45:56', '2023-07-07 15:45:56', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 6, '', '', '12421332', '2023-07-07 15:49:54', 1000.00, '2023-07-07 15:49:54', '2023-07-07 15:49:54', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 8, '', '', '1242131231232', '2023-07-07 15:50:20', 1000.00, '2023-07-07 15:50:20', '2023-07-07 15:50:20', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 9, '', '', '124213123122', '2023-07-07 15:51:57', 1000.00, '2023-07-07 15:51:57', '2023-07-07 15:51:57', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 10, '', '', '124122', '2023-07-07 15:52:32', 1000.00, '2023-07-07 15:52:32', '2023-07-07 15:52:32', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 11, '', '', '112413422', '2023-07-07 15:56:02', 1000.00, '2023-07-07 15:56:02', '2023-07-07 15:56:02', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 12, '', '', '112123413422', '2023-07-07 16:09:41', 1000.00, '2023-07-07 16:09:41', '2023-07-07 16:09:41', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 14, '', '', '11212341322', '2023-07-07 16:35:10', 1000.00, '2023-07-07 16:35:10', '2023-07-07 16:35:10', 0, 0, 1, -1, '0');
+INSERT INTO `employee` VALUES (1, 16, '', '', '111322', '2023-07-07 17:53:17', 1000.00, '2023-07-07 17:53:17', '2023-07-07 17:53:17', 0, 0, 1, -1, '0');
 
 -- ----------------------------
 -- Table structure for employee_department

@@ -39,7 +39,6 @@ public interface EmployeeMapper {
     @Insert("insert into employee" +
             "(name,email,phone_number,hire_date,salary,level,position_id,department_id) values" +
             "(#{name},#{email},#{phoneNumber},#{hireDate},#{salary},#{level},#{positionId},#{departmentId})")
-
     @Options(useGeneratedKeys = true, keyProperty = "id")
     Long addNewEmployee(Employee e);
 

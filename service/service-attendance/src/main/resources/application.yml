@@ -43,3 +43,10 @@ eureka:
     fetch-registry: false # 是否从注册中心获取服务注册信息，默认为 true
     service-url: # 注册中心对外暴露的注册地址
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+feign:
+  client:
+    config:
+      default: # 全局设置
+        connectTimeout: 5000 # 毫秒
+        readTimeout: 5000 # 毫秒

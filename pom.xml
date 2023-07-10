@@ -33,6 +33,7 @@
         <pagehelper.version>1.4.7</pagehelper.version>
         <cloud.version>2021.0.7</cloud.version>
         <rocketmq.version>4.9.6</rocketmq.version>
+        <feign.version>12.4</feign.version>
     </properties>
 
     <dependencyManagement>
@@ -191,6 +192,12 @@
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
                 <version>${rocketmq.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-gson</artifactId>
+                <version>${feign.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
