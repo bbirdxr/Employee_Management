@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.attendance;
 
 import com.example.attendance.mapper.AttendanceMapper;
@@ -67,3 +68,23 @@ public class AttendanceTest {
         attendances.forEach(System.out::println);
     }
 }
+=======
+package com.example.attendance;
+
+import com.example.attendance.mapper.AttendanceMapper;
+import com.example.dto.AttendanceQuery;
+import com.example.entity.Employee ;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.InputStream;
+import java.util.List;
+
+
+
+>>>>>>> ba0863a92bed74b938c097e7218c38a40a23c806

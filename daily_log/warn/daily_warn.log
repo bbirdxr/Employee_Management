@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2023-07-10 10:31:56.806 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
 2023-07-10 10:50:00.068 -ERROR  [pool-3-thread-1] .TaskUtils$LoggingErrorHandler : Unexpected error occurred in scheduled task
 org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
@@ -70,6 +71,42 @@ org.yaml.snakeyaml.scanner.ScannerException: mapping values are not allowed here
  in 'reader', line 49, column 11:
         config:
               ^
+=======
+<<<<<<< HEAD
+2023-07-10 14:07:13.054 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.attendance.ServiceAttendanceApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'rocketMQConsumerService' for bean class [com.example.attendance.service.RocketMQConsumerService] conflicts with existing, non-compatible bean definition of same name and class [com.example.attendance.rocketmq.RocketMQConsumerService]
+2023-07-10 14:07:13.093 -ERROR  [           main] o.s.b.SpringApplication        : Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.attendance.ServiceAttendanceApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'rocketMQConsumerService' for bean class [com.example.attendance.service.RocketMQConsumerService] conflicts with existing, non-compatible bean definition of same name and class [com.example.attendance.rocketmq.RocketMQConsumerService]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:188) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:748) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.13.jar:2.7.13]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.13.jar:2.7.13]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.13.jar:2.7.13]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.13.jar:2.7.13]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.13.jar:2.7.13]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.13.jar:2.7.13]
+	at com.example.attendance.ServiceAttendanceApplication.main(ServiceAttendanceApplication.java:19) ~[classes/:?]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'rocketMQConsumerService' for bean class [com.example.attendance.service.RocketMQConsumerService] conflicts with existing, non-compatible bean definition of same name and class [com.example.attendance.rocketmq.RocketMQConsumerService]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:295) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206) ~[spring-context-5.3.28.jar:5.3.28]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174) ~[spring-context-5.3.28.jar:5.3.28]
+	... 13 more
+2023-07-10 14:16:33.967 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-10 14:17:16.524 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+=======
+2023-07-07 09:46:23.200 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 14:53:37.754 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 14:53:38.398 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8082 is already in use
+2023-07-07 14:53:38.926 -ERROR  [           main] LoggingFailureAnalysisReporter : 
+>>>>>>> ba0863a92bed74b938c097e7218c38a40a23c806
 
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:910) ~[snakeyaml-1.30.jar:?]
 	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:400) ~[snakeyaml-1.30.jar:?]
@@ -2144,6 +2181,7 @@ feign.FeignException$BadRequest: [400] during [GET] to [http://localhost:8081/em
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.76.jar:9.0.76]
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.76.jar:9.0.76]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.76.jar:9.0.76]
+<<<<<<< HEAD
 	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_372]
 2023-07-10 16:20:54.101 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
 2023-07-10 16:20:54.908 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
@@ -3201,3 +3239,36 @@ feign.FeignException$InternalServerError: [500] during [GET] to [http://localhos
 	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_372]
 2023-07-10 17:06:08.919 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
 2023-07-10 17:06:09.301 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+=======
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_202]
+2023-07-07 15:52:32.666 -ERROR  [onsumer_group_1] .e.a.r.RocketMQConsumerService : 请求参数错误
+2023-07-07 15:52:43.312 -ERROR  [onsumer_group_2] .e.a.r.RocketMQConsumerService : 请求参数错误
+2023-07-07 15:53:13.395 -ERROR  [onsumer_group_3] .e.a.r.RocketMQConsumerService : 请求参数错误
+2023-07-07 15:55:36.076 -ERROR  [onsumer_group_1] .e.a.r.RocketMQConsumerService : nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+2023-07-07 15:55:45.037 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:55:45.657 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 15:56:02.786 -ERROR  [onsumer_group_2] .e.a.r.RocketMQConsumerService : nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+2023-07-07 15:56:13.270 -ERROR  [onsumer_group_3] .e.a.r.RocketMQConsumerService : nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+2023-07-07 15:56:43.302 -ERROR  [onsumer_group_4] .e.a.r.RocketMQConsumerService : nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+2023-07-07 15:57:43.374 -ERROR  [onsumer_group_5] .e.a.r.RocketMQConsumerService : nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDate and java.lang.String
+2023-07-07 15:59:14.552 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:02:40.034 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:07:37.685 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:07:44.406 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-07 16:09:42.351 -ERROR  [onsumer_group_1] .e.a.r.RocketMQConsumerService : 请求参数错误
+2023-07-07 16:09:52.789 -ERROR  [onsumer_group_2] .e.a.r.RocketMQConsumerService : 请求参数错误
+2023-07-07 16:10:22.865 -ERROR  [onsumer_group_3] .e.a.r.RocketMQConsumerService : 请求参数错误
+>>>>>>> baa2cacc8eb09982d73249a8436d428a75771bd6
+2023-07-10 14:24:24.625 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-10 14:25:08.037 - WARN  [           main] LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+>>>>>>> ba0863a92bed74b938c097e7218c38a40a23c806
