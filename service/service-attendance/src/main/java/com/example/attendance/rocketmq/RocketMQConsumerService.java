@@ -1,6 +1,7 @@
-package com.example.attendance.service;
+package com.example.attendance.rocketmq;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.attendance.service.AttendanceService;
 import com.example.constant.MQConst;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
@@ -9,6 +10,7 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 import org.apache.rocketmq.common.message.MessageExt;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +26,9 @@ public class RocketMQConsumerService {
     private String namesrvAddr = MQConst.NAMESRV_ADDR;
 
     private DefaultMQPushConsumer defaultMQPushConsumer;
+
+    @Autowired
+    private AttendanceService attendanceService;
 
     @Bean
     public DefaultMQPushConsumer defaultMQPushConsumer() {
@@ -45,9 +50,9 @@ public class RocketMQConsumerService {
                 String tags = messageExt.getTags();
                 String message = new String(body);
                 log.info("接收到来自{} Topic 的消息：{}",topic, message);
-
-                Long employeeId = JSONObject.parseObject(message).getLong("employeeId");
-            } catch (Exception e){
+                Long employeeId = JSONObject.parseObject(message).getLong("id");
+                attendanceService.clockIn(employeeId);
+            } catch (Exception e) {
                 log.error(e.getMessage());
                 // 出错了，重试三次，出错，保存在 mysql 中，进行数据的收集
                 int reconsumeTimes = messageExt.getReconsumeTimes();

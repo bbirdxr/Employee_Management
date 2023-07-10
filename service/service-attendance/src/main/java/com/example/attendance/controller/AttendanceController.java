@@ -37,7 +37,6 @@ public class AttendanceController {
         return ResultUtils.success(attendanceService.selectById(id));
     }
 
-
     @GetMapping("attendanceQuery/{pageNum}/{pageSize}")
     public BaseResponse<PageInfo<Attendance>> selectByAttendanceQuery(
             @PathVariable Integer pageNum,

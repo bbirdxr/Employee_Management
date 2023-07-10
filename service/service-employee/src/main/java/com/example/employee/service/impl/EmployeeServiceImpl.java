@@ -52,7 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-//     @Cacheable(key = "#p0")
+    // @Cacheable(key = "#p0")
     public Employee selectById(Long id) {
         return employeeMapper.findByIdWithSalary(id);
     }
@@ -145,12 +145,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.deleteOneById(employeeId);
     }
 
-
     // @CachePut(key = "#p0.id")
     public Employee add(Employee employee) {
         Long generateId = employeeMapper.addNewEmployee(employee);
         employee = selectById(employee.getId());
-        Message message = new Message("topic", "employee", JSON.toJSONString(employee.getId()).getBytes());
+        Message message = new Message("topic", "employee", JSON.toJSONString(employee).getBytes());
+
         try {
             SendResult sendResult = defaultMQProducer.send(message); // 同步消息
             log.info("发送状态：" + sendResult.getSendStatus() +

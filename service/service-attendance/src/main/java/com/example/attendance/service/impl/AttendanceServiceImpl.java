@@ -35,6 +35,10 @@ public class AttendanceServiceImpl implements AttendanceService {
     @Autowired
     private EmployeeFeignClient employeeFeignClient;
 
+
+    @Autowired
+    private EmployeeRestTemplate employeeRestTemplate;
+
     @Override
     public Attendance selectById(Long id) {
         if (id == null || id <= 0) {
@@ -45,7 +49,6 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public List<Attendance> selectByAttendanceQuery(AttendanceQuery attendanceQuery) {
-
         if (attendanceQuery != null) {
             if (attendanceQuery.getEmployeeId() != null && attendanceQuery.getEmployeeId() <= 0) {
                 throw new BusinessException(ErrorCode.PARAMS_ERROR);
@@ -65,7 +68,8 @@ public class AttendanceServiceImpl implements AttendanceService {
         if (employeeId == null || employeeId <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        Employee employee = employeeFeignClient.selectById(employeeId);
+
+        Employee employee = employeeRestTemplate.selectById(employeeId);
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
