@@ -53,20 +53,4 @@ public class GlobalExceptionHandler {
             ex.printStackTrace();
         }
     }
-
-    // 处理 RetryableException 异常
-    @ExceptionHandler(RetryableException.class)
-    public void handleRetryableException(RetryableException e) {
-        response.setStatus(e.status());
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        try {
-            PrintWriter writer = response.getWriter();
-            writer.write(new ObjectMapper().writeValueAsString(ResultUtils.error(ErrorCode.SYSTEM_ERROR, e.getMessage(), "")));
-            writer.flush();
-            writer.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
 }

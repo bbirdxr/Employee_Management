@@ -22,7 +22,7 @@ import javax.annotation.PreDestroy;
 public class RocketMQConsumerService {
 
     private String consumerGroup = MQConst.CONSUMER_GROUP;
- 
+
     private String namesrvAddr = MQConst.NAMESRV_ADDR;
 
     private DefaultMQPushConsumer defaultMQPushConsumer;
@@ -34,7 +34,7 @@ public class RocketMQConsumerService {
     public DefaultMQPushConsumer defaultMQPushConsumer() {
         return defaultMQPushConsumer;
     }
- 
+
     @PostConstruct
     public void init() throws MQClientException {
         defaultMQPushConsumer=new DefaultMQPushConsumer(consumerGroup);
@@ -51,6 +51,7 @@ public class RocketMQConsumerService {
                 String message = new String(body);
                 log.info("Receiving messages from topic `{}`: {}",topic, message);
                 Long employeeId = JSONObject.parseObject(message).getLong("id");
+                log.info("employeeId: {}", employeeId);
                 attendanceService.clockIn(employeeId);
             } catch (Exception e) {
                 log.error(e.getMessage());

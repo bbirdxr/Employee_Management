@@ -51,7 +51,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (id == null || id < 0) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "员工id不能为空");
         }
-        return employeeMapper.findByIdWithSalary(id);
+        Employee e = employeeMapper.findByIdWithSalary(id);
+        if (e == null) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "员工不存在");
+        }
+        return e;
     }
 
     @Override
@@ -141,10 +145,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteById(Long employeeId) {
         employeeMapper.deleteOneById(employeeId);
     }
+
     // @CachePut(key = "#p0.id")
     public Employee add(Employee employee) {
-        Long generateId = employeeMapper.addNewEmployee(employee);
-        employee = selectById(employee.getId());
+        try {
+            employeeMapper.addNewEmployee(employee);
+            employee = employeeMapper.findByIdWithSalary(employee.getId());
+        } catch (Exception e) {
+            log.error("数据库错误", e);
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "数据库错误");
+        }
         Message message = new Message("topic", "employee", JSON.toJSONString(employee).getBytes());
         try {
             SendResult sendResult = defaultMQProducer.send(message); // 同步消息

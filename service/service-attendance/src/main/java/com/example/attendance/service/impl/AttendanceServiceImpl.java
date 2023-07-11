@@ -11,10 +11,12 @@ import com.example.entity.Employee;
 import com.example.exception.BusinessException;
 import com.example.result.ErrorCode;
 import com.example.vo.AttendanceVO;
+import feign.RetryableException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.ResourceAccessException;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -66,7 +68,13 @@ public class AttendanceServiceImpl implements AttendanceService {
         if (employeeId == null || employeeId <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        Employee employee = employeeRestTemplate.selectById(employeeId);
+        Employee employee;
+        try {
+            employee = employeeRestTemplate.selectById(employeeId);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, e.getMessage());
+        }
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
@@ -115,7 +123,13 @@ public class AttendanceServiceImpl implements AttendanceService {
 //        if (employeeId == null || employeeId <= 0) {
 //            throw new BusinessException(ErrorCode.PARAMS_ERROR);
 //        }
-        Employee employee = employeeFeignClient.selectById(employeeId);
+        Employee employee;
+        try {
+            employee = employeeFeignClient.selectById(employeeId);
+        } catch(RetryableException e) {
+            log.error(e.getMessage());
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, e.getMessage());
+        }
         if (employee == null) {
             throw new BusinessException(ErrorCode.NULL_ERROR, "员工不存在");
         }
