@@ -42,6 +42,9 @@ public class RocketMQConsumerService {
         // 设置 defaultMQPushConsumer 所订阅的 Topic 和 Tag，* 代表全部的 Tag
         defaultMQPushConsumer.subscribe("topic", "*");
         defaultMQPushConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET);
+        // 设置消费者重试间隔
+        defaultMQPushConsumer.setSuspendCurrentQueueTimeMillis(10000);
+
         defaultMQPushConsumer.registerMessageListener((MessageListenerConcurrently) (list, consumeConcurrentlyContext) -> {
             MessageExt messageExt = list.get(0);
             try {
@@ -55,7 +58,7 @@ public class RocketMQConsumerService {
                 attendanceService.clockIn(employeeId);
             } catch (Exception e) {
                 log.error(e.getMessage());
-                // 出错了，重试三次，出错，保存在 mysql 中，进行数据的收集
+                // 出错了，重试 3 次，出错，保存在 mysql 中，进行数据的收集
                 int reconsumeTimes = messageExt.getReconsumeTimes();
                 if (reconsumeTimes == 3) {
                     // 进行保存，通知消费成功

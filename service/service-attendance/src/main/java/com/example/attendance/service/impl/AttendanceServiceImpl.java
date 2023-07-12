@@ -13,10 +13,10 @@ import com.example.result.ErrorCode;
 import com.example.vo.AttendanceVO;
 import feign.RetryableException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.ResourceAccessException;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -38,6 +38,9 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Autowired
     private EmployeeRestTemplate employeeRestTemplate;
+
+    @Autowired
+    private RocketMQTemplate rocketMQTemplate;
 
     @Override
     public Attendance selectById(Long id) {
@@ -89,6 +92,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         attendance.setEmployeeId(employeeId);
         attendance.setDepartmentId(employee.getDepartmentId());
         attendance.setClockInTime(new Date());
+        sendMessage("topic", "打卡成功");
         return attendanceMapper.insert(attendance);
     }
 
@@ -157,5 +161,9 @@ public class AttendanceServiceImpl implements AttendanceService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void sendMessage(String topic, String message) {
+        rocketMQTemplate.convertAndSend(topic, message);
     }
 }

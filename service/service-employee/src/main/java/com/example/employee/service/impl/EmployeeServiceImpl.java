@@ -16,6 +16,7 @@ import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.remoting.exception.RemotingException;
+import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -156,6 +157,8 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "数据库错误");
         }
         Message message = new Message("topic", "employee", JSON.toJSONString(employee).getBytes());
+        // 延时消息
+        message.setDelayTimeLevel(3);
         try {
             SendResult sendResult = defaultMQProducer.send(message); // 同步消息
             log.info("发送状态：" + sendResult.getSendStatus() +

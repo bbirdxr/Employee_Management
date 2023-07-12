@@ -30,9 +30,6 @@ mybatis:
 
 logging:
   config: classpath:log4j2.yml
-  level:
-    # feign 日志以什么级别监控哪个接口
-    com.example.employee.client.EmployeeFeignClient: debug
 
 # 配置 Eureka Server 注册中心
 eureka:
@@ -50,3 +47,16 @@ feign:
       default: # 全局设置
         connectTimeout: 5000 # 毫秒
         readTimeout: 5000 # 毫秒
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: producer-group
+    retry-times-when-send-failed: 2
+    retry-times-when-send-async-failed: 0
+    send-message-timeout: 3000
+    max-message-size: 1024
+    compress-message-body-threshold: 1024
+  consumer:
+    group: consumer-group
+

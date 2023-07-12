@@ -1,19 +1,12 @@
 package com.example.config;
 
-import feign.*;
-import feign.codec.EncodeException;
+import feign.Logger;
+import feign.Request;
+import feign.Retryer;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
-import org.springframework.cloud.openfeign.support.SpringDecoder;
-import org.springframework.cloud.openfeign.support.SpringEncoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.util.StreamUtils;
 
-import java.awt.print.Book;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
 
 @Configuration
