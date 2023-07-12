@@ -16,10 +16,8 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.client.BufferingClientHttpRequestFactory;
-import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.http.client.*;
+import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.ResponseErrorHandler;
@@ -31,6 +29,7 @@ import java.nio.charset.StandardCharsets;
 import java.rmi.ServerException;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 @Configuration
@@ -46,6 +45,7 @@ public class RestTemplateConfig {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.setRequestFactory(new BufferingClientHttpRequestFactory(getClientHttpRequestFactory()));
         restTemplate.getInterceptors().add(new RestTemplateLoggingRequestInterceptor());
+        restTemplate.getInterceptors().add(new BasicAuthenticationInterceptor("user", "password"));
 
 //        restTemplate.setErrorHandler(new ResponseErrorHandler() {
 //            @Override
@@ -120,4 +120,16 @@ public class RestTemplateConfig {
 
         return clientHttpRequestFactory;
     }
+
+//    // 实现一个拦截器：使用拦截器为每一个 HTTP 请求添加 Basic Auth 认证用户名密码信息
+//    private ClientHttpRequestInterceptor getCustomInterceptor() {
+//        ClientHttpRequestInterceptor interceptor = (httpRequest, bytes, execution) -> {
+//            httpRequest.getHeaders().set("Authorization",
+//                    "Basic " +
+//                            Base64.getEncoder()
+//                                    .encodeToString("admin:adminpwd".getBytes()));
+//            return execution.execute(httpRequest, bytes);
+//        };
+//        return interceptor;
+//    }
 }

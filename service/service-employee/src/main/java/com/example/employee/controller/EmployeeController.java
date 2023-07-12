@@ -3,9 +3,11 @@ import com.alibaba.fastjson.JSON;
 import com.example.employee.mapper.EmployeeMapper;
 import com.example.employee.service.EmployeeService;
 import com.example.entity.Employee;
+import com.example.exception.BusinessException;
 import com.example.result.BaseResponse;
 import com.example.result.ErrorCode;
 import com.example.result.ResultUtils;
+import com.example.util.BasicAuthorizationUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.ApiOperation;
@@ -19,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.websocket.SendResult;
 import java.util.List;
 import java.util.Map;
@@ -102,8 +106,13 @@ public class EmployeeController {
     }
 
     @GetMapping("/inner/{id}")
-    public Employee selectById(@PathVariable Long id) {
-        return employeeService.selectById(id);
+    public Employee selectById(@PathVariable Long id, HttpServletRequest req, HttpServletResponse res) {
+        if (BasicAuthorizationUtils.isAuth(req)) {
+            return employeeService.selectById(id);
+        } else {
+            // res.addHeader("WWW-Authenticate", "basic realm=\"no auth\"");
+            throw new BusinessException(ErrorCode.NO_AUTH, "no auth");
+        }
     }
 }
 

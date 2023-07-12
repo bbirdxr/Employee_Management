@@ -22,6 +22,5 @@ public class EmployeeRestTemplateImpl implements EmployeeRestTemplate {
         String url = "http://localhost:8081/employee/inner/{id}";
 
         return restTemplate.getForObject(url, Employee.class, id);
-        // authration: basic: sasdasdas
     }
 }

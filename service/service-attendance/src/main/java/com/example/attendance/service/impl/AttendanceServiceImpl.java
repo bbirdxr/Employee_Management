@@ -130,7 +130,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         Employee employee;
         try {
             employee = employeeFeignClient.selectById(employeeId);
-        } catch(RetryableException e) {
+        } catch (RetryableException e) {
             log.error(e.getMessage());
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, e.getMessage());
         }

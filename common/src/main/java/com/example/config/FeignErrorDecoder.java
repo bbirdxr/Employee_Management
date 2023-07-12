@@ -18,7 +18,8 @@ import java.util.Date;
 public class FeignErrorDecoder implements ErrorDecoder {
     @Override
     public Exception decode(String methodKey, Response response) {
-        if (response.status() == HttpServletResponse.SC_BAD_REQUEST) {
+        // 如果 response 的 status 是 4xx
+        if (response.status() >= HttpServletResponse.SC_BAD_REQUEST && response.status() < HttpServletResponse.SC_INTERNAL_SERVER_ERROR) {
             log.error("请求xxx服务-{},返回:{}", response.status(), response.body());
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "请求xxx服务失败");
         }
