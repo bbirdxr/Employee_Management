@@ -30,6 +30,8 @@ mybatis:
 
 logging:
   config: classpath:log4j2.yml
+  level:
+    feign: info
 
 # 配置 Eureka Server 注册中心
 eureka:
@@ -48,14 +50,16 @@ feign:
         connectTimeout: 5000 # 毫秒
         readTimeout: 5000 # 毫秒
 
+
 rocketmq:
   name-server: localhost:9876
   producer:
     group: producer-group
-    retry-times-when-send-failed: 2
-    retry-times-when-send-async-failed: 0
-    send-message-timeout: 3000
-    max-message-size: 1024
+    retry-times-when-send-failed: 2 # 同步发送重试次数
+    retry-times-when-send-async-failed: 0 # 异步发送重试次数
+    send-message-timeout: 3000 # ms
+    max-message-size: 4096 # byte
     compress-message-body-threshold: 1024
+    retry-next-server: false # retry another broker on sending failure internally
   consumer:
     group: consumer-group
