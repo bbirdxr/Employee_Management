@@ -31,7 +31,7 @@ mybatis:
 logging:
   config: classpath:log4j2.yml
   level:
-    feign: info
+    feign: debug
 
 # 配置 Eureka Server 注册中心
 eureka:
